@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseChimneyWindow,
   faBell,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import SearchButton from "../../components/SearchButton";
 
 const cx = classNames.bind(styles);
 
@@ -19,10 +19,7 @@ function Header({ title }) {
       </div>
 
       <div className={cx("action")}>
-        <div className={cx("search")} >
-          <input className={cx("searchInput")} placeholder="Tim kiem .." />
-          <FontAwesomeIcon className={cx("bell-icon")} icon={faSearch} />
-        </div>
+        <SearchButton />
         <button className={cx("alert")}>
           <FontAwesomeIcon className={cx("bell-icon")} icon={faBell} />
         </button>

@@ -1,17 +1,17 @@
 .wrapper {
-  height: 105px;
+  height: 150px;
   width: 1000px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 100px 0 60px;
 }
 
 // title
 .title {
-  margin-left: 100px;
   display: flex;
   align-items: center;
-  font-size: 3rem;
+  font-size: 3.2rem;
 }
 .icon {
   width: 4rem;
@@ -23,28 +23,17 @@
 .action {
   display: flex;
   align-items: center;
-}
-
-.search {
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-}
-
-.searchInput {
-  padding: 5px 8px;
-  height: 3.2rem;
-  width: 15rem;
-  background-color: #000000 0.08;
+  flex-basis: auto;
+  gap: 10px;
 }
 
 .alert {
-  border-radius: 30%;
+  border-radius: 25%;
 }
 .bell-icon {
   width: auto;
-  height: 2rem;
-  padding: 5px 8px;
+  height: 2.5rem;
+  padding: 8px 10px;
   background-color: #000000 0.08;
 }
 

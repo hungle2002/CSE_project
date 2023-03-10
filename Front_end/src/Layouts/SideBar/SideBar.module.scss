@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
 }
 
 .logo {
@@ -12,4 +13,22 @@
   height: 7rem;
   border-radius: 50%;
   object-fit: cover;
+}
+
+// nav bar
+.nav-bar {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--white);
+
+  &:hover {
+    color: #0a7514;
+  }
 }
