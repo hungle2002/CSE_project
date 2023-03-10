@@ -1,0 +1,67 @@
+@import "normalize.css";
+
+:root {
+  --black: #000;
+  --text-color: #161823;
+  --white: #fff;
+  --font-family: "ProximaNova", sans-serif;
+
+  // default layout
+  --default-layout-header-height: 60px;
+  --default-layout-width-content: 1150px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  color: var(--text-color);
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+// Fonts embedded
+@font-face {
+  font-family: ProximaNova;
+  src: url("/assets/fonts/Proxima-Nova-Bold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url("/assets/fonts/Proxima-Nova-Semibold.woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url("/assets/fonts/Proxima-Nova-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Sofiapro;
+  src: url("/assets/fonts/sofiapro-bold.woff2");
+  font-weight: 400;
+}

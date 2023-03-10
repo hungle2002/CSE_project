@@ -1,0 +1,56 @@
+.wrapper {
+  height: 105px;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// title
+.title {
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+.icon {
+  width: 4rem;
+  height: auto;
+  margin-right: 10px;
+}
+
+// action
+.action {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.searchInput {
+  padding: 5px 8px;
+  height: 3.2rem;
+  width: 15rem;
+  background-color: #000000 0.08;
+}
+
+.alert {
+  border-radius: 30%;
+}
+.bell-icon {
+  width: auto;
+  height: 2rem;
+  padding: 5px 8px;
+  background-color: #000000 0.08;
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
