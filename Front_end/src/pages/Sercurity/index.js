@@ -7,7 +7,7 @@ import images from "../../assets/images";
 
 const cx = classNames.bind(styles);
 
-function Upload() {
+function Security() {
   const messageItems = [
     {
       Date: '17/03/2023',
@@ -124,23 +124,23 @@ function Upload() {
         <div className={cx('dialog-header')}>
           <h2> System State</h2>
           <div><img className={cx("icon")} src={images.trashcan} alt="trashcanImage" />
-          <img className={cx("icon")} src={images.download} alt="downloadImage" /></div>
+            <img className={cx("icon")} src={images.download} alt="downloadImage" /></div>
         </div>
-      <div className={cx('dialog-line')}>
-        <h3>Date</h3>
-        <h3>State</h3>
+        <div className={cx('dialog-line')}>
+          <h3>Date</h3>
+          <h3>State</h3>
+        </div>
+        <div className={cx('dialog-box')}>
+          {messageItems.map((item, index) => {
+            return (
+              <StateLine
+                Date={item.Date}
+                Message={item.Message} />
+            );
+          })}
+        </div>
       </div>
-      <div className={cx('dialog-box')}>
-        {messageItems.map((item, index) => {
-          return (
-            <StateLine
-              Date={item.Date}
-              Message={item.Message} />
-          );
-        })}
-      </div>
-    </div>
     </div >);
 }
 
-export default Upload;
+export default Security;
