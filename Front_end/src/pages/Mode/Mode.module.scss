@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+  padding: 0 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+  height: 100%;
+}
+
+.panel {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rightbar-button-container {
+  width: 2%;
+}
+
+.rightbar-button {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 1.5vw;
+  height: 1.5vw;
+  padding: 3px;
+  cursor: pointer;
+}
