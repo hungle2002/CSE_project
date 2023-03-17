@@ -3,8 +3,11 @@ import styles from "./sercurity.module.scss";
 import classNames from "classnames/bind";
 import Switch from "../../components/ToggleSwitch"
 import StateLine from "../../components/StateLine"
-import images from "../../assets/images";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTrashCan,
+  faDownload
+} from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 
 function Security() {
@@ -115,16 +118,21 @@ function Security() {
           isOn={value3}
           handleToggle={() => setValue3(!value3)}
           type={1} no={3} />
-        {/* <Switch
-        isOn={value}
-        handleToggle={() => setValue(!value)} /> */}
       </div>
       <div className={cx('just-a-line')}><hr></hr></div>
       <div className={cx('right-side')}>
         <div className={cx('dialog-header')}>
           <h2> System State</h2>
-          <div><img className={cx("icon")} src={images.trashcan} alt="trashcanImage" />
-            <img className={cx("icon")} src={images.download} alt="downloadImage" /></div>
+          <div><FontAwesomeIcon
+            className={cx("icon")}
+            icon={faTrashCan}
+            style={{ color: "#4979D1" }}
+          />
+            <FontAwesomeIcon
+            className={cx("icon")}
+            icon={faDownload}
+            style={{ color: "#4979D1" }}
+          /></div>
         </div>
         <div className={cx('dialog-line')}>
           <h3>Date</h3>
