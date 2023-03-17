@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 import styles from "./DeviceTable.module.scss";
 import Button from "./Button";
-import { useState } from "react";
+import React, { useState } from "react";
 import { create } from "../../apiServices/searchService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -73,4 +74,9 @@ function TableRow({ device, img }) {
   );
 }
 
-export default TableRow;
+TableRow.propTypes = {
+  device: PropTypes.object.isRequired,
+  imp: PropTypes.string,
+};
+
+export default React.memo(TableRow);

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 import styles from "./ConditionBlock.module.scss";
 import IconAndNum from "../IconAndNum";
@@ -21,7 +22,6 @@ function ConditionBlock({ item }) {
       <div className={cx("right-content")}>
         <h2 className={cx("mode-title")}>{item.mode.title}</h2>
         <p className={cx("condition-name")}>{item.mode.action}</p>
-
 
         {/* Output for mode */}
         {(item.mode.title === "AUTOMATIC" || item.mode.title === "MANNUAL") && (
@@ -49,5 +49,9 @@ function ConditionBlock({ item }) {
     </div>
   );
 }
+
+ConditionBlock.propTypes = {
+  item: PropTypes.object.isRequired,
+};
 
 export default ConditionBlock;

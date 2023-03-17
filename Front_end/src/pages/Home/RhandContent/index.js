@@ -9,6 +9,7 @@ import {
   faTemperatureThreeQuarters,
 } from "@fortawesome/free-solid-svg-icons";
 import config from "../../../config";
+import React from "react";
 
 const cx = classNames.bind(styles);
 
@@ -37,7 +38,9 @@ function RhandConent() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("border-div")}>
-        <div className={cx('close-button')}><p>&gt;</p></div>
+        <div className={cx("close-button")}>
+          <p>&gt;</p>
+        </div>
         <div className={cx("row")}></div>
       </div>
 
@@ -56,8 +59,8 @@ function RhandConent() {
           ))}
         </div>
         <div className={cx("plant-information")}>
-          <h1 className={cx('plant-name')}>Wheat</h1>
-          <p className={cx('plant-description')} >
+          <h1 className={cx("plant-name")}>Wheat</h1>
+          <p className={cx("plant-description")}>
             Raw wheat can be ground into flour or using hard durum into
             semolina; germinated and dried creating malt; crushed or cut into
             cracked wheat; parboiled ( or steamed), dried, crushed and
@@ -69,4 +72,4 @@ function RhandConent() {
   );
 }
 
-export default RhandConent;
+export default React.memo(RhandConent);

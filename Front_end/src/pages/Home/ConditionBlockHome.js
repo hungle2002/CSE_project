@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import ConditionBlock from "../../components/ConditionBlock";
 import { useEffect, useState } from "react";
 import { search } from "../../apiServices/searchService";
@@ -66,5 +67,9 @@ function ConditionBlockHome({ className }) {
     </div>
   );
 }
+
+ConditionBlockHome.propTypes = {
+  className: PropTypes.string,
+};
 
 export default ConditionBlockHome;

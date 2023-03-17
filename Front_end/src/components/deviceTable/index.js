@@ -21,6 +21,7 @@ function DeviceTable() {
         console.log(error);
       }
     };
+
     fetchAPI();
   }, []);
 

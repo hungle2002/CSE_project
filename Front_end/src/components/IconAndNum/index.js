@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 import styles from "./IconAndNum.module.scss";
 
@@ -16,5 +17,14 @@ function IconAndNum({ icon, chooseColor, num, type, small, big }) {
     </div>
   );
 }
+
+IconAndNum.propTypes = {
+  icon: PropTypes.node.isRequired,
+  chooseColor: PropTypes.string,
+  num: PropTypes.node.isRequired,
+  type: PropTypes.string,
+  small: PropTypes.bool,
+  big: PropTypes.bool,
+};
 
 export default IconAndNum;

@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import styles from "./SearchButton.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 
 const cx = classNames.bind(styles);
 
@@ -16,4 +17,4 @@ function SearchButton() {
   );
 }
 
-export default SearchButton;
+export default React.memo(SearchButton);
