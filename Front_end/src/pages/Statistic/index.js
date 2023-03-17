@@ -46,6 +46,7 @@ const data2 = {
     },
   ]
 }
+
 const avgMoisture = 39
 const avgLight = 23283.5
 const avgTemperature = 46827
