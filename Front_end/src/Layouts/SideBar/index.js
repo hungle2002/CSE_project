@@ -10,7 +10,7 @@ import {
   faHouseFloodWater,
   faLeaf,
 } from "@fortawesome/free-solid-svg-icons";
-import routes from "../../config/routes";
+import config from "../../config";
 import Tippy from "@tippyjs/react";
 
 const cx = classNames.bind(styles);
@@ -18,45 +18,43 @@ const cx = classNames.bind(styles);
 function SideBar() {
   const navbarItems = [
     {
-      path: routes.home,
+      path: config.routes.home,
       icon: faLeaf,
-      value:'Home page'
+      value: "Home page",
     },
     {
-      path: routes.statistic,
+      path: config.routes.statistic,
       icon: faChartLine,
-      value:'Statistic view'
+      value: "Statistic view",
     },
     {
-      path: routes.mode,
+      path: config.routes.mode,
       icon: faHouseFloodWater,
-      value:'Irrigation mode'
+      value: "Irrigation mode",
     },
     {
-      path: routes.sercurity,
+      path: config.routes.sercurity,
       icon: faBuildingLock,
-      value:'Sercurity mode'
+      value: "Sercurity mode",
     },
     {
-      path: routes.setting,
+      path: config.routes.setting,
       icon: faGear,
-      value:'Setting mode'
+      value: "Setting mode",
     },
   ];
 
   return (
     <aside className={cx("wrapper")}>
-      <img className={cx("logo")} src={images.logo} alt="sunImage" />
+      <Link to={config.routes.home}>
+        <img className={cx("logo")} src={images.logo} alt="sunImage" />
+      </Link>
       <div className={cx("nav-bar")}>
         {navbarItems.map((item, index) => {
           const url = window.location.href;
           const isPage = url.includes(item.path);
           return (
-            <Tippy
-              content={item.value}
-              placement="right-end"
-              key={index}
-            >
+            <Tippy content={item.value} placement="right-end" key={index}>
               <Link to={item.path}>
                 <FontAwesomeIcon
                   className={cx("icon")}

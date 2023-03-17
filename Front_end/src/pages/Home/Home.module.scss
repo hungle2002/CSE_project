@@ -1,0 +1,14 @@
+.main-content {
+  width: var(--default-layout-header-width);
+  padding: 0 var(--default-layout-header-padding);
+}
+
+.condition-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.device-table {
+  margin-top: 50px;
+}
+

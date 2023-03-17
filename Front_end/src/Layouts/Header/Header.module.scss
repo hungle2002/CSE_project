@@ -1,10 +1,10 @@
 .wrapper {
   height: 150px;
-  width: 1000px;
+  width: var(--default-layout-header-width);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px 0 60px;
+  padding: 0 100px 0 var(--default-layout-header-padding);
 }
 
 // title

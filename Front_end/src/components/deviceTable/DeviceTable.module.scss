@@ -1,0 +1,116 @@
+.wrapper {
+  width: var(---default-layout-header-width);
+  height: 600px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 5px #888888;
+  padding: 40px 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+// table CSS
+.inner {
+  margin-top: 25px;
+}
+
+.table-header {
+  background-color: #f3f6f9;
+  display: flex;
+  padding-left: 20px;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #b5b5c3;
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 50px;
+  text-align: center;
+}
+
+.name-header {
+  color: #464e5f;
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: row;
+}
+
+.table-body {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  padding-left: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #b5b5c3;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.table-body-row {
+  height: 400px;
+  overflow: auto;
+}
+
+.image {
+  width: 70px;
+  height: 70px;
+  padding-right: 10px;
+}
+
+.name-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.name-header-des {
+  color: #b5b5c3;
+  text-align: center;
+}
+
+.table-col-2 {
+  flex-basis: 10%;
+}
+
+.header-day {
+  color: #464e5f;
+  text-align: center;
+}
+
+.table-col-normal {
+  flex-basis: 10%;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  animation: spinner 1.5s linear infinite;
+  font-size: 2.2rem;
+}
