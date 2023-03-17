@@ -22,7 +22,12 @@ const days = [
 const WeatherBar = ({ rightbarRef, weatherData }) => {
   return (
     <div className={cx("container")} ref={rightbarRef}>
-      <div className={cx(`today-${weatherData.today.weather.toLowerCase()}`, "today")}>
+      <div
+        className={cx(
+          `today-${weatherData.today.weather.toLowerCase()}`,
+          "today"
+        )}
+      >
         <div className={cx("today-top")}>
           <FontAwesomeIcon icon={faSun} size={"3x"} color={"white"} />
           <div className={cx("today-top-content")}>

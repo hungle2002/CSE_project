@@ -1,18 +1,22 @@
 import styles from "./InfoPanel.module.scss";
 import classNames from "classnames/bind";
-import { faThermometer0, faDroplet, faSun, faCross } from "@fortawesome/free-solid-svg-icons";
+import {
+  faThermometer0,
+  faDroplet,
+  faSun,
+  faCross,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const cx = classNames.bind(styles);
 
 const InfoPanel = ({ infoData }) => {
-
   var icon = undefined;
   var modeText = undefined;
   var mode = undefined;
   var modeRange = undefined;
   var backgroundColor = undefined;
-  switch(infoData.meta.name){
+  switch (infoData.meta.name) {
     case "Temperature":
       icon = faThermometer0;
       backgroundColor = "#D0EFF5";
@@ -30,7 +34,7 @@ const InfoPanel = ({ infoData }) => {
       backgroundColor = "#FFFFFF";
       break;
   }
-  switch(infoData.mode) {
+  switch (infoData.mode) {
     case 1:
       mode = "Automatic";
       modeText = "Keep between";
@@ -43,7 +47,7 @@ const InfoPanel = ({ infoData }) => {
       break;
     case 3:
       mode = "Manual";
-      modeText = "Alert when outside";
+      modeText = `${infoData.safeAction === 1 ? "Ignore" : (infoData.safeAction === 2 ? "Alert" : "Take action")} when outside`;
       modeRange = `${infoData.safeMin} - ${infoData.safeMax}`;
       break;
     default:
@@ -54,13 +58,31 @@ const InfoPanel = ({ infoData }) => {
   }
 
   return (
-    <div className={cx("container")} style={{backgroundColor: backgroundColor}}>
+    <div
+      className={cx("container")}
+      style={{ backgroundColor: backgroundColor }}
+    >
       <div className={cx("left")}>
         <div className={cx("left-top")}>
-          <FontAwesomeIcon className={cx("left-top-icon")} icon={icon} size="2x" />
-          <p className={cx("left-top-text")}>{infoData.status} {infoData.meta.unit === "oC" ? <span><sup>o</sup>C</span> : (
-            infoData.meta.unit === "W/m2" ? <span>W/m<sup>2</sup></span> : "%"
-          )}</p>
+          <FontAwesomeIcon
+            className={cx("left-top-icon")}
+            icon={icon}
+            size="2x"
+          />
+          <p className={cx("left-top-text")}>
+            {infoData.status}{" "}
+            {infoData.meta.unit === "oC" ? (
+              <span>
+                <sup>o</sup>C
+              </span>
+            ) : infoData.meta.unit === "W/m2" ? (
+              <span>
+                W/m<sup>2</sup>
+              </span>
+            ) : (
+              "%"
+            )}
+          </p>
         </div>
         <div className={cx("left-bottom")}>
           <p className={cx("left-bottom-text")}>{infoData.meta.name}</p>
@@ -70,14 +92,25 @@ const InfoPanel = ({ infoData }) => {
         <div className={cx("right-top")}>
           <p className={cx("right-top-mode")}>{mode}</p>
           <p className={cx("right-top-text")}>{modeText}</p>
-          <p className={cx("right-top-range")}>{modeRange} {infoData.meta.unit === "oC" ? <span><sup>o</sup>C</span> : (
-            infoData.meta.unit === "W/m2" ? <span>W/m<sup>2</sup></span> : "%"
-          )}</p>
+          <p className={cx("right-top-range")}>
+            {modeRange}{" "}
+            {infoData.meta.unit === "oC" ? (
+              <span>
+                <sup>o</sup>C
+              </span>
+            ) : infoData.meta.unit === "W/m2" ? (
+              <span>
+                W/m<sup>2</sup>
+              </span>
+            ) : (
+              "%"
+            )}
+          </p>
         </div>
         <div className={cx("right-bottom")}>Good</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default InfoPanel
+export default InfoPanel;
