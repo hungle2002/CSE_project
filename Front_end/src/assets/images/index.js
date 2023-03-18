@@ -9,7 +9,12 @@ const images = {
   waterMotor: require("./pumpingicon.png"),
   ledMotor: require("./ledmotor.jpg"),
   lcdMotor: require('./lcdMotor.png'),
-  smokeSensor: require('./smokeSensor.jpg')
+  smokeSensor: require('./smokeSensor.jpg'),
+  trashcan: require('./trashcan.png'),
+  download: require('./download.png'),
+  hydrometer: require('./hydrometer.png'),
+  uparrow: require('./uparrow.png'),
+  downarrow: require('./downarrow.png')
 
 };
 
