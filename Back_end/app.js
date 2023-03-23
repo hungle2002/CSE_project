@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const connect = require("./db/connect");
+// const connect = require("./db/connect");
 var cors = require('cors')
 
 const notFoundMiddleware = require("./middleware/not-found");
@@ -26,7 +26,7 @@ const port = process.env.PORT || 3000;
 
 const connectDB = async () => {
   try {
-    await connect(process.env.MONGO_URI);
+    // await connect(process.env.MONGO_URI);
     app.listen(port, () => {
       console.log("Server listen on port " + port + "...");
     });
