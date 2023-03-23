@@ -10,13 +10,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const cx = classNames.bind(styles);
 
-const InfoPanel = ({ infoData }) => {
+const InfoPanel = ({ currentSettings }) => {
+  const getMeasurementUnit = () => {
+    return currentSettings.meta.unit === "oC" ? (
+      <span>
+        <sup>o</sup>C
+      </span>
+    ) : currentSettings.meta.unit === "W/m2" ? (
+      <span>
+        W/m<sup>2</sup>
+      </span>
+    ) : (
+      <span>%</span>
+    );
+  };
   var icon = undefined;
   var modeText = undefined;
   var mode = undefined;
   var modeRange = undefined;
   var backgroundColor = undefined;
-  switch (infoData.meta.name) {
+  switch (currentSettings.meta.name) {
     case "Temperature":
       icon = faThermometer0;
       backgroundColor = "#D0EFF5";
@@ -34,21 +47,27 @@ const InfoPanel = ({ infoData }) => {
       backgroundColor = "#FFFFFF";
       break;
   }
-  switch (infoData.mode) {
+  switch (currentSettings.mode) {
     case 1:
-      mode = "Automatic";
+      mode = "AUTOMATIC";
       modeText = "Keep between";
-      modeRange = `${infoData.autoMin} - ${infoData.autoMax}`;
+      modeRange = `${currentSettings.autoMin} - ${currentSettings.autoMax}`;
       break;
     case 2:
-      mode = "Scheduled";
+      mode = "SCHEDULED";
       modeText = "On from";
-      modeRange = infoData.schedStart + " - " + infoData.schedEnd;
+      modeRange = currentSettings.schedStart + " - " + currentSettings.schedEnd;
       break;
     case 3:
-      mode = "Manual";
-      modeText = `${infoData.safeAction === 1 ? "Ignore" : (infoData.safeAction === 2 ? "Alert" : "Take action")} when outside`;
-      modeRange = `${infoData.safeMin} - ${infoData.safeMax}`;
+      mode = "MANUAL";
+      modeText = `${
+        currentSettings.safeAction === 1
+          ? "Ignore"
+          : currentSettings.safeAction === 2
+          ? "Alert"
+          : "Take action"
+      } when outside`;
+      modeRange = `${currentSettings.manualMin} - ${currentSettings.manualMax}`;
       break;
     default:
       mode = "Null";
@@ -70,22 +89,12 @@ const InfoPanel = ({ infoData }) => {
             size="2x"
           />
           <p className={cx("left-top-text")}>
-            {infoData.status}{" "}
-            {infoData.meta.unit === "oC" ? (
-              <span>
-                <sup>o</sup>C
-              </span>
-            ) : infoData.meta.unit === "W/m2" ? (
-              <span>
-                W/m<sup>2</sup>
-              </span>
-            ) : (
-              "%"
-            )}
+            {currentSettings.status}{" "}
+            {getMeasurementUnit()}
           </p>
         </div>
         <div className={cx("left-bottom")}>
-          <p className={cx("left-bottom-text")}>{infoData.meta.name}</p>
+          <p className={cx("left-bottom-text")}>{currentSettings.meta.name}</p>
         </div>
       </div>
       <div className={cx("right")}>
@@ -94,17 +103,7 @@ const InfoPanel = ({ infoData }) => {
           <p className={cx("right-top-text")}>{modeText}</p>
           <p className={cx("right-top-range")}>
             {modeRange}{" "}
-            {infoData.meta.unit === "oC" ? (
-              <span>
-                <sup>o</sup>C
-              </span>
-            ) : infoData.meta.unit === "W/m2" ? (
-              <span>
-                W/m<sup>2</sup>
-              </span>
-            ) : (
-              "%"
-            )}
+            {currentSettings.mode !== 2 ? getMeasurementUnit() : null}
           </p>
         </div>
         <div className={cx("right-bottom")}>Good</div>

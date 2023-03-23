@@ -1,222 +1,196 @@
 import styles from "./SettingsPanel.module.scss";
 import classNames from "classnames/bind";
-import { useEffect, useState } from "react";
 
 const cx = classNames.bind(styles);
 
-const SettingsPanel = ({ infoData, settings, setSettings }) => {
-  const [newSettings, setNewSettings] = useState({});
+const SettingsPanel = ({ newSettings, setNewSettings }) => {
+  const getMeasurementUnit = () => {
+    return newSettings.meta.unit === "oC" ? (
+      <span>
+        <sup>o</sup>C
+      </span>
+    ) : newSettings.meta.unit === "W/m2" ? (
+      <span>
+        W/m<sup>2</sup>
+      </span>
+    ) : (
+      <span>%</span>
+    );
+  };
 
-  useEffect(() => {
-    setNewSettings({ settings });
-  }, []);
+  const conditionalTexts = {
+    title:
+      newSettings.mode === 1
+        ? "Automatic"
+        : newSettings.mode === 2
+        ? "Scheduled"
+        : "Manual",
+    contentClassname:
+      newSettings.mode === 2 ? "sched-content" : "range-content",
+    rangeMinText:
+      newSettings.mode === 1
+        ? "Keep between"
+        : newSettings.mode === 2
+        ? "Turn on from"
+        : "Safe from",
+    rangeMaxText: newSettings.mode === 1 ? "and" : "to",
+    minInputClassname:
+      newSettings.mode === 2 ? "sched-start-input" : "ideal-min-input",
+    maxInputClassname:
+      newSettings.mode === 2 ? "sched-end-input" : "ideal-max-input",
+  };
+
+  const inputElements = {
+    inputMin:
+      newSettings.mode === 2 ? (
+        <input
+          type="time"
+          value={newSettings.schedStart}
+          onChange={(e) =>
+            setNewSettings({
+              ...newSettings,
+              schedStart: e.target.value,
+            })
+          }
+        />
+      ) : (
+        <>
+          <input
+            type="number"
+            id={newSettings.meta.name + "_range-input-min"}
+            value={
+              newSettings.mode === 1
+                ? newSettings.autoMin
+                : newSettings.manualMin
+            }
+            onChange={(e) =>
+              setNewSettings(
+                newSettings.mode === 1
+                  ? {
+                      ...newSettings,
+                      autoMin:
+                        e.target.value === "-"
+                          ? "-"
+                          : parseInt(e.target.value || "0"),
+                    }
+                  : {
+                      ...newSettings,
+                      manualMin:
+                        e.target.value === "-"
+                          ? "-"
+                          : parseInt(e.target.value || "0"),
+                    }
+              )
+            }
+          />
+          <label htmlFor={newSettings.meta.name + "_range-input-min"}>
+            {getMeasurementUnit()}
+          </label>
+        </>
+      ),
+    inputMax:
+      newSettings.mode === 2 ? (
+        <input
+          type="time"
+          value={newSettings.schedEnd}
+          onChange={(e) =>
+            setNewSettings({
+              ...newSettings,
+              schedEnd: e.target.value,
+            })
+          }
+        />
+      ) : (
+        <>
+          <input
+            type="number"
+            id={newSettings.meta.name + "_range-input-max"}
+            value={
+              newSettings.mode === 1
+                ? newSettings.autoMax
+                : newSettings.manualMax
+            }
+            onChange={(e) =>
+              setNewSettings(
+                newSettings.mode === 1
+                  ? {
+                      ...newSettings,
+                      autoMax:
+                        e.target.value === "-"
+                          ? "-"
+                          : parseInt(e.target.value || "0"),
+                    }
+                  : {
+                      ...newSettings,
+                      manualMax:
+                        e.target.value === "-"
+                          ? "-"
+                          : parseInt(e.target.value || "0"),
+                    }
+              )
+            }
+          />
+          <label htmlFor={newSettings.meta.name + "_range-input-max"}>
+            {getMeasurementUnit()}
+          </label>
+        </>
+      ),
+  };
 
   return (
-    <div
-      className={cx(
-        "container",
-        infoData.mode === 3 ? "container-manual" : null
-      )}
-    >
+    <div className={cx("container")}>
       <div className={cx("mode")}>
         <div className={cx("mode-title")}>
           <p className={cx("mode-title-text")}>Mode</p>
         </div>
         <div
           className={cx("mode-content")}
-          onChange={(e) => alert(e.target.value)}
+          onChange={(e) => {
+            setNewSettings({
+              ...newSettings,
+              mode: parseInt(e.target.value),
+            });
+          }}
         >
-          <div className={cx("mode-radio")}>
-            <label htmlFor={infoData.meta.name + "_mode-radio-input-1"}>
-              Automatic
-            </label>
-            {infoData.mode === 1 ? (
+          {[1, 2, 3].map((i) => (
+            <div className={cx("mode-radio")} key={i}>
+              <label htmlFor={newSettings.meta.name + `_mode-radio-input-${i}`}>
+                {i === 1 ? "Automatic" : i === 2 ? "Scheduled" : "Manual"}
+              </label>
               <input
                 type="radio"
-                name={infoData.meta.name + "mode"}
-                id={infoData.meta.name + "_mode-radio-input-1"}
-                value={1}
-                checked
+                name={newSettings.meta.name + "mode"}
+                id={newSettings.meta.name + `_mode-radio-input-${i}`}
+                value={i}
+                checked={newSettings.mode === i}
               />
-            ) : (
-              <input
-                type="radio"
-                name={infoData.meta.name + "mode"}
-                id={infoData.meta.name + "_mode-radio-input-1"}
-                value={1}
-              />
-            )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={cx("range")}>
+        <div className={cx("range-title")}>
+          <p className={cx("range-title-text")}>{conditionalTexts.title}</p>
+        </div>
+        <div className={cx(conditionalTexts.contentClassname)}>
+          <div className={cx("range-min")}>
+            <p className={cx("range-min-text")}>
+              {conditionalTexts.rangeMinText}
+            </p>
+            <div className={cx(conditionalTexts.minInputClassname)}>
+              {inputElements.inputMin}
+            </div>
           </div>
-          <div className={cx("mode-radio")}>
-            <label htmlFor={infoData.meta.name + "_mode-radio-input-2"}>
-              Scheduled
-            </label>
-            {infoData.mode === 2 ? (
-              <input
-                type="radio"
-                name={infoData.meta.name + "mode"}
-                id={infoData.meta.name + "_mode-radio-input-2"}
-                value={2}
-                checked
-              />
-            ) : (
-              <input
-                type="radio"
-                name={infoData.meta.name + "mode"}
-                id={infoData.meta.name + "_mode-radio-input-2"}
-                value={2}
-              />
-            )}
-          </div>
-          <div className={cx("mode-radio")}>
-            <label htmlFor={infoData.meta.name + "_mode-radio-input-3"}>
-              Manual
-            </label>
-            {infoData.mode === 3 ? (
-              <input
-                type="radio"
-                name={infoData.meta.name + "mode"}
-                id={infoData.meta.name + "_mode-radio-input-3"}
-                value={3}
-                checked
-              />
-            ) : (
-              <input
-                type="radio"
-                name={infoData.meta.name + "mode"}
-                id={infoData.meta.name + "_mode-radio-input-3"}
-                value={3}
-              />
-            )}
+          <div className={cx("range-max")}>
+            <p className={cx("range-max-text")}>
+              {conditionalTexts.rangeMaxText}
+            </p>
+            <div className={cx(conditionalTexts.maxInputClassname)}>
+              {inputElements.inputMax}
+            </div>
           </div>
         </div>
       </div>
-      {infoData.mode === 1 ? (
-        <div className={cx("range")}>
-          <div className={cx("range-title")}>
-            <p className={cx("range-title-text")}>Automatic</p>
-          </div>
-          <div className={cx("range-content")} onChange={(e) => alert(e.target.value)}>
-            <div className={cx("range-min")}>
-              <p className={cx("range-min-text")}>Keep between</p>
-              <div className={cx("ideal-min-input")}>
-                <input
-                  type="text"
-                  id={infoData.meta.name + "_range-input-min"}
-                  value={infoData.autoMin}
-                />
-                <label htmlFor={infoData.meta.name + "_range-input-min"}>
-                  {infoData.meta.unit === "oC" ? (
-                    <span>
-                      <sup>o</sup>C
-                    </span>
-                  ) : (
-                    <span>
-                      W/m<sup>2</sup>
-                    </span>
-                  )}
-                </label>
-              </div>
-            </div>
-            <div className={cx("range-max")}>
-              <p className={cx("range-max-text")}>and</p>
-              <div className={cx("ideal-max-input")}>
-                <input
-                  type="text"
-                  id={infoData.meta.name + "_range-input-max"}
-                  value={infoData.autoMax}
-                />
-                <label htmlFor={infoData.meta.name + "_range-input-max"}>
-                  {infoData.meta.unit === "oC" ? (
-                    <span>
-                      <sup>o</sup>C
-                    </span>
-                  ) : (
-                    <span>
-                      W/m<sup>2</sup>
-                    </span>
-                  )}
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : infoData.mode === 2 ? (
-        <div className={cx("range")}>
-          <div className={cx("range-title")}>
-            <p className={cx("range-title-text")}>Scheduled</p>
-          </div>
-          <div className={cx("sched-content")} onChange={(e) => alert(e.target.value)}>
-            <div className={cx("range-min")}>
-              <p className={cx("range-min-text")}>Turn on from</p>
-              <div className={cx("sched-start-input")}>
-                <input type="time" value={infoData.schedStart} />
-              </div>
-            </div>
-            <div className={cx("range-max")}>
-              <p className={cx("range-max-text")}>to</p>
-              <div className={cx("sched-end-input")}>
-                <input type="time" value={infoData.schedEnd} />
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* null */
-        <div className={cx("range")}>
-          <div className={cx("range-title")}>
-            <p className={cx("range-title-text")}>Manual</p>
-          </div>
-          <div className={cx("range-content")}>
-            <div className={cx("range-min")} onChange={(e) => alert(e.target.value)}>
-              <p className={cx("range-min-text")}>Safe from</p>
-              <div className={cx("ideal-min-input")}>
-                <input
-                  type="text"
-                  id={infoData.meta.name + "_range-input-min"}
-                  value={infoData.safeMin}
-                />
-                <label htmlFor={infoData.meta.name + "_range-input-min"}>
-                  {infoData.meta.unit === "oC" ? (
-                    <span>
-                      <sup>o</sup>C
-                    </span>
-                  ) : infoData.meta.unit === "W/m2" ? (
-                    <span>
-                      W/m<sup>2</sup>
-                    </span>
-                  ) : (
-                    <span>%</span>
-                  )}
-                </label>
-              </div>
-            </div>
-            <div className={cx("range-max")}>
-              <p className={cx("range-max-text")}>to</p>
-              <div className={cx("ideal-max-input")}>
-                <input
-                  type="text"
-                  id={infoData.meta.name + "_range-input-max"}
-                  value={infoData.safeMax}
-                />
-                <label htmlFor={infoData.meta.name + "_range-input-max"}>
-                  {infoData.meta.unit === "oC" ? (
-                    <span>
-                      <sup>o</sup>C
-                    </span>
-                  ) : infoData.meta.unit === "W/m2" ? (
-                    <span>
-                      W/m<sup>2</sup>
-                    </span>
-                  ) : (
-                    <span>%</span>
-                  )}
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
       <div className={cx("safe")}>
         <div className={cx("safe-title")}>
           <p className={cx("safe-title-text")}>Safe Mode</p>
@@ -224,91 +198,68 @@ const SettingsPanel = ({ infoData, settings, setSettings }) => {
         <div className={cx("safe-content")}>
           <div className={cx("safe-content-left")}>
             <p className={cx("safe-left-text")}>Action</p>
-            <div className={cx("safe-left-radios")} onChange={(e) => alert(e.target.value)}>
-              <div className={cx("safe-radio")}>
-                <label htmlFor={infoData.meta.name + "_safe-radio-1"}>
-                  Ignore
-                </label>
-                {infoData.safeAction === 1 ? (
+            <div
+              className={cx("safe-left-radios")}
+              onChange={(e) =>
+                setNewSettings({
+                  ...newSettings,
+                  safeAction: parseInt(e.target.value),
+                })
+              }
+            >
+              {[1, 2, 3].map((i) => (
+                <div className={cx("safe-radio")} key={i}>
+                  <label htmlFor={newSettings.meta.name + `_safe-radio-${i}`}>
+                    {i === 1 ? "Ignore" : i === 2 ? "Alert" : "Take action"}
+                  </label>
                   <input
                     type="radio"
-                    id={infoData.meta.name + "_safe-radio-1"}
-                    value={1}
-                    checked
-                    name={infoData.meta.name + "safe"}
+                    id={newSettings.meta.name + `_safe-radio-${i}`}
+                    value={i}
+                    checked={newSettings.safeAction === i}
+                    name={newSettings.meta.name + "safe"}
                   />
-                ) : (
-                  <input
-                    type="radio"
-                    id={infoData.meta.name + "_safe-radio-1"}
-                    value={1}
-                    name={infoData.meta.name + "safe"}
-                  />
-                )}
-              </div>
-              <div className={cx("safe-radio")}>
-                <label htmlFor={infoData.meta.name + "_safe-radio-2"}>
-                  Alert
-                </label>
-                {infoData.safeAction === 2 ? (
-                  <input
-                    type="radio"
-                    id={infoData.meta.name + "_safe-radio-2"}
-                    value={2}
-                    checked
-                    name={infoData.meta.name + "safe"}
-                  />
-                ) : (
-                  <input
-                    type="radio"
-                    id={infoData.meta.name + "_safe-radio-2"}
-                    value={2}
-                    name={infoData.meta.name + "safe"}
-                  />
-                )}
-              </div>
-              <div className={cx("safe-radio")}>
-                <label htmlFor={infoData.meta.name + "_safe-radio-3"}>
-                  Take action
-                </label>
-                {infoData.safeAction === 3 ? (
-                  <input
-                    type="radio"
-                    id={infoData.meta.name + "_safe-radio-3"}
-                    value={3}
-                    checked
-                    name={infoData.meta.name + "safe"}
-                  />
-                ) : (
-                  <input
-                    type="radio"
-                    id={infoData.meta.name + "_safe-radio-3"}
-                    value={3}
-                    name={infoData.meta.name + "safe"}
-                  />
-                )}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className={cx("safe-content-right")} onChange={(e) => alert(e.target.value)}>
+          <div className={cx("safe-content-right")}>
             <div className={cx("safe-lower")}>
-              <label htmlFor={infoData.meta.name + "_safe-lower"}>
+              <label htmlFor={newSettings.meta.name + "_safe-lower"}>
                 Lower limit
               </label>
               <input
-                type="text"
-                id={infoData.meta.name + "_safe-lower"}
-                value={infoData.safeMin}
+                type="number"
+                id={newSettings.meta.name + "_safe-lower"}
+                value={newSettings.safeMin}
+                onChange={(e) =>
+                  setNewSettings({
+                    ...newSettings,
+                    safeMin:
+                      e.target.value === "-"
+                        ? "-"
+                        : parseInt(e.target.value || "0"),
+                  })
+                }
               />
             </div>
             <div className={cx("safe-upper")}>
-              <label htmlFor={infoData.meta.name + "_safe-upper"}>
+              <label htmlFor={newSettings.meta.name + "_safe-upper"}>
                 Upper limit
               </label>
               <input
-                type="text"
-                id={infoData.meta.name + "_safe-upper"}
-                value={infoData.safeMax}
+                type="number"
+                id={newSettings.meta.name + "_safe-upper"}
+                value={newSettings.safeMax}
+                onChange={(e) =>
+                  setNewSettings({
+                    ...newSettings,
+                    safeMax:
+                      e.target.value === "-"
+                        ? "-"
+                        : parseInt(e.target.value || "0"),
+                  })
+                }
               />
             </div>
           </div>

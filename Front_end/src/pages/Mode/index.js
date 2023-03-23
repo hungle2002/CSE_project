@@ -46,6 +46,8 @@ function Profile() {
     schedEnd: "10:00",
     safeMin: 0,
     safeMax: 0,
+    manualMin: 0,
+    manualMax: 0
   };
   const temperatureData = {
     meta: {
@@ -61,6 +63,8 @@ function Profile() {
     schedEnd: "18:00",
     safeMin: 15,
     safeMax: 32,
+    manualMin: 16,
+    manualMax: 31
   };
   const lightingData = {
     meta: {
@@ -76,6 +80,8 @@ function Profile() {
     schedEnd: "18:00",
     safeMin: 80,
     safeMax: 220,
+    manualMin: 90,
+    manualMax: 210
   };
   const soilMoistureData = {
     meta: {
@@ -91,6 +97,8 @@ function Profile() {
     schedEnd: "18:00",
     safeMin: 45,
     safeMax: 75,
+    manualMin: 47,
+    manualMax: 73
   };
   const weatherData = {
     meta: {
@@ -124,18 +132,13 @@ function Profile() {
     ],
   };
 
-  const [settings, setSettings] = useState({});
   const [showRightbar, setShowRightbar] = useState(true);
 
   const rightbarRef = useRef();
   const contentRef = useRef();
 
   useEffect(() => {
-    setSettings({
-      temperatureData: { ...temperatureData },
-      lightingData: { ...lightingData },
-      soilMoistureData: { ...soilMoistureData },
-    });
+    
   }, []);
 
   useEffect(() => {
@@ -145,8 +148,8 @@ function Profile() {
       contentRef.current.style.width = "98%";
     } else {
       rightbarRef.current.style.display = "flex";
-      rightbarRef.current.style.width = "28%";
-      contentRef.current.style.width = "70%";
+      rightbarRef.current.style.width = "23%";
+      contentRef.current.style.width = "75%";
     }
   }, [showRightbar]);
 
@@ -157,8 +160,6 @@ function Profile() {
           <div className={cx("panel")} key={data.meta.name}>
             <Panel
               infoData={data}
-              settings={settings}
-              setSettings={setSettings}
             />
           </div>
         ))}

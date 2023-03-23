@@ -1,11 +1,5 @@
 import styles from "./WeatherBar.module.scss";
 import classNames from "classnames/bind";
-import {
-  faSun,
-  faCloudShowersHeavy,
-  faCloud,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const cx = classNames.bind(styles);
 
@@ -29,7 +23,6 @@ const WeatherBar = ({ rightbarRef, weatherData }) => {
         )}
       >
         <div className={cx("today-top")}>
-          <FontAwesomeIcon icon={faSun} size={"3x"} color={"white"} />
           <div className={cx("today-top-content")}>
             <p className={cx("today-top-content-temp")}>
               {weatherData.today.temp} <sup>o</sup>
@@ -63,17 +56,6 @@ const WeatherBar = ({ rightbarRef, weatherData }) => {
               key={String(index) + data.weather}
             >
               <div className={cx("other-day-left")}>
-                <FontAwesomeIcon
-                  icon={
-                    data.weather === "Sunny"
-                      ? faSun
-                      : data.weather === "Cloudy"
-                      ? faCloud
-                      : faCloudShowersHeavy
-                  }
-                  size={"2x"}
-                  color={"white"}
-                />
                 <p className={cx("other-day-day")}>
                   {days[(new Date().getDay() + index + 1) % 7]}
                 </p>
