@@ -17,31 +17,8 @@ import {
 const cx = classNames.bind(styles);
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Filler, Tooltip, TimeScale, Title,
   Legend)
-const ChartBox = ({ }) => {
-  const data = {
-    labels: ['01/3', '02/3', '03/3', '04/3', '05/3', '06/3', '07/3'],
-    datasets: [
-      {
-        label: "Moisture",
-        // yAxisID: 'moisture',
-        data: [70, 40, 60, 23, 40, 23, 42],
-        fill: false,
-        borderColor: 'rgba(52, 122, 226, 1)',
-        tension: 0.2,
-        yAxisID: 'y',
-      },
-      {
-        label: "Consumption",
-        // yAxisID: 'consumption',
-        data: [2000, 14000, 4000, 4020, 10000, 8000, 12000],
-        fill: false,
-        borderColor: 'rgba(255, 149, 0, 1)',
-        tension: 0.2,
-        yAxisID: 'y1',
-      },
-    ]
-  }
-  const options = {
+const ChartBox = ({ title, data, opNum }) => {
+  const options1 = {
     responsive: true,
     showTooltips: true,
     interaction: {
@@ -79,11 +56,38 @@ const ChartBox = ({ }) => {
       }
     }
   }
+  const options2 = {
+    responsive: true,
+    showTooltips: true,
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    stacked: false,
+    scales:
+    {
+      y:
+      {
+        type: 'linear',
+        display: true,
+      },
+      x: {
+        grid: {
+          display: false
+        }
+      }
+    }
+  }
+  const options = opNum ? options1 : options2
   return (
     <div className={cx('chart-box')}>
-      <Line
-        data={data}
-        options={options} />
+      <h1>{title} Analytics</h1>
+      <p>Realtime - last 7 days</p>
+      <div className={cx('chart')}>
+        <Line
+          data={data}
+          options={options} />
+      </div>
     </div>
   );
 

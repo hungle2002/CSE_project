@@ -1,5 +1,6 @@
 const images = {
   logo: require("./sun.png"),
+<<<<<<< HEAD
   user: require("./user.jpg"),
   wheat: require("./wheat.png"),
   lightSensor: require("./lightsensor.jpg"),
@@ -16,6 +17,9 @@ const images = {
   uparrow: require('./uparrow.png'),
   downarrow: require('./downarrow.png')
 
+=======
+  user: require('./user.jpg')
+>>>>>>> ada8cb55d2ed5b04c9493dd4e2fb856d63ed4f21
 };
 
 export default images;
