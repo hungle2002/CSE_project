@@ -27,7 +27,7 @@ function ConditionBlockHome({ className }) {
     fetchAPI();
     const getCondition = setInterval(async () => {
       await fetchAPI();
-    }, 5000);
+    }, 1000);
 
     return () => {
       clearInterval(getCondition);
