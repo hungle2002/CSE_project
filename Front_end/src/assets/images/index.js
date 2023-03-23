@@ -18,7 +18,12 @@ const images = {
   downarrow: require('./downarrow.png')
 
 =======
-  user: require('./user.jpg')
+  sunnyImage: require("./sunny.png"),
+  rainyImage: require("./rainy.png"),
+  cloudyImage: require("./cloudy.png"),
+  todaySunnyImage: require("./today-sunny.png"),
+  todayRainyImage: require("./today-rainy.png"),
+  todayCloudyImage: require("./today-cloudy.png")
 >>>>>>> ada8cb55d2ed5b04c9493dd4e2fb856d63ed4f21
 };
 
