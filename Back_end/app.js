@@ -17,6 +17,7 @@ app.use(express.json());
 // routing
 app.use("/api/v1/condition/", route.condition);
 app.use("/api/v1/device/", route.deviceState);
+app.use("/api/v1/server-record/", route.serverRecord); // for initial testing purposes only; delete this line when in implementation
 
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);
