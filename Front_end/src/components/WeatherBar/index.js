@@ -52,7 +52,7 @@ const WeatherBar = ({ rightbarRef, weatherData }) => {
         <div className={cx("other-days-weather")}>
           {weatherData.others.map((data, index) => (
             <div
-              className={cx(`other-day-${data.weather.toLowerCase()}`)}
+              className={cx("other-day", `other-day-${data.weather.toLowerCase()}`)}
               key={String(index) + data.weather}
             >
               <div className={cx("other-day-left")}>
