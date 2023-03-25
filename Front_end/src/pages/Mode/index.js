@@ -56,7 +56,7 @@ function Profile() {
     },
     mode: 1,
     safeAction: 1,
-    status: 27,
+    status: 31,
     autoMin: 17,
     autoMax: 30,
     schedStart: "06:00",
@@ -73,7 +73,7 @@ function Profile() {
     },
     mode: 2,
     safeAction: 2,
-    status: 150,
+    status: 10,
     autoMin: 100,
     autoMax: 200,
     schedStart: "06:00",
@@ -127,6 +127,18 @@ function Profile() {
       },
       {
         temp: 22,
+        weather: "Rainy",
+      },
+      {
+        temp: 25,
+        weather: "Sunny",
+      },
+      {
+        temp: 23,
+        weather: "Cloudy",
+      },
+      {
+        temp: 25,
         weather: "Rainy",
       },
     ],

@@ -29,6 +29,7 @@ const InfoPanel = ({ currentSettings }) => {
   var mode = undefined;
   var modeRange = undefined;
   var backgroundColor = undefined;
+  var statusText = undefined;
   switch (currentSettings.meta.name) {
     case "Temperature":
       icon = faThermometer0;
@@ -75,6 +76,15 @@ const InfoPanel = ({ currentSettings }) => {
       modeRange = "null - null";
       break;
   }
+  if (currentSettings.status >= currentSettings.autoMin && currentSettings.status <= currentSettings.autoMax) {
+    statusText = "Good";
+  }
+  else if (currentSettings.status < currentSettings.autoMin) {
+    statusText = "Low";
+  }
+  else {
+    statusText = "High";
+  }
 
   return (
     <div
@@ -106,7 +116,7 @@ const InfoPanel = ({ currentSettings }) => {
             {currentSettings.mode !== 2 ? getMeasurementUnit() : null}
           </p>
         </div>
-        <div className={cx("right-bottom")}>Good</div>
+        <div className={cx("right-bottom", `right-bottom-${statusText.toLowerCase()}`)}>{statusText}</div>
       </div>
     </div>
   );
