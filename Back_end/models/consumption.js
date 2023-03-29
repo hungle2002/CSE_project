@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const consumptionSchema = new mongoose.Schema({
   date: {
     type: Date,
-    required: [true, "ConsumptionSchema: Consumption data's date required!"]
+    default: Date.now // ??
   },
   amount: {
     type: Number,

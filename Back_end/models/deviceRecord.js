@@ -6,8 +6,16 @@ const deviceRecordSchema = new mongoose.Schema({
     required: [true, "DeviceRecordSchema: Device record's ID required!"]
   },
   typ: {
-    type: Number,   // [1, 2, 3] => [temperature, lighting, soil moisture]
-    required: [true, "DeviceRecordSchema: Device record's type required!"]
+    type: String,
+    required: [true, "Device record's type required!"],
+    enum: {
+      values: ["temperature", "lighting", "soilMoisture"],
+      message: "Type can only be temperature, lighting or soilMoisture!"
+    }
+  },
+  value: {
+    type: Number,
+    required: [true, "DeviceRecordSchema: The value of this device record required!"]
   }
 });
 

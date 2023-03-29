@@ -8,7 +8,11 @@ const activityLogSchema = new mongoose.Schema({
   },
   typ: {
     type: String,
-    required: [true, "ActivityLogSchema: Activity log's type required!"]
+    required: [true, "ActivityLogSchema: Activity log's type required!"],
+    enum: {
+      values: ["warning", "reminder", "systemInfo"],
+      message: "Type can only be warning, reminder or systemInfo!"
+    }
   },
   time: {
     type: Date,
@@ -16,8 +20,7 @@ const activityLogSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    maxLength: [50, "ActivityLogSchema: Activity log's description too lengthy!"],
-    required: [true, "ActivityLogSchema: Activity log's description required!"]
+    maxLength: [50, "ActivityLogSchema: Activity log's description too lengthy!"]
   },
   SRID: {           // references server record's SRID
     type: String,
