@@ -1,0 +1,12 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const conditions_1 = __importDefault(require("./conditions"));
+const devices_1 = __importDefault(require("./devices"));
+const route = {
+    conditionRoute: conditions_1.default,
+    deviceRoute: devices_1.default,
+};
+exports.default = route;
