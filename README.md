@@ -11,6 +11,6 @@ ReactJS
 ### mobie: 
 ReactNative, 
 ### Server: 
-NodeJS
+NodeJS (Express + Typescript)
 ### Database: 
 MongoDB
