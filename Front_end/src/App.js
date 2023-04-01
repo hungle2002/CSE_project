@@ -1,31 +1,56 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { puplicRoutes } from "./routes";
 import DefaultLayout from "./Layouts";
+import { socket, SocketContext } from "./context/socket";
+import { useEffect, useState } from "react";
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Routes>
-          {puplicRoutes.map((route, index) => {
-            const Page = route.component;
-            let Layout = DefaultLayout;
+  // handle socket io connections
+  useEffect(() => {
+    function onConnect() {
+      console.log("Connect to socket successfully!");
+    }
 
-            return (
-              <Route
-                key={index}
-                path={route.path}
-                element={
-                  <Layout title={route.title}>
-                    <Page />
-                  </Layout>
-                }
-              />
-            );
-          })}
-        </Routes>
-      </div>
-    </Router>
+    function onDisconnect() {
+      console.log("Disconnect to socket successfully!");
+    }
+
+    socket.on("connect", onConnect);
+    socket.on("disconnect", onDisconnect);
+    // socket.on("update_something", onFooEvent);
+
+    return () => {
+      socket.off("connect", onConnect);
+      socket.off("disconnect", onDisconnect);
+      // socket.off("update_something", onFooEvent);
+    };
+  }, []);
+
+  return (
+    <SocketContext.Provider value={socket}>
+      <Router>
+        <div className="App">
+          <Routes>
+            {puplicRoutes.map((route, index) => {
+              const Page = route.component;
+              let Layout = DefaultLayout;
+
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={
+                    <Layout title={route.title}>
+                      <Page />
+                    </Layout>
+                  }
+                />
+              );
+            })}
+          </Routes>
+        </div>
+      </Router>
+    </SocketContext.Provider>
   );
 }
 

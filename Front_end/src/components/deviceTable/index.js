@@ -41,14 +41,14 @@ function DeviceTable() {
           <div className={cx("table-col-normal")}>INSTALLED</div>
           <div className={cx("table-col-2")}>LAST CHECKING</div>
           <div className={cx("table-col-normal")}>PRICE</div>
-          <div className={cx("table-col-normal")}>CONSUMPT</div>
+          <div className={cx("table-col-normal")}>USING TIME</div>
           <div className={cx("table-col-normal")}></div>
         </div>
         <div className={cx("table-body-row")}>
           {deviceInfo.map((device, index) => (
             <TableRow
               device={device}
-              img={devicesImage[device.id]}
+              img={devicesImage[device.key]}
               key={index}
             />
           ))}

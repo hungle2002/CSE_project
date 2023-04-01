@@ -1,10 +1,11 @@
 import images from "../../assets/images";
-export const devicesImage = [
-  images.tempSensor,
-  images.waterMotor,
-  images.lightSensor,
-  images.soilSensor,
-  images.smokeSensor,
-  images.ledMotor,
-  images.lcdMotor,
-];
+import devicesKeys from '../../config/device'
+export const devicesImage = {
+  [devicesKeys.tempSensor] :  images.tempSensor,
+  [devicesKeys.waterMotor] : images.waterMotor,
+  [devicesKeys.lightSensor] : images.lightSensor,
+  [devicesKeys.soilSensor] : images.soilSensor,
+  [devicesKeys.smokeSensor] : images.smokeSensor,
+  [devicesKeys.ledMotor] : images.ledMotor,
+  [devicesKeys.lcdMotor] : images.lcdMotor,
+};

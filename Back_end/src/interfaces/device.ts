@@ -7,8 +7,8 @@ interface DeviceInfo {
   state: Boolean;
   usingTime: Number;
   key: String;
-  installedDate?: Date;
-  startOn?: Date;
+  installedDate?: String;
+  startOn?: String;
 }
 
 export default DeviceInfo;

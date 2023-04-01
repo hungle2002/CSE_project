@@ -8,7 +8,7 @@ const DeviceRepository_1 = __importDefault(require("../repositories/DeviceReposi
 const AdaAPI_1 = __importDefault(require("../AdaAPI"));
 const DeviceRepository_2 = __importDefault(require("../repositories/DeviceRepository"));
 class DeviceController {
-    // get all information about one device include state and other informatio
+    // get all information about one device include state and other information
     static async getOneDeviceInfo(req, res) {
         const { key } = req.params;
         const device = await DeviceRepository_1.default.getOneDevice(key);
@@ -17,7 +17,7 @@ class DeviceController {
     // get all device information
     static async getAllDeviceInfo(req, res) {
         const device = await DeviceRepository_1.default.getAllDevice();
-        res.status(http_status_1.default.OK).json({ device: device });
+        res.status(http_status_1.default.OK).json({ devices: device });
     }
     // get one device state
     static async getOneDeviceState(req, res) {

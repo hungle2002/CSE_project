@@ -3,9 +3,10 @@ import status from 'http-status';
 import deviceRepository from '../repositories/DeviceRepository';
 import AdaAPI from '../AdaAPI';
 import DeviceRepository from '../repositories/DeviceRepository';
+import Socket from '../providers/Socket';
 
 class DeviceController {
-  // get all information about one device include state and other informatio
+  // get all information about one device include state and other information
   public static async getOneDeviceInfo(req: Request, res: Response) {
     const {key} = req.params;
     const device = await deviceRepository.getOneDevice(key);
@@ -15,7 +16,7 @@ class DeviceController {
   // get all device information
   public static async getAllDeviceInfo(req: Request, res: Response) {
     const device = await deviceRepository.getAllDevice();
-    res.status(status.OK).json({device: device});
+    res.status(status.OK).json({devices: device});
   }
 
   // get one device state
@@ -36,6 +37,7 @@ class DeviceController {
     const {key} = req.params;
     const {data} = req.body;
     const newDeviceState = await AdaAPI.createFeedValue(key, data);
+
     res.status(status.OK).json({device: newDeviceState});
   }
 

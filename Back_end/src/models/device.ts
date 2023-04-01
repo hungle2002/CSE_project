@@ -36,15 +36,15 @@ const deviceSchema = new mongoose.Schema({
     required: [true, "DeviceSchema: Device's usage time required!"],
   },
   startOn: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: new Date().toLocaleDateString('en-GB'),
   },
   lastChecked: {
     type: Number,
   },
   installedDate: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: new Date().toLocaleDateString('en-GB'),
   },
   des: {
     type: String,

@@ -4,13 +4,20 @@ import dotenv from 'dotenv';
 import connect from './db/connect';
 import route from './routes';
 import middlewares from './middlewares';
+import http from 'http';
+import Socket from './providers/Socket';
+import corConfig from './config/CORS';
 
 dotenv.config();
 const app = express();
+const server = http.createServer(app);
 
 // app mounting
-app.use(cors());
+app.use(cors(corConfig));
 app.use(express.json());
+
+// init socket
+Socket.init(server);
 
 //routing
 app.use('/api/v1/condition/', route.conditionRoute);
@@ -21,12 +28,12 @@ app.use(middlewares.notFoundMiddleware);
 app.use(middlewares.errorHandleMiddleware);
 
 // server
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 const connectDB = async () => {
   try {
     await connect(process.env.MONGO_URI);
-    app.listen(port, () => {
+    server.listen(port, () => {
       console.log('Server listen on port ' + port + '...');
     });
   } catch (error) {

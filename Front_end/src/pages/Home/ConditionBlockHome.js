@@ -24,14 +24,14 @@ function ConditionBlockHome({ className }) {
       }
     };
 
-    fetchAPI();
-    const getCondition = setInterval(async () => {
-      await fetchAPI();
-    }, 1000);
+    // fetchAPI();
+    // const getCondition = setInterval(async () => {
+    //   await fetchAPI();
+    // }, 100000);
 
-    return () => {
-      clearInterval(getCondition);
-    };
+    // return () => {
+    //   clearInterval(getCondition);
+    // };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

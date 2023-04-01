@@ -31,18 +31,18 @@ function TableRow({ device, img }) {
       <div className={cx("name-header")}>
         <img className={cx("image")} src={img} alt="temperature sensor" />
         <div className={cx("name-header-info")}>
-          <h3>{device.type}</h3>
+          <h3>{device.typ}</h3>
           <p className={cx("name-header-des")}>{device.des}</p>
         </div>
       </div>
       <div className={cx("table-col-normal")}>
         <div className={cx("name-header-info")}>
-          <h3 className={cx("header-day")}>{device.date}</h3>
+          <h3 className={cx("header-day")}>{device.installedDate}</h3>
           <p className={cx("name-header-des")}>Guarantee</p>
         </div>
       </div>
 
-      <div className={cx("table-col-2", "header-day")}>{device.check}</div>
+      <div className={cx("table-col-2", "header-day")}>{device.lastChecked} days</div>
 
       <div className={cx("table-col-normal")}>
         <div className={cx("name-header-info")}>
@@ -52,11 +52,11 @@ function TableRow({ device, img }) {
         </div>
       </div>
       <div className={cx("table-col-normal")}>
-        <h3 className={cx("header-day")}>{device.consumption}W</h3>
-        {device.consumption < 1 && (
+        <h3 className={cx("header-day")}>{device.usingTime}h</h3>
+        {device.usingTime < 1 && (
           <p className={cx("name-header-des")}>Good</p>
         )}
-        {device.consumption >= 1 && (
+        {device.usingTime >= 1 && (
           <p className={cx("name-header-des")}>Not good</p>
         )}
       </div>
