@@ -19,8 +19,8 @@ const deviceSchema = new mongoose_1.default.Schema({
         },
     },
     state: {
-        type: Boolean,
-        default: false,
+        type: Number,
+        default: 0,
     },
     price: {
         type: Number,
@@ -36,18 +36,19 @@ const deviceSchema = new mongoose_1.default.Schema({
     },
     usingTime: {
         type: Number,
-        required: [true, "DeviceSchema: Device's usage time required!"],
+        default: 0,
     },
     startOn: {
         type: String,
-        default: new Date().toLocaleDateString('en-GB'),
+        default: new Date(),
     },
     lastChecked: {
         type: Number,
+        default: 0,
     },
     installedDate: {
         type: String,
-        default: new Date().toLocaleDateString('en-GB'),
+        default: new Date().toLocaleDateString('en-GB', { timeZone: 'Asia/Ho_Chi_Minh' }),
     },
     des: {
         type: String,

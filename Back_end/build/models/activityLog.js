@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const activityLogSchema = new mongoose_1.default.Schema({
     LID: {
-        type: String,
+        type: Number,
         required: [true, "ActivityLogSchema: Activity log's ID required!"],
         unique: [true, "ActivityLogSchema: Activity log's must be unique!"],
     },
@@ -20,16 +20,11 @@ const activityLogSchema = new mongoose_1.default.Schema({
     },
     time: {
         type: Date,
-        default: Date.now,
+        default: new Date(),
     },
     description: {
         type: String,
         maxLength: [50, "ActivityLogSchema: Activity log's description too lengthy!"],
-    },
-    SRID: {
-        // references server record's SRID
-        type: String,
-        required: [true, "ActivityLogSchema: Server record's type required!"],
     },
 });
 exports.default = mongoose_1.default.model('ActivityLog', activityLogSchema);

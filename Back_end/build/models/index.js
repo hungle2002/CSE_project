@@ -6,14 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const device_1 = __importDefault(require("./device"));
 const activityLog_1 = __importDefault(require("./activityLog"));
 const consumption_1 = __importDefault(require("./consumption"));
-const deviceRecord_1 = __importDefault(require("./deviceRecord"));
 const serverRecord_1 = __importDefault(require("./serverRecord"));
 const user_1 = __importDefault(require("./user"));
 const model = {
     device: device_1.default,
     activityLog: activityLog_1.default,
     consumption: consumption_1.default,
-    deviceRecord: deviceRecord_1.default,
     serverRecord: serverRecord_1.default,
     user: user_1.default,
 };

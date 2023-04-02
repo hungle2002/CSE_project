@@ -26,10 +26,40 @@ class Socket {
             });
         });
     }
-    test() {
-        console.log('Socket testing!');
+    update_device_state(device_key, value) {
+        const notification = {
+            title: 'UPDATE device state',
+            message: `Change state of device ${device_key} to ${value} `,
+        };
         if (this.io) {
-            this.io.emit('update_something', 'Le Quoc Hung');
+            this.io.emit(`update_device_${device_key}`, value);
+            this.io.emit('notification', notification);
+        }
+        else {
+            console.log('No socket create!!');
+        }
+    }
+    create_device(device_typ, device_des) {
+        const notification = {
+            title: 'ADD new device',
+            message: `Add new ${device_typ} device : ${device_des} successfully !`,
+        };
+        if (this.io) {
+            // this.io.emit(`update_device_${device_key}`, value);
+            this.io.emit('notification', notification);
+        }
+        else {
+            console.log('No socket create!!');
+        }
+    }
+    update_condition(value) {
+        const notification = {
+            title: 'UPDATE condition',
+            message: `Update latest condition at ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' })} `,
+        };
+        if (this.io) {
+            this.io.emit('update_condition', value);
+            this.io.emit('notification', notification);
         }
         else {
             console.log('No socket create!!');

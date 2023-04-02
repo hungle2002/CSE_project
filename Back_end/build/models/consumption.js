@@ -13,7 +13,7 @@ const consumptionSchema = new mongoose_1.default.Schema({
         type: Number,
         required: [true, 'ConsumptionSchema: Consumption amount required!'],
     },
-    deviceID: {
+    deviceKey: {
         // references device's ID
         type: String,
         required: [true, "ConsumptionSchema: Device consumption's ID required!"],

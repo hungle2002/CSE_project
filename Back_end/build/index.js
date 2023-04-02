@@ -12,6 +12,7 @@ const middlewares_1 = __importDefault(require("./middlewares"));
 const http_1 = __importDefault(require("http"));
 const Socket_1 = __importDefault(require("./providers/Socket"));
 const CORS_1 = __importDefault(require("./config/CORS"));
+const ServerRecordService_1 = require("./services/ServerRecordService");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
@@ -34,6 +35,7 @@ const connectDB = async () => {
         server.listen(port, () => {
             console.log('Server listen on port ' + port + '...');
         });
+        (0, ServerRecordService_1.autoCreateServerRecord)();
     }
     catch (error) {
         console.log(error);

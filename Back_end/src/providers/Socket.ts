@@ -1,6 +1,6 @@
 import {Server} from 'socket.io';
 import http from 'http';
-
+import Notification from '../interfaces/notification';
 class Socket {
   private io: Server | null = null;
 
@@ -32,10 +32,40 @@ class Socket {
     });
   }
 
-  public test() {
-    console.log('Socket testing!');
+  public update_device_state(device_key: String, value: Number) {
+    const notification: Notification = {
+      title: 'UPDATE device state',
+      message: `Change state of device ${device_key} to ${value} `,
+    };
     if (this.io) {
-      this.io.emit('update_something', 'Le Quoc Hung');
+      this.io.emit(`update_device_${device_key}`, value);
+      this.io.emit('notification', notification);
+    } else {
+      console.log('No socket create!!');
+    }
+  }
+
+  public create_device(device_typ: String, device_des: String) {
+    const notification: Notification = {
+      title: 'ADD new device',
+      message: `Add new ${device_typ} device : ${device_des} successfully !`,
+    };
+    if (this.io) {
+      // this.io.emit(`update_device_${device_key}`, value);
+      this.io.emit('notification', notification);
+    } else {
+      console.log('No socket create!!');
+    }
+  }
+
+  public update_condition(value: Number[]) {
+    const notification: Notification = {
+      title: 'UPDATE condition',
+      message: `Update latest condition at ${new Date().toLocaleString('en-US', {timeZone: 'Asia/Ho_Chi_Minh'})} `,
+    };
+    if (this.io) {
+      this.io.emit('update_condition', value);
+      this.io.emit('notification', notification);
     } else {
       console.log('No socket create!!');
     }

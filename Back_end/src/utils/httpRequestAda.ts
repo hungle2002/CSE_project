@@ -1,6 +1,6 @@
 // axios using
 import axios from 'axios';
-import {DrawFeedValue} from '../interfaces/ada';
+import {DrawFeedValue, FeedUpdateValue} from '../interfaces/ada';
 
 const request = axios.create({
   baseURL: 'https://io.adafruit.com/api/v2/heriota/',
@@ -19,7 +19,11 @@ async function getAllFeed(path: string, options: undefined | Object = undefined)
   return response.data;
 }
 
-async function post(path: string, data: undefined | Object, options: undefined | Object = undefined): Promise<Object> {
+async function post(
+  path: string,
+  data: undefined | Object,
+  options: undefined | Object = undefined
+): Promise<FeedUpdateValue> {
   const response = await request.post(path, data, options);
   return response.data;
 }

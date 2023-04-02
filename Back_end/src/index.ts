@@ -7,6 +7,7 @@ import middlewares from './middlewares';
 import http from 'http';
 import Socket from './providers/Socket';
 import corConfig from './config/CORS';
+import {autoCreateServerRecord} from './services/ServerRecordService';
 
 dotenv.config();
 const app = express();
@@ -36,6 +37,7 @@ const connectDB = async () => {
     server.listen(port, () => {
       console.log('Server listen on port ' + port + '...');
     });
+    autoCreateServerRecord();
   } catch (error) {
     console.log(error);
   }

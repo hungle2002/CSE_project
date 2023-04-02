@@ -2,25 +2,30 @@ import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 import styles from "./DeviceTable.module.scss";
 import Button from "./Button";
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { create } from "../../apiServices/searchService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { SocketContext } from "../../context/socket"; 
 
 const cx = classNames.bind(styles);
 
 function TableRow({ device, img }) {
   const [state, setState] = useState(device.state);
+  const socket =  useContext(SocketContext)
 
+  useEffect( () => {
+    socket.on(`update_device_${device.key}`,  value => setState( value ))
+  }, [device.key, socket])
+  
   const handleOnClick = async () => {
     try {
       setState(-1);
-      const updateState = state > 0 ? 0 : 1;
-      const response = await create({
-        path: `device/${device.key}/state`,
-        data: { value: updateState },
-      });
-      setState(Number(response.result.value));
+      const update_value = state >0 ? 0 : 1;
+        await create({
+          path: `device/${device.key}/state`,
+          data: { value: update_value },
+        });
     } catch (error) {
       console.log(error);
     }
@@ -52,23 +57,27 @@ function TableRow({ device, img }) {
         </div>
       </div>
       <div className={cx("table-col-normal")}>
-        <h3 className={cx("header-day")}>{device.usingTime}h</h3>
-        {device.usingTime < 1 && (
-          <p className={cx("name-header-des")}>Good</p>
+        <h3 className={cx("header-day")}>{device.location}</h3>
+        {device.usingTime < 100 && (
+          <p className={cx("name-header-des")}>In progress</p>
         )}
-        {device.usingTime >= 1 && (
-          <p className={cx("name-header-des")}>Not good</p>
+        {device.usingTime >= 100 && (
+          <p className={cx("name-header-des")}>Maintaining</p>
         )}
       </div>
 
       <div className={cx("table-col-normal")}>
-        {state === 0 && (
+
+        {device.typ !== 'Sensor' && state === 0 && (
           <Button title="Off" danger small onClick={handleOnClick} />
         )}
-        {state > 0 && <Button title="On" info small onClick={handleOnClick} />}
-        {state === -1 && (
+        { device.typ !== 'Sensor' && state > 0 && <Button title="On" info small onClick={handleOnClick} />}
+        {device.typ !== 'Sensor' && state === -1 && (
           <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
         )}
+          
+        { device.typ === 'Sensor' && state > 0 && <Button title="Good" primary small />}
+        { device.typ === 'Sensor' && state === 0 && <Button title="Check" warning small />}
       </div>
     </div>
   );

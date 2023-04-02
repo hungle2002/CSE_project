@@ -22,6 +22,5 @@ const deviceRecordSchema = new mongoose_1.default.Schema({
         type: Number,
         required: [true, 'DeviceRecordSchema: The value of this device record required!'],
     },
-    // value
 });
 exports.default = mongoose_1.default.model('DeviceRecord', deviceRecordSchema);

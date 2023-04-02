@@ -1,3 +1,4 @@
+import Model from '../models';
 class ConditionRepository {
   // implement singleton pattern
   private static instance: ConditionRepository;
@@ -9,12 +10,9 @@ class ConditionRepository {
     }
     return ConditionRepository.instance;
   }
-  public getOneCondition() {
-    return 'One condition!';
-  }
 
-  public getAllCondition() {
-    return 'All conditions!';
+  public async getAllConditionValue() {
+    return await Model.serverRecord.find({});
   }
 }
 

@@ -31,10 +31,10 @@ class DeviceRepository {
     }
   }
 
-  public async createDevice(data: DeviceInfo) {
+  public async createDevice(data: DeviceInfo): Promise<DeviceInfo | undefined> {
     try {
-      const device = await Model.device.create(data);
-      return device;
+      await Model.device.create(data);
+      return data;
     } catch (error) {
       console.log(error);
     }
@@ -44,6 +44,15 @@ class DeviceRepository {
     try {
       const device: DeviceInfo = await Model.device.find({key: device_key});
       return device.state;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  public async updateDeviceState(device_key: string, value: Number) {
+    try {
+      await Model.device.findOneAndUpdate({key: device_key}, {$set: {state: value}});
+      return 'Success';
     } catch (error) {
       console.log(error);
     }

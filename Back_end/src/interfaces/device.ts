@@ -4,7 +4,7 @@ interface DeviceInfo {
   des: String;
   lastChecked: Number;
   price: Number;
-  state: Boolean;
+  state: Number;
   usingTime: Number;
   key: String;
   installedDate?: String;

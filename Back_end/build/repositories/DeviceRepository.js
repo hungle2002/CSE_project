@@ -32,8 +32,8 @@ class DeviceRepository {
     }
     async createDevice(data) {
         try {
-            const device = await models_1.default.device.create(data);
-            return device;
+            await models_1.default.device.create(data);
+            return data;
         }
         catch (error) {
             console.log(error);
@@ -43,6 +43,15 @@ class DeviceRepository {
         try {
             const device = await models_1.default.device.find({ key: device_key });
             return device.state;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+    async updateDeviceState(device_key, value) {
+        try {
+            await models_1.default.device.findOneAndUpdate({ key: device_key }, { $set: { state: value } });
+            return 'Success';
         }
         catch (error) {
             console.log(error);

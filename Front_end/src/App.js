@@ -3,6 +3,7 @@ import { puplicRoutes } from "./routes";
 import DefaultLayout from "./Layouts";
 import { socket, SocketContext } from "./context/socket";
 import { useEffect, useState } from "react";
+import pushNotify from "./utils/notify";
 
 function App() {
   // handle socket io connections
@@ -17,7 +18,11 @@ function App() {
 
     socket.on("connect", onConnect);
     socket.on("disconnect", onDisconnect);
-    // socket.on("update_something", onFooEvent);
+    
+    // listen for new notifications
+    socket.on("notification", (content) => {
+      pushNotify(content)
+    });
 
     return () => {
       socket.off("connect", onConnect);
@@ -25,7 +30,6 @@ function App() {
       // socket.off("update_something", onFooEvent);
     };
   }, []);
-
   return (
     <SocketContext.Provider value={socket}>
       <Router>

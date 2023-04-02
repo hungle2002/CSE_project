@@ -1,18 +1,24 @@
 import {Request, Response} from 'express';
 import status from 'http-status';
-// import condtionRepository from '../repositories/CondtionRepository';
-import AdaAPI from '../AdaAPI';
+import CondtionRepository from '../repositories/CondtionRepository';
+import {getAllSetting} from '../services/ConditionService';
 
 class ConditionController {
-  public static async getOneConditionInfo(req: Request, res: Response) {
-    const {key} = req.params;
-    const value = await AdaAPI.getLastFeedValue(key);
-    res.status(status.OK).json({conditon: value});
+  public static async getAllConditionInfo(req: Request, res: Response) {
+    const condition = getAllSetting();
+    const value = await CondtionRepository.getAllConditionValue();
+    res.status(status.OK).json({condition: condition, value: value[value.length - 1]});
   }
 
-  public static async getAllConditionInfo(req: Request, res: Response) {
-    const value = await AdaAPI.getAllLastFeedValue();
-    res.status(status.OK).json({conditon: value});
+  // public static async getAllConditionValue(req: Request, res: Response) {
+  //   const condition = await CondtionRepository.getLatestConditionValue();
+  //   res.status(status.OK).json({condition: condition});
+  // }
+
+  public static async getOneConditionValue(req: Request, res: Response) {
+    const {key} = req.params;
+    const condition = await CondtionRepository.getAllConditionValue();
+    res.status(status.OK).json({condition: condition});
   }
 }
 

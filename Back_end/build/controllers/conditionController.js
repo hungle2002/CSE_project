@@ -4,17 +4,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const http_status_1 = __importDefault(require("http-status"));
-// import condtionRepository from '../repositories/CondtionRepository';
-const AdaAPI_1 = __importDefault(require("../AdaAPI"));
+const CondtionRepository_1 = __importDefault(require("../repositories/CondtionRepository"));
+const ConditionService_1 = require("../services/ConditionService");
 class ConditionController {
-    static async getOneConditionInfo(req, res) {
-        const { key } = req.params;
-        const value = await AdaAPI_1.default.getLastFeedValue(key);
-        res.status(http_status_1.default.OK).json({ conditon: value });
-    }
     static async getAllConditionInfo(req, res) {
-        const value = await AdaAPI_1.default.getAllLastFeedValue();
-        res.status(http_status_1.default.OK).json({ conditon: value });
+        const condition = (0, ConditionService_1.getAllSetting)();
+        const value = await CondtionRepository_1.default.getAllConditionValue();
+        res.status(http_status_1.default.OK).json({ condition: condition, value: value[value.length - 1] });
+    }
+    static async getAllConditionValue(req, res) {
+        const condition = await CondtionRepository_1.default.getLatestConditionValue();
+        res.status(http_status_1.default.OK).json({ condition: condition });
+    }
+    static async getOneConditionValue(req, res) {
+        const { key } = req.params;
+        const condition = await CondtionRepository_1.default.getAllConditionValue();
+        res.status(http_status_1.default.OK).json({ condition: condition });
     }
 }
 exports.default = ConditionController;

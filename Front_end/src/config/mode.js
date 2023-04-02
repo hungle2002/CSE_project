@@ -1,19 +1,19 @@
-const modes = {
-  auto:{
+const modes = [
+  {
     title: "AUTOMATIC",
-    action: 'Keep between',
-    color:'#D0EFF5'
+    action: "Keep between",
+    color: "#D0EFF5",
   },
-  schedule:{
+  {
     title: "SCHEDULED",
-    action: 'Turn on',
-    color:'#D1EEDB'
-  }, 
-  mannual:{
+    action: "Turn on",
+    color: "#D1EEDB",
+  },
+  {
     title: "MANNUAL",
-    action: 'Alert when out',
-    color:'#F0F6D2'
-  }
-};
+    action: "Alert when out",
+    color: "#F0F6D2",
+  },
+];
 
 export default modes;

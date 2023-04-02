@@ -3,12 +3,27 @@ import mongoose from 'mongoose';
 const serverRecordSchema = new mongoose.Schema({
   SRID: {
     type: String,
-    unique: [true, "ServerRecord: Server record's ID must be unique!"],
-    required: [true, "ServerRecord: Server record's ID required!"],
+    required: [true, "DeviceRecordSchema: Server record's ID required!"],
   },
+
+  tempValue: {
+    type: Number,
+    required: [true, 'DeviceRecordSchema: The value of temperature required!'],
+  },
+
+  lightValue: {
+    type: Number,
+    required: [true, 'DeviceRecordSchema: The value of light required!'],
+  },
+
+  soilValue: {
+    type: Number,
+    required: [true, 'DeviceRecordSchema: The value of soil moisture required!'],
+  },
+
   time: {
     type: Date,
-    default: Date.now,
+    default: new Date(),
   },
 });
 

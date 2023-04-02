@@ -11,4 +11,9 @@ interface FeedValue {
   key: string;
 }
 
-export {FeedValue, DrawFeedValue};
+interface FeedUpdateValue {
+  value: string;
+  feed_key: string;
+}
+
+export {FeedValue, DrawFeedValue, FeedUpdateValue};

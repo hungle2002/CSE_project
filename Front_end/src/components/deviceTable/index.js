@@ -21,7 +21,6 @@ function DeviceTable() {
         console.log(error);
       }
     };
-
     fetchAPI();
   }, []);
 
@@ -41,7 +40,7 @@ function DeviceTable() {
           <div className={cx("table-col-normal")}>INSTALLED</div>
           <div className={cx("table-col-2")}>LAST CHECKING</div>
           <div className={cx("table-col-normal")}>PRICE</div>
-          <div className={cx("table-col-normal")}>USING TIME</div>
+          <div className={cx("table-col-normal")}>LOCATION</div>
           <div className={cx("table-col-normal")}></div>
         </div>
         <div className={cx("table-body-row")}>
