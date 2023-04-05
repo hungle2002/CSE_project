@@ -18,7 +18,7 @@ function RhandConent() {
     {
       icon: <FontAwesomeIcon icon={faTemperatureThreeQuarters} />,
       color: "#5EE85C",
-      type: config.conditions.temprature.unit,
+      type: config.conditions.temperature.unit,
       num: 24,
     },
     {

@@ -17,3 +17,12 @@ export const create = async ({ path, data, options = null }) => {
     console.log(error);
   }
 };
+
+export const update = async ({ path, data, options = null }) => {
+  try {
+    const response = await request.put(path, data, options);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

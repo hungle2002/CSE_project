@@ -1,7 +1,7 @@
 const conditions = {
-  temprature: {
+  temperature: {
     unit:"°C",
-    title: 'Temprature'
+    title: 'Temperature'
   },
   light:  {
     unit:"W/m²",

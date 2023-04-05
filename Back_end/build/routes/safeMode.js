@@ -4,9 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const ConditionController_1 = __importDefault(require("../controllers/ConditionController"));
+const SafeModeController_1 = __importDefault(require("../controllers/SafeModeController"));
 const router = express_1.default.Router();
-router.route('/').get(ConditionController_1.default.getAllConditionInfo);
-// router.route('/value').get(ConditionController.getAllConditionValue);
-// router.route('/:key/value').get(ConditionController.getOneConditionInfo);
+// this file should be deleted
+router.route('/:type').get(SafeModeController_1.default.getSafeModeInfo).put(SafeModeController_1.default.updateSafeModeInfo);
 exports.default = router;
