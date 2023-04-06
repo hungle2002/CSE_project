@@ -8,7 +8,7 @@ import http from 'http';
 import Socket from './providers/Socket';
 import corConfig from './config/CORS';
 import {autoCreateServerRecord} from './services/ServerRecordService';
-
+import {autoIrrigationStart} from './services/IrrigationService';
 dotenv.config();
 const app = express();
 const server = http.createServer(app);
@@ -39,6 +39,7 @@ const connectDB = async () => {
       console.log('Server listen on port ' + port + '...');
     });
     autoCreateServerRecord();
+    autoIrrigationStart();
   } catch (error) {
     console.log(error);
   }

@@ -16,7 +16,7 @@ const readFileID = (filePath: string): Number => {
 
 const writeFileID = (filePath: string, id: Number) => {
   const data = {id: id};
-  const jsonString = JSON.stringify(data);
+  const jsonString = JSON.stringify(data, undefined, 2);
   fs.writeFileSync(filePath, jsonString);
 };
 
