@@ -9,4 +9,15 @@ const deviceKeys = {
   lcdMotor: 'cs-ce-dadn.lcdmotor',
 };
 
+export const deviceKeysArray = [
+  'cs-ce-dadn.sun-sensor',
+  'cs-ce-dadn.humi-sensor',
+  'cs-ce-dadn.temp-sensor',
+  'cs-ce-dadn.earth-humi-sensor',
+  'cs-ce-dadn.motor',
+  'cs-ce-dadn.light-button',
+  'cs-ce-dadn.smokesensor',
+  'cs-ce-dadn.lcdmotor',
+];
+
 export default deviceKeys;

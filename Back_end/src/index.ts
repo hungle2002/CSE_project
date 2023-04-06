@@ -8,6 +8,7 @@ import http from 'http';
 import Socket from './providers/Socket';
 import corConfig from './config/CORS';
 import {autoCreateServerRecord} from './services/ServerRecordService';
+import {autoUpdateDeviceState} from './services/DevicesService';
 
 dotenv.config();
 const app = express();
@@ -37,7 +38,9 @@ const connectDB = async () => {
     server.listen(port, () => {
       console.log('Server listen on port ' + port + '...');
     });
+    // set auto update record and device state
     autoCreateServerRecord();
+    autoUpdateDeviceState();
   } catch (error) {
     console.log(error);
   }

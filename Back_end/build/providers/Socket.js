@@ -65,5 +65,17 @@ class Socket {
             console.log('No socket create!!');
         }
     }
+    update_all_device_state() {
+        const notification = {
+            title: 'UPDATE all device state',
+            message: 'Automatically updating device state!',
+        };
+        if (this.io) {
+            this.io.emit('notification', notification);
+        }
+        else {
+            console.log('No socket create!!');
+        }
+    }
 }
 exports.default = Socket.getConditionRepository();

@@ -1,5 +1,5 @@
 import Model from '../models';
-import DeviceInfo from '../interfaces/device';
+import {DeviceInfo, DeviceState} from '../interfaces';
 
 class DeviceRepository {
   // implement singleton pattern
@@ -58,8 +58,13 @@ class DeviceRepository {
     }
   }
 
-  public getAllDeviceState() {
-    return 'All device state!';
+  public async getAllDeviceState(): Promise<DeviceState[] | undefined> {
+    try {
+      const device: DeviceState[] = await Model.device.find({}, {state: 1, key: 1});
+      return device;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 

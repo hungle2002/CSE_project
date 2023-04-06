@@ -72,8 +72,9 @@
 }
 
 .image {
-  width: 70px;
+  width: 60px;
   height: 70px;
+  margin-right: 7px;
 }
 
 .name-header-info {
@@ -99,6 +100,28 @@
 
 .table-col-normal {
   flex-basis: 13%;
+}
+
+.refresh-button{
+  border: 1px solid black;
+  padding: 8px 12px;
+  font-size: 500;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: row;
+
+  &:active {
+    background-color: #464e5f;
+    color: var(--white);
+  }
+
+}
+.refresh-button-icon{
+  margin-right: 5px;
+}
+
+.iconLoading{
+  animation: spinner 1.5s linear infinite;
 }
 
 @keyframes spinner {

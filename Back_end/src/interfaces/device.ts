@@ -11,4 +11,9 @@ interface DeviceInfo {
   startOn?: String;
 }
 
-export default DeviceInfo;
+interface DeviceState {
+  state: Number;
+  key: String;
+}
+
+export {DeviceInfo, DeviceState};
