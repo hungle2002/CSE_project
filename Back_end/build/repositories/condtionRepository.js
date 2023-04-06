@@ -15,8 +15,5 @@ class ConditionRepository {
     async getAllConditionValue() {
         return await models_1.default.serverRecord.find({});
     }
-    async getLatestConditionValue() {
-        return await models_1.default.serverRecord.findOne({}, {}, { sort: { SRID: -1 } });
-    }
 }
 exports.default = ConditionRepository.getConditionRepository();

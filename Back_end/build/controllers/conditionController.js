@@ -12,10 +12,10 @@ class ConditionController {
         const value = await CondtionRepository_1.default.getAllConditionValue();
         res.status(http_status_1.default.OK).json({ condition: condition, value: value[value.length - 1] });
     }
-    static async getAllConditionValue(req, res) {
-        const condition = await CondtionRepository_1.default.getLatestConditionValue();
-        res.status(http_status_1.default.OK).json({ condition: condition });
-    }
+    // public static async getAllConditionValue(req: Request, res: Response) {
+    //   const condition = await CondtionRepository.getLatestConditionValue();
+    //   res.status(status.OK).json({condition: condition});
+    // }
     static async getOneConditionValue(req, res) {
         const { key } = req.params;
         const condition = await CondtionRepository_1.default.getAllConditionValue();
