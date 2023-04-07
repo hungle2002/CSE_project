@@ -9,4 +9,5 @@ export const devicesImage = {
   [devicesKeys.lightMotor] : images.ledMotor,
   [devicesKeys.lcdMotor] : images.lcdMotor,
   [devicesKeys.humiSensor] : images.humidSensor,
+  [devicesKeys.coolingMotor] : images.coolingMotor,
 };

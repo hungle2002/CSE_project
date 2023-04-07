@@ -26,8 +26,8 @@ export const getNewDeviceState = async () => {
       }
     }
     for (let a = 0; a < n; a++) {
-      if (newDevice[a].key === deviceKeysArray[i]) {
-        newValue = Number(newDevice[a].value);
+      if (newDevice[a + 1].key === deviceKeysArray[i]) {
+        newValue = Number(newDevice[a + 1].value);
       }
     }
     if (curValue !== newValue) {

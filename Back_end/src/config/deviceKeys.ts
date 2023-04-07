@@ -7,6 +7,7 @@ const deviceKeys = {
   lightMotor: 'cs-ce-dadn.light-button',
   smokeSensor: 'cs-ce-dadn.smokesensor',
   lcdMotor: 'cs-ce-dadn.lcdmotor',
+  coolingMotor: 'cs-ce-dadn.coolingmotor',
 };
 
 export const deviceKeysArray = [
@@ -18,6 +19,7 @@ export const deviceKeysArray = [
   'cs-ce-dadn.light-button',
   'cs-ce-dadn.smokesensor',
   'cs-ce-dadn.lcdmotor',
+  'cs-ce-dadn.coolingmotor',
 ];
 
 export default deviceKeys;
