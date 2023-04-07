@@ -2,7 +2,7 @@
 export const conditionReset = 10000;
 
 // time for checking condition : 1s
-export const autoIrCircle = 1000;
+export const autoIrCircle = 2000;
 
 // time for smoke and fire : 3s
 export const activityLogReset = 3000;

@@ -8,7 +8,7 @@ import http from 'http';
 import Socket from './providers/Socket';
 import corConfig from './config/CORS';
 import {autoCreateServerRecord} from './services/ServerRecordService';
-import {autoIrrigationStart} from './services/IrrigationService';
+import {autoIrrigationStart} from './services/AutoIrrigationOperation';
 dotenv.config();
 const app = express();
 const server = http.createServer(app);
@@ -34,7 +34,7 @@ const port = 3000;
 
 const connectDB = async () => {
   try {
-    await connect(process.env.MONGO_URI);
+    await connect("mongodb+srv://tpphuhungbp2:123456hung@test.gmlvbk8.mongodb.net/?retryWrites=true&w=majority");
     server.listen(port, () => {
       console.log('Server listen on port ' + port + '...');
     });

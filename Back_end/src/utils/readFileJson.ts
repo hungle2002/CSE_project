@@ -1,6 +1,6 @@
 import fs from 'fs';
 import modeSetting from '../interfaces/modeSetting';
-import {recordID} from '../interfaces/record';
+import numberID from '../interfaces/numberID';
 
 const readFileModeSetting = (filePath: string): modeSetting => {
   const data = fs.readFileSync(filePath, 'utf8');
@@ -10,7 +10,7 @@ const readFileModeSetting = (filePath: string): modeSetting => {
 
 const readFileID = (filePath: string): Number => {
   const data = fs.readFileSync(filePath, 'utf8');
-  const jsonData = JSON.parse(data) as recordID;
+  const jsonData = JSON.parse(data) as numberID;
   return jsonData.id;
 };
 
