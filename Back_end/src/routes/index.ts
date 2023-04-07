@@ -5,7 +5,7 @@ import {default as settingsRoute} from './settings';
 const route = {
   conditionRoute,
   deviceRoute,
-  settingsRoute
+  settingsRoute,
 };
 
 export default route;

@@ -68,7 +68,7 @@ class Socket {
     update_settings(type) {
         const notification = {
             title: 'UPDATE settings',
-            message: `${type === "soilMoisture" ? "SOIL MOISTURE" : type.toUpperCase()} settings updated successfully!`,
+            message: `${type === 'soilMoisture' ? 'SOIL MOISTURE' : type.toUpperCase()} settings updated successfully!`,
         };
         if (this.io) {
             this.io.emit('notification', notification);

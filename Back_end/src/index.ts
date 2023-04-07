@@ -34,7 +34,7 @@ const port = 3000;
 
 const connectDB = async () => {
   try {
-    await connect("mongodb+srv://tpphuhungbp2:123456hung@test.gmlvbk8.mongodb.net/?retryWrites=true&w=majority");
+    await connect(process.env.MONGO_URI);
     server.listen(port, () => {
       console.log('Server listen on port ' + port + '...');
     });

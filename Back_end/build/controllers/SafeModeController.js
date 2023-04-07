@@ -10,7 +10,9 @@ class SafeModeController {
     static async getSafeModeInfo(req, res) {
         const { type } = req.params;
         const safeModeInfo = SafeModeRepository_1.default.getSafeModeInfo(type);
-        res.status(http_status_1.default.OK).json({ safeAction: safeModeInfo === null || safeModeInfo === void 0 ? void 0 : safeModeInfo.safeAction, safeMin: safeModeInfo === null || safeModeInfo === void 0 ? void 0 : safeModeInfo.safeMin, safeMax: safeModeInfo === null || safeModeInfo === void 0 ? void 0 : safeModeInfo.safeMax });
+        res
+            .status(http_status_1.default.OK)
+            .json({ safeAction: safeModeInfo === null || safeModeInfo === void 0 ? void 0 : safeModeInfo.safeAction, safeMin: safeModeInfo === null || safeModeInfo === void 0 ? void 0 : safeModeInfo.safeMin, safeMax: safeModeInfo === null || safeModeInfo === void 0 ? void 0 : safeModeInfo.safeMax });
     }
     static async updateSafeModeInfo(req, res) {
         const { type } = req.params;

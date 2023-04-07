@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { readFileModeSetting } from '../utils/readFileJson';
+import {readFileModeSetting} from '../utils/readFileJson';
 // this file should be deleted
 class SafeModeRepository {
   // implement singleton pattern
@@ -23,9 +23,11 @@ class SafeModeRepository {
     }
   }
 
-  public updateSafeModeInfo(type: string, updatedData: any){
+  public updateSafeModeInfo(type: string, updatedData: any) {
     try {
-      fs.writeFileSync(path.join(__dirname, `../config/modeSetting/${type}.json`), JSON.stringify(updatedData), {encoding: 'utf-8'});
+      fs.writeFileSync(path.join(__dirname, `../config/modeSetting/${type}.json`), JSON.stringify(updatedData), {
+        encoding: 'utf-8',
+      });
       return updatedData;
     } catch (error) {
       console.log(error);

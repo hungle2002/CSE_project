@@ -6,7 +6,9 @@ class SafeModeController {
   public static async getSafeModeInfo(req: Request, res: Response) {
     const {type} = req.params;
     const safeModeInfo = SafeModeRepository.getSafeModeInfo(type);
-    res.status(status.OK).json({safeAction: safeModeInfo?.safeAction, safeMin: safeModeInfo?.safeMin, safeMax: safeModeInfo?.safeMax});
+    res
+      .status(status.OK)
+      .json({safeAction: safeModeInfo?.safeAction, safeMin: safeModeInfo?.safeMin, safeMax: safeModeInfo?.safeMax});
   }
 
   public static async updateSafeModeInfo(req: Request, res: Response) {
