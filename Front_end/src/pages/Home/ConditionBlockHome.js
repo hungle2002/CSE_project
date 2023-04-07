@@ -38,7 +38,7 @@ function ConditionBlockHome({ className }) {
     {
       icon: <FontAwesomeIcon icon={faTemperatureThreeQuarters} />,
       color: "black",
-      condition: config.conditions.temprature,
+      condition: config.conditions.temperature,
       number: condtionValue[0],
       key : config.devicesKeys.tempSensor,
       ...conditionResult[0],

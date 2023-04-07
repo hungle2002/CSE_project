@@ -19,7 +19,7 @@ const readFileID = (filePath) => {
 exports.readFileID = readFileID;
 const writeFileID = (filePath, id) => {
     const data = { id: id };
-    const jsonString = JSON.stringify(data);
+    const jsonString = JSON.stringify(data, undefined, 2);
     fs_1.default.writeFileSync(filePath, jsonString);
 };
 exports.writeFileID = writeFileID;

@@ -10,6 +10,7 @@ import corConfig from './config/CORS';
 import {autoCreateServerRecord} from './services/ServerRecordService';
 import {autoUpdateDeviceState} from './services/DevicesService';
 
+import {autoIrrigationStart} from './services/AutoIrrigationOperation';
 dotenv.config();
 const app = express();
 const server = http.createServer(app);
@@ -24,6 +25,7 @@ Socket.init(server);
 //routing
 app.use('/api/v1/condition/', route.conditionRoute);
 app.use('/api/v1/device/', route.deviceRoute);
+app.use('/api/v1/settings/', route.settingsRoute);
 
 // using middlewares
 app.use(middlewares.notFoundMiddleware);
@@ -41,6 +43,7 @@ const connectDB = async () => {
     // set auto update record and device state
     autoCreateServerRecord();
     autoUpdateDeviceState();
+    autoIrrigationStart();
   } catch (error) {
     console.log(error);
   }

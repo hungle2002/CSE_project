@@ -10,7 +10,7 @@ const modes = [
     color: "#D1EEDB",
   },
   {
-    title: "MANNUAL",
+    title: "MANUAL",
     action: "Alert when out",
     color: "#F0F6D2",
   },

@@ -3,46 +3,33 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-const SettingsPanel = ({ newSettings, setNewSettings }) => {
-  const getMeasurementUnit = () => {
-    return newSettings.meta.unit === "oC" ? (
-      <span>
-        <sup>o</sup>C
-      </span>
-    ) : newSettings.meta.unit === "W/m2" ? (
-      <span>
-        W/m<sup>2</sup>
-      </span>
-    ) : (
-      <span>%</span>
-    );
-  };
-
+const SettingsPanel = ({ newSettings, setNewSettings, type, displayInfo }) => {
+  const { settingType, measurementUnit } = displayInfo
   const conditionalTexts = {
     title:
-      newSettings.mode === 1
+      newSettings.mode === 0
         ? "Automatic"
-        : newSettings.mode === 2
+        : newSettings.mode === 1
         ? "Scheduled"
         : "Manual",
     contentClassname:
-      newSettings.mode === 2 ? "sched-content" : "range-content",
+      newSettings.mode === 1 ? "sched-content" : "range-content",
     rangeMinText:
-      newSettings.mode === 1
+      newSettings.mode === 0
         ? "Keep between"
-        : newSettings.mode === 2
+        : newSettings.mode === 1
         ? "Turn on from"
         : "Safe from",
-    rangeMaxText: newSettings.mode === 1 ? "and" : "to",
+    rangeMaxText: newSettings.mode === 0 ? "and" : "to",
     minInputClassname:
-      newSettings.mode === 2 ? "sched-start-input" : "ideal-min-input",
+      newSettings.mode === 1 ? "sched-start-input" : "ideal-min-input",
     maxInputClassname:
-      newSettings.mode === 2 ? "sched-end-input" : "ideal-max-input",
+      newSettings.mode === 1 ? "sched-end-input" : "ideal-max-input",
   };
 
   const inputElements = {
     inputMin:
-      newSettings.mode === 2 ? (
+      newSettings.mode === 1 ? (
         <input
           type="time"
           value={newSettings.schedStart}
@@ -57,15 +44,15 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
         <>
           <input
             type="number"
-            id={newSettings.meta.name + "_range-input-min"}
+            id={settingType + "_range-input-min"}
             value={
-              newSettings.mode === 1
+              newSettings.mode === 0
                 ? newSettings.autoMin
                 : newSettings.manualMin
             }
             onChange={(e) =>
               setNewSettings(
-                newSettings.mode === 1
+                newSettings.mode === 0
                   ? {
                       ...newSettings,
                       autoMin:
@@ -83,13 +70,13 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
               )
             }
           />
-          <label htmlFor={newSettings.meta.name + "_range-input-min"}>
-            {getMeasurementUnit()}
+          <label htmlFor={settingType + "_range-input-min"}>
+            {measurementUnit}
           </label>
         </>
       ),
     inputMax:
-      newSettings.mode === 2 ? (
+      newSettings.mode === 1 ? (
         <input
           type="time"
           value={newSettings.schedEnd}
@@ -104,15 +91,15 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
         <>
           <input
             type="number"
-            id={newSettings.meta.name + "_range-input-max"}
+            id={settingType + "_range-input-max"}
             value={
-              newSettings.mode === 1
+              newSettings.mode === 0
                 ? newSettings.autoMax
                 : newSettings.manualMax
             }
             onChange={(e) =>
               setNewSettings(
-                newSettings.mode === 1
+                newSettings.mode === 0
                   ? {
                       ...newSettings,
                       autoMax:
@@ -130,8 +117,8 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
               )
             }
           />
-          <label htmlFor={newSettings.meta.name + "_range-input-max"}>
-            {getMeasurementUnit()}
+          <label htmlFor={settingType + "_range-input-max"}>
+            {measurementUnit}
           </label>
         </>
       ),
@@ -152,15 +139,15 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
             });
           }}
         >
-          {[1, 2, 3].map((i) => (
+          {[0, 1, 2].map((i) => (
             <div className={cx("mode-radio")} key={i}>
-              <label htmlFor={newSettings.meta.name + `_mode-radio-input-${i}`}>
-                {i === 1 ? "Automatic" : i === 2 ? "Scheduled" : "Manual"}
+              <label htmlFor={settingType + `_mode-radio-input-${i}`}>
+                {i === 0 ? "Automatic" : i === 1 ? "Scheduled" : "Manual"}
               </label>
               <input
                 type="radio"
-                name={newSettings.meta.name + "mode"}
-                id={newSettings.meta.name + `_mode-radio-input-${i}`}
+                name={settingType + "mode"}
+                id={settingType + `_mode-radio-input-${i}`}
                 value={i}
                 checked={newSettings.mode === i}
               />
@@ -207,17 +194,17 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
                 })
               }
             >
-              {[1, 2, 3].map((i) => (
+              {[0, 1, 2].map((i) => (
                 <div className={cx("safe-radio")} key={i}>
-                  <label htmlFor={newSettings.meta.name + `_safe-radio-${i}`}>
-                    {i === 1 ? "Ignore" : i === 2 ? "Alert" : "Take action"}
+                  <label htmlFor={settingType + `_safe-radio-${i}`}>
+                    {i === 0 ? "Ignore" : i === 1 ? "Alert" : "Take action"}
                   </label>
                   <input
                     type="radio"
-                    id={newSettings.meta.name + `_safe-radio-${i}`}
+                    id={settingType + `_safe-radio-${i}`}
                     value={i}
                     checked={newSettings.safeAction === i}
-                    name={newSettings.meta.name + "safe"}
+                    name={settingType + "safe"}
                   />
                 </div>
               ))}
@@ -225,12 +212,12 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
           </div>
           <div className={cx("safe-content-right")}>
             <div className={cx("safe-lower")}>
-              <label htmlFor={newSettings.meta.name + "_safe-lower"}>
+              <label htmlFor={settingType + "_safe-lower"}>
                 Lower limit
               </label>
               <input
                 type="number"
-                id={newSettings.meta.name + "_safe-lower"}
+                id={settingType + "_safe-lower"}
                 value={newSettings.safeMin}
                 onChange={(e) =>
                   setNewSettings({
@@ -244,12 +231,12 @@ const SettingsPanel = ({ newSettings, setNewSettings }) => {
               />
             </div>
             <div className={cx("safe-upper")}>
-              <label htmlFor={newSettings.meta.name + "_safe-upper"}>
+              <label htmlFor={settingType + "_safe-upper"}>
                 Upper limit
               </label>
               <input
                 type="number"
-                id={newSettings.meta.name + "_safe-upper"}
+                id={settingType + "_safe-upper"}
                 value={newSettings.safeMax}
                 onChange={(e) =>
                   setNewSettings({

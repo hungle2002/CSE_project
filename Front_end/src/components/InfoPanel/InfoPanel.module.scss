@@ -28,18 +28,23 @@
   align-items: center;
 }
 
-.left-top-icon {
-  
+.left-top-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.left-top-text {
+.left-top-value {
   font-weight: 800;
   font-size: 3rem;
 }
 
-.left-top-text span {
+.measurement-unit {
   font-weight: 600;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
+  margin-left: 5px;
 }
 
 .left-bottom {

@@ -1,8 +1,8 @@
 interface modeSetting {
   mode: Number;
   safeAction: Number;
-  autoMin: Number;
-  autoMax: Number;
+  autoMin: number;
+  autoMax: number;
   schedStart: String;
   schedEnd: String;
   safeMin: Number;

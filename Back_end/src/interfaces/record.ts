@@ -1,7 +1,3 @@
-export interface recordID {
-  id: Number;
-}
-
 interface ServerRecord {
   SRID: Number;
   tempValue: Number;
