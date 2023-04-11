@@ -68,7 +68,7 @@ const autoIrrigationStart = () => {
     const soilSensorKey = deviceKeys_1.default.soilSensor;
     const lightSensorKey = deviceKeys_1.default.lightSensor;
     const tempSensorKey = deviceKeys_1.default.tempSensor;
-    const waterMotorKey = deviceKeys_1.default.waterMotor;
+    const coolingMotorKey = deviceKeys_1.default.coolingMotor;
     let tempOutputStart = false;
     let soilOutputStart = false;
     let lightOutputStart = false;
@@ -77,17 +77,17 @@ const autoIrrigationStart = () => {
         const soilInfo = SettingsRepository_1.default.getSettingsInfo('soilMoisture');
         const lightInfo = SettingsRepository_1.default.getSettingsInfo('lighting');
         if ((temperatureInfo === null || temperatureInfo === void 0 ? void 0 : temperatureInfo.mode) === 0)
-            tempOutputStart = await processAutoMode(tempSensorKey, 'Temperature', waterMotorKey, temperatureInfo.autoMax, temperatureInfo.autoMin, tempOutputStart);
+            tempOutputStart = await processAutoMode(tempSensorKey, 'Temperature', coolingMotorKey, temperatureInfo.autoMax, temperatureInfo.autoMin, tempOutputStart);
         if ((soilInfo === null || soilInfo === void 0 ? void 0 : soilInfo.mode) === 0)
-            soilOutputStart = await processAutoMode(soilSensorKey, 'Soil Humidity', waterMotorKey, soilInfo.autoMax, soilInfo.autoMin, soilOutputStart);
+            soilOutputStart = await processAutoMode(soilSensorKey, 'Soil Humidity', coolingMotorKey, soilInfo.autoMax, soilInfo.autoMin, soilOutputStart);
         if ((lightInfo === null || lightInfo === void 0 ? void 0 : lightInfo.mode) === 0)
-            lightOutputStart = await processAutoMode(lightSensorKey, 'Light Intensity', waterMotorKey, lightInfo.autoMax, lightInfo.autoMin, lightOutputStart);
+            lightOutputStart = await processAutoMode(lightSensorKey, 'Light Intensity', coolingMotorKey, lightInfo.autoMax, lightInfo.autoMin, lightOutputStart);
         if ((temperatureInfo === null || temperatureInfo === void 0 ? void 0 : temperatureInfo.mode) === 1)
-            tempOutputStart = await processScheduledMode(tempSensorKey, 'Temperature', waterMotorKey, temperatureInfo.schedEnd, temperatureInfo.schedStart, tempOutputStart);
+            tempOutputStart = await processScheduledMode(tempSensorKey, 'Temperature', coolingMotorKey, temperatureInfo.schedEnd, temperatureInfo.schedStart, tempOutputStart);
         if ((soilInfo === null || soilInfo === void 0 ? void 0 : soilInfo.mode) === 1)
-            tempOutputStart = await processScheduledMode(soilSensorKey, 'Soil Humidity', waterMotorKey, soilInfo.schedEnd, soilInfo.schedStart, soilOutputStart);
+            tempOutputStart = await processScheduledMode(soilSensorKey, 'Soil Humidity', coolingMotorKey, soilInfo.schedEnd, soilInfo.schedStart, soilOutputStart);
         if ((lightInfo === null || lightInfo === void 0 ? void 0 : lightInfo.mode) === 1)
-            lightOutputStart = await processScheduledMode(lightSensorKey, 'Light Intensity', waterMotorKey, lightInfo.schedEnd, lightInfo.schedStart, lightOutputStart);
+            lightOutputStart = await processScheduledMode(lightSensorKey, 'Light Intensity', coolingMotorKey, lightInfo.schedEnd, lightInfo.schedStart, lightOutputStart);
     }, timeSetting_1.autoIrCircle);
 };
 exports.autoIrrigationStart = autoIrrigationStart;

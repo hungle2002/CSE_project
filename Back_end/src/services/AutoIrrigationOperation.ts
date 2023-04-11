@@ -86,7 +86,7 @@ const autoIrrigationStart = () => {
   const soilSensorKey = deviceKeys.soilSensor;
   const lightSensorKey = deviceKeys.lightSensor;
   const tempSensorKey = deviceKeys.tempSensor;
-  const waterMotorKey = deviceKeys.waterMotor;
+  const coolingMotorKey = deviceKeys.coolingMotor;
   let tempOutputStart = false;
   let soilOutputStart = false;
   let lightOutputStart = false;
@@ -99,7 +99,7 @@ const autoIrrigationStart = () => {
       tempOutputStart = await processAutoMode(
         tempSensorKey,
         'Temperature',
-        waterMotorKey,
+        coolingMotorKey,
         temperatureInfo.autoMax,
         temperatureInfo.autoMin,
         tempOutputStart
@@ -108,7 +108,7 @@ const autoIrrigationStart = () => {
       soilOutputStart = await processAutoMode(
         soilSensorKey,
         'Soil Humidity',
-        waterMotorKey,
+        coolingMotorKey,
         soilInfo.autoMax,
         soilInfo.autoMin,
         soilOutputStart
@@ -117,7 +117,7 @@ const autoIrrigationStart = () => {
       lightOutputStart = await processAutoMode(
         lightSensorKey,
         'Light Intensity',
-        waterMotorKey,
+        coolingMotorKey,
         lightInfo.autoMax,
         lightInfo.autoMin,
         lightOutputStart
@@ -126,7 +126,7 @@ const autoIrrigationStart = () => {
       tempOutputStart = await processScheduledMode(
         tempSensorKey,
         'Temperature',
-        waterMotorKey,
+        coolingMotorKey,
         temperatureInfo.schedEnd,
         temperatureInfo.schedStart,
         tempOutputStart
@@ -135,7 +135,7 @@ const autoIrrigationStart = () => {
       tempOutputStart = await processScheduledMode(
         soilSensorKey,
         'Soil Humidity',
-        waterMotorKey,
+        coolingMotorKey,
         soilInfo.schedEnd,
         soilInfo.schedStart,
         soilOutputStart
@@ -144,7 +144,7 @@ const autoIrrigationStart = () => {
       lightOutputStart = await processScheduledMode(
         lightSensorKey,
         'Light Intensity',
-        waterMotorKey,
+        coolingMotorKey,
         lightInfo.schedEnd,
         lightInfo.schedStart,
         lightOutputStart
