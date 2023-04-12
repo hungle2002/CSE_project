@@ -18,6 +18,14 @@
   display: flex
 }
 
+.h-screen {
+  height: 100vh
+}
+
+.h-20 {
+  height: 5rem
+}
+
 .flex-row {
   flex-direction: row
 }
