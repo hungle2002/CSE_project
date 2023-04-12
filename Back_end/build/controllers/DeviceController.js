@@ -8,6 +8,7 @@ const DeviceRepository_1 = __importDefault(require("../repositories/DeviceReposi
 const AdaAPI_1 = __importDefault(require("../AdaAPI"));
 const DeviceRepository_2 = __importDefault(require("../repositories/DeviceRepository"));
 const Socket_1 = __importDefault(require("../providers/Socket"));
+const DevicesService_1 = require("../services/DevicesService");
 class DeviceController {
     // get all information about one device include state and other information
     static async getOneDeviceInfo(req, res) {
@@ -28,8 +29,9 @@ class DeviceController {
     }
     // get all device state
     static async getAllDeviceState(req, res) {
-        const device = DeviceRepository_1.default.getAllDeviceState();
-        res.status(http_status_1.default.OK).json({ device: device });
+        // get current device state from repo
+        const devices = await (0, DevicesService_1.getNewDeviceState)();
+        res.status(http_status_1.default.OK).json({ devices: devices });
     }
     // create new state for device
     static async createDeviceState(req, res) {

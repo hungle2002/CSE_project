@@ -13,6 +13,7 @@ const http_1 = __importDefault(require("http"));
 const Socket_1 = __importDefault(require("./providers/Socket"));
 const CORS_1 = __importDefault(require("./config/CORS"));
 const ServerRecordService_1 = require("./services/ServerRecordService");
+const DevicesService_1 = require("./services/DevicesService");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
@@ -36,7 +37,9 @@ const connectDB = async () => {
         server.listen(port, () => {
             console.log('Server listen on port ' + port + '...');
         });
+        // set auto update record and device state
         (0, ServerRecordService_1.autoCreateServerRecord)();
+        (0, DevicesService_1.autoUpdateDeviceState)();
     }
     catch (error) {
         console.log(error);

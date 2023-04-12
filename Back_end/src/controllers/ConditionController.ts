@@ -16,7 +16,6 @@ class ConditionController {
   // }
 
   public static async getOneConditionValue(req: Request, res: Response) {
-    const {key} = req.params;
     const condition = await CondtionRepository.getAllConditionValue();
     res.status(status.OK).json({condition: condition});
   }

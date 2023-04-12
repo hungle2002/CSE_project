@@ -71,10 +71,10 @@ class Socket {
     }
   }
 
-  public update_settings(type: String) {
+  public update_all_device_state() {
     const notification: Notification = {
-      title: 'UPDATE settings',
-      message: `${type === "soilMoisture" ? "SOIL MOISTURE" : type.toUpperCase()} settings updated successfully!`,
+      title: 'UPDATE all device state',
+      message: 'Automatically updating device state!',
     };
     if (this.io) {
       this.io.emit('notification', notification);

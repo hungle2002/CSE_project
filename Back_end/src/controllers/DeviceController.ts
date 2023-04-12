@@ -4,7 +4,9 @@ import deviceRepository from '../repositories/DeviceRepository';
 import AdaAPI from '../AdaAPI';
 import DeviceRepository from '../repositories/DeviceRepository';
 import Socket from '../providers/Socket';
-import DeviceInfo from '../interfaces/device';
+import {DeviceInfo} from '../interfaces';
+import {getNewDeviceState} from '../services/DevicesService';
+
 class DeviceController {
   // get all information about one device include state and other information
   public static async getOneDeviceInfo(req: Request, res: Response) {
@@ -28,8 +30,9 @@ class DeviceController {
 
   // get all device state
   public static async getAllDeviceState(req: Request, res: Response) {
-    const device = deviceRepository.getAllDeviceState();
-    res.status(status.OK).json({device: device});
+    // get current device state from repo
+    const devices = await getNewDeviceState();
+    res.status(status.OK).json({devices: devices});
   }
 
   // create new state for device

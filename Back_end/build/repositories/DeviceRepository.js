@@ -57,8 +57,14 @@ class DeviceRepository {
             console.log(error);
         }
     }
-    getAllDeviceState() {
-        return 'All device state!';
+    async getAllDeviceState() {
+        try {
+            const device = await models_1.default.device.find({}, { state: 1, key: 1 });
+            return device;
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 }
 exports.default = DeviceRepository.getDeviceRepository();
