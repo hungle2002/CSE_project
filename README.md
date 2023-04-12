@@ -14,3 +14,16 @@ ReactNative,
 NodeJS
 ### Database: 
 MongoDB
+# Run app
+## Web app
+## Mobile app
+First, you need to download Expo Go app on CHPlay
+### Download all packages
+npm run install
+### Create 2 terminal
+npm run dev:tailwind (for auto create tailwind css)
+
+npm run start (for start server)
+### Scan QR code from terminal and start app on your phone
+## Server
+
