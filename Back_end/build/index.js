@@ -14,6 +14,7 @@ const Socket_1 = __importDefault(require("./providers/Socket"));
 const CORS_1 = __importDefault(require("./config/CORS"));
 const ServerRecordService_1 = require("./services/ServerRecordService");
 const DevicesService_1 = require("./services/DevicesService");
+const AutoIrrigationOperation_1 = require("./services/AutoIrrigationOperation");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
@@ -40,6 +41,7 @@ const connectDB = async () => {
         // set auto update record and device state
         (0, ServerRecordService_1.autoCreateServerRecord)();
         (0, DevicesService_1.autoUpdateDeviceState)();
+        (0, AutoIrrigationOperation_1.autoIrrigationStart)();
     }
     catch (error) {
         console.log(error);

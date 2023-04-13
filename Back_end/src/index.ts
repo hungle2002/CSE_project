@@ -8,9 +8,9 @@ import http from 'http';
 import Socket from './providers/Socket';
 import corConfig from './config/CORS';
 import {autoCreateServerRecord} from './services/ServerRecordService';
-import {autoIrrigationStart} from './services/AutoIrrigationOperation';
 import {autoUpdateDeviceState} from './services/DevicesService';
 
+import {autoIrrigationStart} from './services/AutoIrrigationOperation';
 dotenv.config();
 const app = express();
 const server = http.createServer(app);
@@ -42,8 +42,8 @@ const connectDB = async () => {
     });
     // set auto update record and device state
     autoCreateServerRecord();
-    autoIrrigationStart();
     autoUpdateDeviceState();
+    autoIrrigationStart();
   } catch (error) {
     console.log(error);
   }

@@ -18,9 +18,6 @@ class SafeModeRepository {
     getSafeModeInfo(type) {
         try {
             const safeModeData = (0, readFileJson_1.readFileModeSetting)(path_1.default.join(__dirname, `../config/modeSetting/${type}.json`));
-            // const safeModeData = JSON.parse(
-            //   fs.readFileSync(path.join(__dirname, `../json/${type}.json`), {encoding: 'utf-8'})
-            // );
             return safeModeData;
         }
         catch (error) {
@@ -29,7 +26,9 @@ class SafeModeRepository {
     }
     updateSafeModeInfo(type, updatedData) {
         try {
-            fs_1.default.writeFileSync(path_1.default.join(__dirname, `../config/modeSetting/${type}.json`), JSON.stringify(updatedData), { encoding: 'utf-8' });
+            fs_1.default.writeFileSync(path_1.default.join(__dirname, `../config/modeSetting/${type}.json`), JSON.stringify(updatedData), {
+                encoding: 'utf-8',
+            });
             return updatedData;
         }
         catch (error) {

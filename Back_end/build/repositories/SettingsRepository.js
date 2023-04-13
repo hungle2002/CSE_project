@@ -16,7 +16,7 @@ class SettingsRepository {
     }
     getSettingsInfo(type) {
         try {
-            const settingsData = (0, readFileJson_1.readFileModeSetting)(path_1.default.join(__dirname, `../config/modeSetting/${type}.json`));
+            const settingsData = (0, readFileJson_1.readFileModeSetting)(path_1.default.join(__dirname, `../../src/config/modeSetting/${type}.json`));
             // const settingsData = JSON.parse(
             //   fs.readFileSync(path.join(__dirname, `../json/${type}.json`), {encoding: 'utf-8'})
             // );
@@ -28,7 +28,7 @@ class SettingsRepository {
     }
     updateSettingsInfo(type, updatedData) {
         try {
-            fs_1.default.writeFileSync(path_1.default.join(__dirname, `../../src/config/modeSetting/${type}.json`), JSON.stringify(updatedData), { encoding: 'utf-8' });
+            fs_1.default.writeFileSync(path_1.default.join(__dirname, `../../src/config/modeSetting/${type}.json`), JSON.stringify(updatedData, undefined, 2), { encoding: 'utf-8' });
             return updatedData;
         }
         catch (error) {

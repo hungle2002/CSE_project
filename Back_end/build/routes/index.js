@@ -9,6 +9,6 @@ const settings_1 = __importDefault(require("./settings"));
 const route = {
     conditionRoute: conditions_1.default,
     deviceRoute: devices_1.default,
-    settingsRoute: settings_1.default
+    settingsRoute: settings_1.default,
 };
 exports.default = route;
