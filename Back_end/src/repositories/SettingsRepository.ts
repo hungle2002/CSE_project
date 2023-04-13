@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { readFileModeSetting } from '../utils/readFileJson';
+import {readFileModeSetting} from '../utils/readFileJson';
 
 class SettingsRepository {
   // implement singleton pattern
@@ -25,10 +25,14 @@ class SettingsRepository {
     }
   }
 
-  public updateSettingsInfo(type: string, updatedData: any){
+  public updateSettingsInfo(type: string, updatedData: any) {
     try {
-      fs.writeFileSync(path.join(__dirname, `../../src/config/modeSetting/${type}.json`), JSON.stringify(updatedData,undefined,2), {encoding: 'utf-8'});
-      
+      fs.writeFileSync(
+        path.join(__dirname, `../../src/config/modeSetting/${type}.json`),
+        JSON.stringify(updatedData, undefined, 2),
+        {encoding: 'utf-8'}
+      );
+
       return updatedData;
     } catch (error) {
       console.log(error);

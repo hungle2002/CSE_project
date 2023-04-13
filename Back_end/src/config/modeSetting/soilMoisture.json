@@ -1,7 +1,7 @@
 {
     "mode": 0,
     "safeAction": 2,
-    "autoMin": 50,
+    "autoMin": 0,
     "autoMax": 70,
     "schedStart": "06:00",
     "schedEnd": "18:00",

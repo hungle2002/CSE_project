@@ -82,5 +82,17 @@ class Socket {
       console.log('No socket create!!');
     }
   }
+
+  public update_settings(type: String) {
+    const notification: Notification = {
+      title: 'UPDATE settings',
+      message: `${type === 'soilMoisture' ? 'SOIL MOISTURE' : type.toUpperCase()} settings updated successfully!`,
+    };
+    if (this.io) {
+      this.io.emit('notification', notification);
+    } else {
+      console.log('No socket create!!');
+    }
+  }
 }
 export default Socket.getConditionRepository();
