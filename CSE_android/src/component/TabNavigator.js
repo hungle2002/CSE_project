@@ -22,7 +22,7 @@ const Tab = createBottomTabNavigator();
 
 function TabNavigator() {
   const tailwind = useTailwind();
-  const [popupState, setPopupState] = React.useState(1);
+  const [popupState, setPopupState] = React.useState(0);
 
   // init data
   const notifications = [

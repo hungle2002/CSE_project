@@ -3503,6 +3503,11 @@
   "resolved" "https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz"
   "version" "1.2.0"
 
+"detect-libc@^1.0.3":
+  "integrity" "sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg=="
+  "resolved" "https://registry.npmjs.org/detect-libc/-/detect-libc-1.0.3.tgz"
+  "version" "1.0.3"
+
 "didyoumean@^1.2.2":
   "integrity" "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw=="
   "resolved" "https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz"
@@ -5446,6 +5451,27 @@
   dependencies:
     "prelude-ls" "^1.2.1"
     "type-check" "~0.4.0"
+
+"lightningcss-win32-x64-msvc@1.19.0":
+  "integrity" "sha512-C+VuUTeSUOAaBZZOPT7Etn/agx/MatzJzGRkeV+zEABmPuntv1zihncsi+AyGmjkkzq3wVedEy7h0/4S84mUtg=="
+  "resolved" "https://registry.npmjs.org/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.19.0.tgz"
+  "version" "1.19.0"
+
+"lightningcss@^1.19.0":
+  "integrity" "sha512-yV5UR7og+Og7lQC+70DA7a8ta1uiOPnWPJfxa0wnxylev5qfo4P+4iMpzWAdYWOca4jdNQZii+bDL/l+4hUXIA=="
+  "resolved" "https://registry.npmjs.org/lightningcss/-/lightningcss-1.19.0.tgz"
+  "version" "1.19.0"
+  dependencies:
+    "detect-libc" "^1.0.3"
+  optionalDependencies:
+    "lightningcss-darwin-arm64" "1.19.0"
+    "lightningcss-darwin-x64" "1.19.0"
+    "lightningcss-linux-arm-gnueabihf" "1.19.0"
+    "lightningcss-linux-arm64-gnu" "1.19.0"
+    "lightningcss-linux-arm64-musl" "1.19.0"
+    "lightningcss-linux-x64-gnu" "1.19.0"
+    "lightningcss-linux-x64-musl" "1.19.0"
+    "lightningcss-win32-x64-msvc" "1.19.0"
 
 "lilconfig@^2.0.5", "lilconfig@^2.0.6":
   "integrity" "sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ=="
