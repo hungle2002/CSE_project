@@ -28,8 +28,8 @@ function DashboardScreen({ navigation }) {
       value: 149,
       mode: "Scheduled",
       modeText: "On from",
-      min: 150,
-      max: 200,
+      min: "06:00",
+      max: "14:00",
       styles: styles.lighting,
       icon: faCloudSun,
     },
@@ -50,20 +50,19 @@ function DashboardScreen({ navigation }) {
     if (value > start && value < end) {
       return {
         text: "Good",
-        color: "black"
-      }
-    }
-    else if (value > end) {
+        color: "black",
+      };
+    } else if (value > end) {
       return {
         text: "High",
-        color: "red"
-      }
+        color: "red",
+      };
     }
     return {
       text: "Low",
-      color: "#031cab"
-    }
-  }
+      color: "#031cab",
+    };
+  };
 
   return (
     <View
@@ -72,78 +71,78 @@ function DashboardScreen({ navigation }) {
       )}
     >
       {data.map((item) => (
-        <View
-          style={item.styles}
-          key={item.name}
-        >
+        <View style={item.styles} key={item.name}>
           {/* <View style={tailwind("w-1/2 h-full bg-black")}>
 
           </View> */}
           <View style={styles.blockContainer}>
-              <View style={styles.leftContent}>
-                <FontAwesomeIcon icon={item.icon} size={48} />
-                <View style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  width: "100%"
-                }}>
-                  <Text style={{
-                    fontSize: 32,
-                    paddingEnd: 6
-                  }}>{item.value}</Text>
-                  <Text style={{
-                    fontSize: 16,
-                    width: "50%"
-                  }}>{item.unit}</Text>
+            <View style={styles.leftContent}>
+              <View style={tailwind("flex items-center")}>
+                <View style={tailwind("flex items-start w-full")}>
+                  <FontAwesomeIcon icon={item.icon} size={48} />
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      width: "100%",
+                      marginTop: 10,
+                    }}
+                  >
+                    <Text style={tailwind("text-3xl font-bold mr-1")}>
+                      {item.value}
+                    </Text>
+                    <Text style={tailwind("text-xl")}>{item.unit}</Text>
+                  </View>
                 </View>
-                <Text style={{
-                    fontSize: 16
-                  }}>{item.name}</Text>
+                <Text style={tailwind("mt-2 text-lg")}>{item.name}</Text>
               </View>
+            </View>
           </View>
 
           <View style={styles.rightContent}>
-            <View style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              width: "100%",
-            }}>
-              <Text style={{
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
                 width: "100%",
-                textAlign: "center",
-                fontSize: 18,
-                marginBottom: 12,
-              }}>{item.mode.toUpperCase()}</Text>
-            <Text style={{
-                width: "100%",
-                textAlign: "center",
-                marginBottom: 4,
-              }}>{item.modeText}</Text>
-            <Text style={{
-                width: "100%",
-                textAlign: "center",
-                fontSize: 16,
-                marginBottom: 40,
-              }}>{`${item.min} - ${item.max} ${item.unit}`}</Text>
-            <View style={{
-              width: "30%",
-              height: "15%",
-              alignSelf: "center",
-              borderRadius: 20,
-              borderWidth: 1,
-              borderColor: getStatusDisplay(item.value, item.min, item.max).color,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center"
-            }}>
-              <Text style={{
-                  width: "100%",
-                  textAlign: "center",
-                  color: getStatusDisplay(item.value, item.min, item.max).color
-                }}>{getStatusDisplay(item.value, item.min, item.max).text}</Text>
-            </View>
+              }}
+            >
+              <Text style={tailwind("text-lg font-semibold mt-6")}>
+                {item.mode.toUpperCase()}
+              </Text>
+              <Text style={tailwind("mt-2")}>{item.modeText}</Text>
+              <Text style={tailwind("text-lg pt-1 mb-6")}>
+                {`${item.min} - ${item.max}`} {item.mode !== "Scheduled" && <Text>{item.unit}</Text>}
+              </Text>
+
+              <View
+                style={{
+                  width: "30%",
+                  height: "15%",
+                  alignSelf: "center",
+                  borderRadius: 20,
+                  borderWidth: 1,
+                  borderColor: getStatusDisplay(item.value, item.min, item.max)
+                    .color,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Text
+                  style={{
+                    width: "100%",
+                    textAlign: "center",
+                    color: getStatusDisplay(item.value, item.min, item.max)
+                      .color,
+                  }}
+                >
+                  {getStatusDisplay(item.value, item.min, item.max).text}
+                </Text>
+              </View>
             </View>
           </View>
         </View>
@@ -160,7 +159,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
   },
   lighting: {
     backgroundColor: "#D1EED8",
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
   },
   soilMoisture: {
     backgroundColor: "#F0F6D2",
@@ -178,7 +177,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
   },
   blockContainer: {
     width: "50%",
@@ -188,14 +187,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRightColor: "white",
-    borderRightWidth: 1
+    borderRightWidth: 1,
   },
   leftContent: {
-    width: "60%",
+    width: "65%",
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
   },
   rightContent: {
     width: "50%",
@@ -203,8 +202,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    alignItems: "flex-start"
-  }
+    alignItems: "flex-start",
+  },
 });
 
 export default DashboardScreen;
