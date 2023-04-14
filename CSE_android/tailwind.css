@@ -22,9 +22,36 @@
   top: 50px
 }
 
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem
+.right-2 {
+  right: 0.5rem
+}
+
+.right-6 {
+  right: 1.5rem
+}
+
+.right-4 {
+  right: 1rem
+}
+
+.right-3 {
+  right: 0.75rem
+}
+
+.z-50 {
+  z-index: 50
+}
+
+.z-20 {
+  z-index: 20
+}
+
+.z-10 {
+  z-index: 10
+}
+
+.mr-4 {
+  margin-right: 1rem
 }
 
 .mt-1 {
@@ -39,24 +66,80 @@
   display: flex
 }
 
-.h-2 {
-  height: 0.5rem
-}
-
-.h-4 {
-  height: 1rem
-}
-
-.h-\[900px\] {
-  height: 900px
+.h-20 {
+  height: 5rem
 }
 
 .h-full {
   height: 100%
 }
 
+.h-40 {
+  height: 10rem
+}
+
+.h-\[100px\] {
+  height: 100px
+}
+
+.h-\[1000px\] {
+  height: 1000px
+}
+
+.h-\[500px\] {
+  height: 500px
+}
+
+.h-\[300px\] {
+  height: 300px
+}
+
+.h-\[00px\] {
+  height: 00px
+}
+
+.h-\[600px\] {
+  height: 600px
+}
+
+.h-\[900px\] {
+  height: 900px
+}
+
+.w-full {
+  width: 100%
+}
+
 .w-\[100\%\] {
   width: 100%
+}
+
+.w-\[100px\] {
+  width: 100px
+}
+
+.w-\[1000px\] {
+  width: 1000px
+}
+
+.w-20 {
+  width: 5rem
+}
+
+.w-40 {
+  width: 10rem
+}
+
+.w-0 {
+  width: 0px
+}
+
+.w-\[\] {
+  width: 
+}
+
+.w-\[500px\] {
+  width: 500px
 }
 
 .w-\[300px\] {
@@ -67,8 +150,8 @@
   width: 400px
 }
 
-.w-full {
-  width: 100%
+.w-\[200px\] {
+  width: 200px
 }
 
 .flex-row {
@@ -87,12 +170,29 @@
   justify-content: space-between
 }
 
+.justify-evenly {
+  justify-content: space-evenly
+}
+
 .rounded-full {
   border-radius: 9999px
 }
 
 .rounded-xl {
   border-radius: 0.75rem
+}
+
+.rounded-b-xl {
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem
+}
+
+.border {
+  border-width: 1px
+}
+
+.border-b-2 {
+  border-bottom-width: 2px
 }
 
 .border-b {
@@ -124,9 +224,9 @@
   padding-right: 0.25rem
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem
 }
 
 .px-4 {
@@ -152,6 +252,32 @@
   padding-left: 0.5rem
 }
 
+.pl-3 {
+  padding-left: 0.75rem
+}
+
+.pl-1 {
+  padding-left: 0.25rem
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem
@@ -162,18 +288,18 @@
   line-height: 1.75rem
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem
 }
 
-.font-bold {
-  font-weight: 700
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem
+}
+
+.font-extrabold {
+  font-weight: 800
 }
 
 .font-semibold {

@@ -29,10 +29,44 @@
 			"top": 50
 		}
 	},
-	"mx-2": {
+	"right-2": {
 		"style": {
-			"marginLeft": 8,
-			"marginRight": 8
+			"right": 8
+		}
+	},
+	"right-6": {
+		"style": {
+			"right": 24
+		}
+	},
+	"right-4": {
+		"style": {
+			"right": 16
+		}
+	},
+	"right-3": {
+		"style": {
+			"right": 12
+		}
+	},
+	"z-50": {
+		"style": {
+			"zIndex": 50
+		}
+	},
+	"z-20": {
+		"style": {
+			"zIndex": 20
+		}
+	},
+	"z-10": {
+		"style": {
+			"zIndex": 10
+		}
+	},
+	"mr-4": {
+		"style": {
+			"marginRight": 16
 		}
 	},
 	"mt-1": {
@@ -50,14 +84,49 @@
 			"display": "flex"
 		}
 	},
-	"h-2": {
+	"h-20": {
 		"style": {
-			"height": 8
+			"height": 80
 		}
 	},
-	"h-4": {
+	"h-full": {
 		"style": {
-			"height": 16
+			"height": "100%"
+		}
+	},
+	"h-40": {
+		"style": {
+			"height": 160
+		}
+	},
+	"h-[100px]": {
+		"style": {
+			"height": 100
+		}
+	},
+	"h-[1000px]": {
+		"style": {
+			"height": 1000
+		}
+	},
+	"h-[500px]": {
+		"style": {
+			"height": 500
+		}
+	},
+	"h-[300px]": {
+		"style": {
+			"height": 300
+		}
+	},
+	"h-[00px]": {
+		"style": {
+			"height": 0
+		}
+	},
+	"h-[600px]": {
+		"style": {
+			"height": 600
 		}
 	},
 	"h-[900px]": {
@@ -65,9 +134,9 @@
 			"height": 900
 		}
 	},
-	"h-full": {
+	"w-full": {
 		"style": {
-			"height": "100%"
+			"width": "100%"
 		}
 	},
 	"w-[100%]": {
@@ -85,9 +154,9 @@
 			"width": 400
 		}
 	},
-	"w-full": {
+	"w-[200px]": {
 		"style": {
-			"width": "100%"
+			"width": 200
 		}
 	},
 	"flex-row": {
@@ -110,6 +179,11 @@
 			"justifyContent": "space-between"
 		}
 	},
+	"justify-evenly": {
+		"style": {
+			"justifyContent": "space-evenly"
+		}
+	},
 	"rounded-full": {
 		"style": {
 			"borderTopLeftRadius": 9999,
@@ -126,15 +200,28 @@
 			"borderBottomLeftRadius": 12
 		}
 	},
+	"rounded-b-xl": {
+		"style": {
+			"borderBottomRightRadius": 12,
+			"borderBottomLeftRadius": 12
+		}
+	},
+	"border": {
+		"style": {
+			"borderTopWidth": 1,
+			"borderRightWidth": 1,
+			"borderBottomWidth": 1,
+			"borderLeftWidth": 1
+		}
+	},
+	"border-b-2": {
+		"style": {
+			"borderBottomWidth": 2
+		}
+	},
 	"border-b": {
 		"style": {
 			"borderBottomWidth": 1
-		}
-	},
-	"bg-black": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
 		}
 	},
 	"bg-blue-300": {
@@ -143,10 +230,28 @@
 			"backgroundColor": "rgb(147 197 253 / var(--tw-bg-opacity))"
 		}
 	},
-	"bg-green-100": {
+	"bg-slate-200": {
 		"style": {
 			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(220 252 231 / var(--tw-bg-opacity))"
+			"backgroundColor": "rgb(226 232 240 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-slate-100": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(241 245 249 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-black": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-blue-200": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(191 219 254 / var(--tw-bg-opacity))"
 		}
 	},
 	"bg-white": {
@@ -155,16 +260,36 @@
 			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
 		}
 	},
+	"bg-green-200": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(187 247 208 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-[]": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(220 252 231 / var(--tw-bg-opacity))"
+		}
+	},
+	"p-2": {
+		"style": {
+			"paddingTop": 8,
+			"paddingRight": 8,
+			"paddingBottom": 8,
+			"paddingLeft": 8
+		}
+	},
 	"px-1": {
 		"style": {
 			"paddingLeft": 4,
 			"paddingRight": 4
 		}
 	},
-	"px-2": {
+	"px-6": {
 		"style": {
-			"paddingLeft": 8,
-			"paddingRight": 8
+			"paddingLeft": 24,
+			"paddingRight": 24
 		}
 	},
 	"px-4": {
@@ -207,21 +332,21 @@
 			"lineHeight": 28
 		}
 	},
-	"text-xl": {
-		"style": {
-			"fontSize": 20,
-			"lineHeight": 28
-		}
-	},
 	"text-xs": {
 		"style": {
 			"fontSize": 12,
 			"lineHeight": 16
 		}
 	},
-	"font-bold": {
+	"text-sm": {
 		"style": {
-			"fontWeight": "700"
+			"fontSize": 14,
+			"lineHeight": 20
+		}
+	},
+	"font-extrabold": {
+		"style": {
+			"fontWeight": "800"
 		}
 	},
 	"font-semibold": {
