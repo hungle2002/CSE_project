@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-function DashboardScreen({ navigation }) {
+function DashboardScreen({}) {
   return (
     <View>
-      <Text>This is Dashboard</Text>
+      <Text>This is dashboard</Text>
     </View>
   );
 }
