@@ -5,9 +5,7 @@ module.exports = {
     "./src/component/**.{js,jsx}",
     "./src/screens/**.{js,jsx}",
   ],
-  theme: {
-    extend: {},
-  },
+  theme: {},
   plugins: [],
   corePlugins: require("tailwind-rn/unsupported-core-plugins"),
 };
