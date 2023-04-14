@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import AdaAPI from '../AdaAPI';
 import SettingsRepository from '../repositories/SettingsRepository';
 import deviceKeys from '../config/deviceKeys';

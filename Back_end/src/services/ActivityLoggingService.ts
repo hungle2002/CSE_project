@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import ActivityLogRepository from '../repositories/ActivityLogRepository';
 import ActivityLog from '../interfaces/activitylog';
 import {readFileID, writeFileID} from '../utils/readFileJson';

@@ -1,6 +1,7 @@
-import fs from 'fs';
+/* eslint-disable prettier/prettier */
+
 import path from 'path';
-import {readFileModeSetting} from '../utils/readFileJson';
+import {readFileModeSetting, writeFileModeSetting} from '../utils/readFileJson';
 
 class SettingsRepository {
   // implement singleton pattern
@@ -16,9 +17,6 @@ class SettingsRepository {
   public getSettingsInfo(type: string) {
     try {
       const settingsData = readFileModeSetting(path.join(__dirname, `../../src/config/modeSetting/${type}.json`));
-      // const settingsData = JSON.parse(
-      //   fs.readFileSync(path.join(__dirname, `../json/${type}.json`), {encoding: 'utf-8'})
-      // );
       return settingsData;
     } catch (error) {
       console.log(error);
@@ -27,12 +25,7 @@ class SettingsRepository {
 
   public updateSettingsInfo(type: string, updatedData: any) {
     try {
-      fs.writeFileSync(
-        path.join(__dirname, `../../src/config/modeSetting/${type}.json`),
-        JSON.stringify(updatedData, undefined, 2),
-        {encoding: 'utf-8'}
-      );
-
+      updatedData= writeFileModeSetting(path.join(__dirname, `../../src/config/modeSetting/${type}.json`),updatedData)
       return updatedData;
     } catch (error) {
       console.log(error);
