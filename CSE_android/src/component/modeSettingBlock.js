@@ -1,13 +1,12 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { useTailwind } from "tailwind-rn";
-import { RadioButton } from "react-native-paper";
 import * as React from "react";
-
+import RadioButtonComponent from "./RadioButtonComponent";
+import { ModeChoices, SafeModeChoices } from "../config/mode";
 function ModeSettingBlock({ condition }) {
   const tailwind = useTailwind();
-  const [checked, setChecked] = React.useState("first");
   return (
-    <View style={tailwind("text-xl w-[100%] ")}>
+    <View style={tailwind("text-xl w-[90%] ")}>
       <View
         style={{
           backgroundColor: condition.color,
@@ -20,21 +19,25 @@ function ModeSettingBlock({ condition }) {
               {condition.title}
             </Text>
           </View>
-          <View style={tailwind("bg-white mx-2 mt-2 px-4 py-2")}>
-            <Text style={tailwind("font-semibold")}>Mode</Text>
-            <RadioButton
-              value="first"
-              status={checked === "first" ? "checked" : "unchecked"}
-              onPress={() => setChecked("first")}
-            />
-            <RadioButton
-              value="second"
-              status={checked === "second" ? "checked" : "unchecked"}
-              onPress={() => setChecked("second")}
-            />
+          <View style={tailwind("bg-white m-2 px-4 py-2")}>
+            <Text style={tailwind("font-extrabold text-lg")}>Mode</Text>
+            <RadioButtonComponent listChoice={ModeChoices} />
+          </View>
+          
+          <View style={tailwind("bg-white m-2 px-4 py-2")}>
+            <Text style={tailwind("font-extrabold text-lg")}>Normal range</Text>
+          </View>
+
+          <View style={tailwind("bg-white m-2 px-4 py-2")}>
+            <Text style={tailwind("font-extrabold text-lg")}>Safe mode</Text>
+            <RadioButtonComponent listChoice={SafeModeChoices} />
+          </View>
+
+          <View style={tailwind("bg-white m-2 px-4 py-2")}>
+            <Text style={tailwind("font-extrabold text-lg")}>Safe range</Text>
           </View>
         </View>
-        <View style={tailwind("h-4")}></View>
+        <View style={tailwind("h-2")}></View>
       </View>
       <View style={tailwind("h-2 ")}></View>
       <View></View>
