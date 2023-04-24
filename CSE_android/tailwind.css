@@ -27,12 +27,24 @@
   margin-right: 0.5rem
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem
+}
+
+.mr-1 {
+  margin-right: 0.25rem
+}
+
 .mt-1 {
   margin-top: 0.25rem
 }
 
 .mt-2 {
   margin-top: 0.5rem
+}
+
+.mt-6 {
+  margin-top: 1.5rem
 }
 
 .flex {
@@ -59,6 +71,10 @@
   height: 100%
 }
 
+.w-1\/2 {
+  width: 50%
+}
+
 .w-\[100\%\] {
   width: 100%
 }
@@ -79,6 +95,10 @@
   width: 100%
 }
 
+.flex-1 {
+  flex: 1 1 0%
+}
+
 .flex-row {
   flex-direction: row
 }
@@ -87,12 +107,20 @@
   flex-direction: column
 }
 
+.items-start {
+  align-items: flex-start
+}
+
 .items-center {
   align-items: center
 }
 
 .justify-between {
   justify-content: space-between
+}
+
+.justify-evenly {
+  justify-content: space-evenly
 }
 
 .rounded-full {
@@ -174,9 +202,18 @@
   padding-left: 0.5rem
 }
 
+.pt-1 {
+  padding-top: 0.25rem
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem
 }
 
 .text-lg {

@@ -22,28 +22,22 @@ function ModeSettingBlock({ condition }) {
           </View>
           <View style={tailwind("bg-white mx-2 mt-2 px-4 py-2")}>
             <Text style={tailwind("font-semibold")}>Mode</Text>
-            <View>
-              <View>
-                <Text>Automation</Text>
-              </View>
-              <Text>Scheduled</Text>
-              <Text>Manual</Text>
-            </View>
+            <RadioButton
+              value="first"
+              status={checked === "first" ? "checked" : "unchecked"}
+              onPress={() => setChecked("first")}
+            />
+            <RadioButton
+              value="second"
+              status={checked === "second" ? "checked" : "unchecked"}
+              onPress={() => setChecked("second")}
+            />
           </View>
         </View>
         <View style={tailwind("h-4")}></View>
       </View>
       <View style={tailwind("h-2 ")}></View>
-      <View>
-        <RadioButton.Group
-          onValueChange={(value) => setChecked(value)}
-          value={checked}
-        >
-          <RadioButton.Item label="First item" value="first" />
-          <RadioButton.Item label="Second item" value="second" />
-          <RadioButton.Item label="Third item" value="third" />
-        </RadioButton.Group>
-      </View>
+      <View></View>
     </View>
   );
 }
