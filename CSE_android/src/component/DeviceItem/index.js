@@ -4,9 +4,8 @@ import {
   Text,
   View,
   Image,
-  SafeAreaView,
-  SectionList,
-  StatusBar,
+  Button,
+  Alert
 } from 'react-native';
 import { useTailwind } from "tailwind-rn";
 import { devicesImage } from "./data";
@@ -14,30 +13,17 @@ import { devicesImage } from "./data";
 const DeviceItem = ({device}) =>{
   const tailwind = useTailwind();
   console.log(device)
-  return(<View>
-      <Image source={devicesImage[device.key]} style={tailwind('w-[30px]')} />
-     <Text style={styles.title}>{device.des}</Text>
+  return(<View style={tailwind('flex flex-row p-1 items-center justify-between')}>
+      <View style={tailwind('flex flex-row p-1 items-center')}>
+        <Image source={devicesImage[device.key]} style={tailwind('w-[40px] h-[40px]')} />
+        <Text style={tailwind('text-xl px-3')}>{device.des}</Text>
+      </View>
+      <Button 
+        title="Good"
+        color="#C9F7F5"
+        onPress={() => Alert.alert('Button with adjusted color pressed')}
+      />
   </View>)
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 16,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-  },
-  header: {
-    fontSize: 32,
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-  },
-});
 
 export default DeviceItem;

@@ -1,6 +1,7 @@
 import { Text, View } from "react-native";
 import { Button } from "react-native";
 import DeviceItem from '../component/DeviceItem';
+import { useTailwind } from "tailwind-rn";
 import {
   StyleSheet,
   SafeAreaView,
@@ -54,9 +55,9 @@ const DATA = [
   },
 ];
 function DeviceScreen({ navigation }) {
+  const tailwind=useTailwind()
   return (
-    <View style={styles.container}>
-      <Text>aaaaaaa</Text>
+    <View style={tailwind('px-4')}>
       <SectionList
       sections={DATA}
       keyExtractor={(item, index) => item + index}
@@ -64,7 +65,7 @@ function DeviceScreen({ navigation }) {
         <DeviceItem device={item}/>
       )}
       renderSectionHeader={({section: {title}}) => (
-        <Text style={styles.header}>{title}</Text>
+        <Text style={tailwind('text-2xl py-5')}>{title}</Text>
       )}/>
     </View>
     // <View>
@@ -73,23 +74,5 @@ function DeviceScreen({ navigation }) {
     // </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 16,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-  },
-  header: {
-    fontSize: 32,
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-  },
-});
+// 
 export default DeviceScreen;
