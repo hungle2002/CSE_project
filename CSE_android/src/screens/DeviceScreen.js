@@ -43,6 +43,18 @@ const Motor =[
     des: 'LCD',
     key:"cs-ce-dadn.lcdmotor"
   },
+  {
+    des: 'LCD',
+    key:"cs-ce-dadn.lcdmotor"
+  },
+  {
+    des: 'LCD',
+    key:"cs-ce-dadn.lcdmotor"
+  },
+  {
+    des: 'LCD',
+    key:"cs-ce-dadn.lcdmotor"
+  },
 ];
 const DATA = [
   {
@@ -68,10 +80,6 @@ function DeviceScreen({ navigation }) {
         <Text style={tailwind('text-2xl py-5')}>{title}</Text>
       )}/>
     </View>
-    // <View>
-    //   <Text>This is DeviceScreen22 </Text>
-    //   <DeviceBoard/>
-    // </View>
   );
 }
 // 
