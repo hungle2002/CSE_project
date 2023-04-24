@@ -3,14 +3,22 @@ import { View, Text } from "react-native";
 import { RadioButton } from "react-native-paper";
 import ModeSettingContext from "../context/modeSettingContext";
 
-const RadioButtonComponent = ({ listChoice }) => {
+const RadioButtonComponent = ({ listChoice, mode, type }) => {
   const { modeSetting, setModeSetting } = React.useContext(ModeSettingContext);
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(modeSetting[mode][type]);
+
+  const handleChange = (value) => {
+    setValue(value);
+    const tmp = { ...modeSetting };
+    tmp[mode][type] = value;
+    setModeSetting(tmp);
+    console.log("Save behaviour setting")
+  };
 
   return (
     <View>
       <RadioButton.Group
-        onValueChange={(newValue) => setValue(newValue)}
+        onValueChange={(newValue) => handleChange(newValue)}
         value={value}
       >
         {listChoice.map((e, index) => (

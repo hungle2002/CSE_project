@@ -13,21 +13,49 @@ const modes = [
   },
 ];
 
-export const DefaultModeSetting = {
-  mode: 1,
-  safeAction: 1,
-  schedStart: "06:00",
-  schedEnd: "06:01",
-  safeMin: 80,
-  safeMax: 220,
-  autoMin: 100,
-  autoMax: 200,
-  manualMin: 90,
-  manualMax: 210,
-  status: 258,
-};
+export const DefaultModeSetting = [
+  {
+    mode: 0,
+    safeAction: 1,
+    schedStart: "06:00",
+    schedEnd: "06:01",
+    safeMin: 20,
+    safeMax: 45,
+    autoMin: 30,
+    autoMax: 40,
+    manualMin: 20,
+    manualMax: 25,
+    status: 258,
+  },
+  {
+    mode: 1,
+    safeAction: 2,
+    autoMin: 50,
+    autoMax: 70,
+    schedStart: "06:00",
+    schedEnd: "18:00",
+    safeMin: 45,
+    safeMax: 75,
+    manualMin: 35,
+    manualMax: 60,
+    status: 50,
+  },
+  {
+    mode: 2,
+    safeAction: 0,
+    autoMin: 50,
+    autoMax: 70,
+    schedStart: "06:00",
+    schedEnd: "18:00",
+    safeMin: 45,
+    safeMax: 75,
+    manualMin: 35,
+    manualMax: 50,
+    status: 50,
+  },
+];
 
-export const ModeChoices = ['Automatic', 'Scheduled', 'Manual']
-export const SafeModeChoices = ['Take action', 'Alert', 'Ignore']
+export const ModeChoices = ["Automatic", "Scheduled", "Manual"];
+export const SafeModeChoices = ["Take action", "Alert", "Ignore"];
 
 export default modes;

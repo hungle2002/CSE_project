@@ -1,5 +1,6 @@
 import { Text, View } from "react-native";
 import { Button } from "react-native";
+import TimeButton from "../component/TimeButton";
 
 function SercurityScreen() {
   return (
