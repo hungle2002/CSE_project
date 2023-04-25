@@ -18,7 +18,7 @@ export const DefaultModeSetting = [
     mode: 0,
     safeAction: 1,
     schedStart: "06:00",
-    schedEnd: "06:01",
+    schedEnd: "11:30",
     safeMin: 20,
     safeMax: 45,
     autoMin: 30,
