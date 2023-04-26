@@ -1,4 +1,10 @@
-import { View, ScrollView, Text, ActivityIndicator } from "react-native";
+import {
+  View,
+  ScrollView,
+  Text,
+  ActivityIndicator,
+  RefreshControl,
+} from "react-native";
 import { useTailwind } from "tailwind-rn";
 import React from "react";
 import { Button } from "react-native-paper";
@@ -12,24 +18,31 @@ import { search, update } from "../apiServices/searchService";
 
 function ModeScreen({ navigation }) {
   const tailwind = useTailwind();
+  // save current setting state
   const [modeSetting, setModeSetting] = React.useState(DefaultModeSetting);
+  // save state for loading
   const [isLoading, setIsLoading] = React.useState(0);
+  // save state for refresh button
+  const [refreshing, setRefreshing] = React.useState(false);
+  // save rerender
+  const [rerender, setrerender] = React.useState(1);
+  // function to update latest data
+  const fetchAPI = React.useCallback(async () => {
+    try {
+      const response = await search({
+        path: "condition",
+      });
+      setModeSetting(response.condition);
+    } catch (error) {
+      console.log("error");
+    }
+  }, []);
 
   React.useEffect(() => {
-    const fetchAPI = async () => {
-      try {
-        const response = await search({
-          path: "condition",
-        });
-        setModeSetting(response.condition);
-        console.log(modeSetting);
-      } catch (error) {
-        console.log("error");
-      }
-    };
     fetchAPI();
   }, []);
 
+  // function to handle saving settings state
   const handleSaveSetting = () => {
     setIsLoading(1);
     const updateAPI = async () => {
@@ -54,13 +67,30 @@ function ModeScreen({ navigation }) {
     console.log(modeSetting);
   };
 
+  // function to handle refresh
+  const onRefresh = React.useCallback(async () => {
+    setRefreshing(true);
+    await fetchAPI();
+    setRefreshing(false);
+  }, []);
+
   return (
     // <ModeSettingContext.Provider value={{ modeSetting, setModeSetting }}>
     <View style={tailwind(" w-[100%] h-[100%]")}>
       <ModeSettingContext.Provider value={{ modeSetting, setModeSetting }}>
-        <ScrollView style={tailwind("flex flex-col ml-5 w-[100%]")}>
+        <ScrollView
+          style={tailwind("flex flex-col ml-5 w-[100%]")}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        >
           {config.conditions.map((condition, index) => (
-            <ModeSettingBlock key={index} condition={condition} mode={index} />
+            <ModeSettingBlock
+              key={index}
+              condition={condition}
+              mode={index}
+              rerender={rerender}
+            />
           ))}
         </ScrollView>
       </ModeSettingContext.Provider>

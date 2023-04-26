@@ -9,7 +9,7 @@ const axios_1 = __importDefault(require("axios"));
 const request = axios_1.default.create({
     baseURL: 'https://io.adafruit.com/api/v2/heriota/',
     headers: {
-        'X-AIO-KEY': 'aio_pilK91gqXxZRLoo7T7fIrdYtlMAW',
+        'X-AIO-KEY': 'aio_cHNq97kjb0gf8QBATKvQZHwzIqP5',
     },
 });
 async function getFeed(path, options = undefined) {

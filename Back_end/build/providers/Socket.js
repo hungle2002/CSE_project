@@ -89,5 +89,18 @@ class Socket {
             console.log('No socket create!!');
         }
     }
+    update_all_settings(data) {
+        const notification = {
+            title: 'UPDATE settings',
+            message: 'Update all settings from android application',
+        };
+        if (this.io) {
+            this.io.emit('notification', notification);
+            this.io.emit('update_all_settings', data);
+        }
+        else {
+            console.log('No socket create!!');
+        }
+    }
 }
 exports.default = Socket.getConditionRepository();

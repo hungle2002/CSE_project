@@ -1,9 +1,9 @@
 import axios from "axios";
+import { ipLAN } from "../config/ipCOnfig";
 
 const request = axios.create({
-  baseURL: "http://192.168.31.160:3000/api/v1/",
+  baseURL: `http://${ipLAN}:3000/api/v1/`,
 });
-
 export const get = async (path, options) => {
   const response = await request.get(path, options);
   return response;

@@ -38,6 +38,29 @@ class SettingsRepository {
       console.log(error);
     }
   }
+  public updateAllSettingsInfo(updatedData: any) {
+    try {
+      fs.writeFileSync(
+        path.join(__dirname, '../../src/config/modeSetting/lighting.json'),
+        JSON.stringify(updatedData[1], undefined, 2),
+        {encoding: 'utf-8'}
+      );
+      fs.writeFileSync(
+        path.join(__dirname, '../../src/config/modeSetting/soilMoisture.json'),
+        JSON.stringify(updatedData[2], undefined, 2),
+        {encoding: 'utf-8'}
+      );
+      fs.writeFileSync(
+        path.join(__dirname, '../../src/config/modeSetting/temperature.json'),
+        JSON.stringify(updatedData[0], undefined, 2),
+        {encoding: 'utf-8'}
+      );
+
+      return updatedData;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default SettingsRepository.getSettingsRepository();

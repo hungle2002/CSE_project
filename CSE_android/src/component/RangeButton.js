@@ -7,8 +7,6 @@ import * as React from "react";
 function RangeButton({ unit, mode, isSafe }) {
   const tailwind = useTailwind();
   const { modeSetting, setModeSetting } = React.useContext(ModeSettingContext);
-
-  // console.log(modeSetting[mode]);
   let minType = "autoMin";
   let maxType = "autoMax";
   if (isSafe == 1) {
@@ -25,7 +23,6 @@ function RangeButton({ unit, mode, isSafe }) {
   const [botRangeValue, setBotRangeValue] = React.useState(
     modeSetting[mode][minType]
   );
-
 
   const handleSaveSetting = () => {
     const tmp = {

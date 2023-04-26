@@ -17,6 +17,13 @@ class SettingsController {
     Socket.update_settings(type);
     res.status(status.OK).json(newSettingsInfo);
   }
+
+  public static async updateAllSettingsInfo(req: Request, res: Response) {
+    const newSettingsInfo = req.body;
+    SettingsRepository.updateAllSettingsInfo(newSettingsInfo);
+    Socket.update_all_settings(newSettingsInfo);
+    res.status(status.OK).json(newSettingsInfo);
+  }
 }
 
 export default SettingsController;

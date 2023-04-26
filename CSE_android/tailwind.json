@@ -155,6 +155,11 @@
 			"height": 16
 		}
 	},
+	"h-[700px]": {
+		"style": {
+			"height": 700
+		}
+	},
 	"h-[900px]": {
 		"style": {
 			"height": 900
