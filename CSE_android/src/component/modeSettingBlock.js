@@ -1,13 +1,20 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { useTailwind } from "tailwind-rn";
-import { RadioButton } from "react-native-paper";
 import * as React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { ModeChoices, SafeModeChoices } from "../config/mode";
+import RadioButtonComponent from "./RadioButtonComponent";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import ModeSettingContext from "../context/modeSettingContext";
+import RangeButton from "./RangeButton";
+import TimeButton from "./TimeButton";
 
-function ModeSettingBlock({ condition }) {
+function ModeSettingBlock({ condition, mode }) {
+  const { modeSetting, setModeSetting } = React.useContext(ModeSettingContext);
+  const [show, setShow] = React.useState(0);
   const tailwind = useTailwind();
-  const [checked, setChecked] = React.useState("first");
   return (
-    <View style={tailwind("text-xl w-[100%] ")}>
+    <View style={tailwind("text-xl w-[90%] ")}>
       <View
         style={{
           backgroundColor: condition.color,
@@ -15,29 +22,101 @@ function ModeSettingBlock({ condition }) {
         }}
       >
         <View style={tailwind("px-2 ")}>
-          <View>
-            <Text style={tailwind("text-xl mx-2 mt-2 font-semibold")}>
-              {condition.title}
-            </Text>
+          <View
+            style={tailwind("flex flex-row justify-between items-center pr-2")}
+          >
+            <TouchableOpacity onPress={() => setShow(1)}>
+              <Text style={tailwind("text-xl mx-2 mt-2 font-semibold")}>
+                {condition.title}
+              </Text>
+            </TouchableOpacity>
+            {show == 0 && (
+              <TouchableOpacity
+                style={tailwind("w-[18px] h-[16px]")}
+                onPress={() => setShow(1)}
+              >
+                <FontAwesomeIcon icon={faChevronDown} size={20} />
+              </TouchableOpacity>
+            )}
+            {show == 1 && (
+              <TouchableOpacity
+                style={tailwind("w-[18px] h-[16px]")}
+                onPress={() => setShow(0)}
+              >
+                <FontAwesomeIcon icon={faChevronUp} size={20} />
+              </TouchableOpacity>
+            )}
           </View>
-          <View style={tailwind("bg-white mx-2 mt-2 px-4 py-2")}>
-            <Text style={tailwind("font-semibold")}>Mode</Text>
-            <RadioButton
-              value="first"
-              status={checked === "first" ? "checked" : "unchecked"}
-              onPress={() => setChecked("first")}
-            />
-            <RadioButton
-              value="second"
-              status={checked === "second" ? "checked" : "unchecked"}
-              onPress={() => setChecked("second")}
-            />
-          </View>
+          {show == 1 && (
+            <View>
+              <View style={tailwind("bg-white m-2 px-4 py-2")}>
+                <Text style={tailwind("font-extrabold text-lg")}>Mode</Text>
+                <RadioButtonComponent
+                  listChoice={ModeChoices}
+                  mode={mode}
+                  type="mode"
+                />
+              </View>
+
+              {modeSetting[mode]["mode"] == 0 && (
+                <View style={tailwind("bg-white m-2 px-4 py-2")}>
+                  <Text style={tailwind("font-extrabold text-lg")}>
+                    Normal range
+                  </Text>
+                  <View>
+                    <RangeButton unit={condition.unit} mode={mode} isSafe={0} />
+                  </View>
+                </View>
+              )}
+              {modeSetting[mode]["mode"] == 2 && (
+                <View style={tailwind("bg-white m-2 px-4 py-2")}>
+                  <Text style={tailwind("font-extrabold text-lg")}>
+                    Normal range
+                  </Text>
+                  <View>
+                    <RangeButton unit={condition.unit} mode={mode} isSafe={0} />
+                  </View>
+                </View>
+              )}
+              {modeSetting[mode]["mode"] == 1 && (
+                <View style={tailwind("bg-white m-2 px-4 py-2")}>
+                  <Text style={tailwind("font-extrabold text-lg mb-2")}>
+                    Turn on time
+                  </Text>
+                  <View
+                    style={tailwind("flex flex-row justify-between px-4 mb-3")}
+                  >
+                    <TimeButton type={0} mode={mode} />
+                    <TimeButton type={1} mode={mode} />
+                  </View>
+                </View>
+              )}
+
+              <View style={tailwind("bg-white m-2 px-4 py-2")}>
+                <Text style={tailwind("font-extrabold text-lg")}>
+                  Safe mode
+                </Text>
+                <RadioButtonComponent
+                  listChoice={SafeModeChoices}
+                  mode={mode}
+                  type="safeAction"
+                />
+              </View>
+
+              <View style={tailwind("bg-white m-2 px-4 py-2")}>
+                <Text style={tailwind("font-extrabold text-lg")}>
+                  Safe range
+                </Text>
+                <View>
+                  <RangeButton unit={condition.unit} mode={mode} isSafe={1} />
+                </View>
+              </View>
+            </View>
+          )}
         </View>
-        <View style={tailwind("h-4")}></View>
+        <View style={tailwind("h-2")}></View>
       </View>
-      <View style={tailwind("h-2 ")}></View>
-      <View></View>
+      <View style={tailwind("h-4")}></View>
     </View>
   );
 }

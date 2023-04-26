@@ -54,6 +54,16 @@ const Panel = ({ type }) => {
     setCurrentSettings(localSettings)
   });
 
+  socket.on("update_all_settings", (value) => {
+    const tmp =type === "temperature" ? value[0] : (
+      type === "lighting" ? value[1] : value[2]
+    ) ;
+    // save previous status of condition values
+      tmp["status"] = currentSettings["status"]
+    setCurrentSettings(tmp)
+    setNewSettings(tmp)
+  });
+
   var settingType = undefined;
   var measurementUnit = undefined;
   var icon = undefined;
@@ -107,6 +117,8 @@ const Panel = ({ type }) => {
           : "Take action"
       } when outside`;
       modeRange = `${currentSettings.manualMin} - ${currentSettings.manualMax}`;
+      break;
+    default:
       break;
   }
   if (currentSettings.status >= currentSettings.autoMin && currentSettings.status <= currentSettings.autoMax) {

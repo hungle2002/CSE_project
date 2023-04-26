@@ -136,3 +136,15 @@
   animation: spinner 1.5s linear infinite;
   font-size: 2.2rem;
 }
+
+.state-sensor-good{
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1bc5bd
+}
+
+.state-sensor-check{
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #f64e60
+}

@@ -76,8 +76,8 @@ function TableRow({ device, img }) {
           <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
         )}
           
-        { device.typ === 'Sensor' && state > 0 && <Button title="Good" primary small />}
-        { device.typ === 'Sensor' && state === 0 && <Button title="Check" warning small />}
+        { device.typ === 'Sensor' && state > 0 && <p className={cx("state-sensor-good")}>Good</p>}
+        { device.typ === 'Sensor' && state === 0 && <p className={cx("state-sensor-check")}>Check</p>}
       </div>
     </div>
   );

@@ -58,65 +58,69 @@ function TabNavigator() {
         },
 
         headerLeft: () => (
-          <View style={tailwind("w-[400px] h-[900px]")}>
-            {popupState === 1 && (
-              <View>
-                <View
-                  style={tailwind("bg-black w-full h-full opacity-10")}
-                ></View>
-                <View
-                  style={tailwind(
-                    "bg-white w-[300px] absolute right-3 top-[50px] rounded-xl"
-                  )}
-                >
+          <View>
+            {popupState == 1 && (
+              <View style={tailwind("w-[400px] h-[900px]")}>
+                <View>
+                  <View
+                    style={tailwind("bg-black w-full h-full opacity-10")}
+                  ></View>
                   <View
                     style={tailwind(
-                      "flex flex-row justify-between items-center py-3 px-4"
+                      "bg-white w-[300px] absolute right-3 top-[50px] rounded-xl"
                     )}
                   >
-                    <Text style={tailwind("text-black font-bold text-2xl")}>
-                      Notifications
-                    </Text>
-                    <TouchableOpacity onPress={() => setPopupState(0)}>
-                      <FontAwesomeIcon icon={faClose} size={25} />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={tailwind("bg-green-100")}>
-                    {notifications.map((notification, index) => (
-                      <View
-                        key={index}
-                        style={tailwind(
-                          "border-b py-2 mt-1 px-4 flex flex-row justify-between"
-                        )}
-                      >
-                        <View>
-                          <Text style={tailwind("text-lg")}>
-                            {notification.title}
-                          </Text>
-                          <View
-                            style={tailwind("flex flex-row items-center pl-2")}
-                          >
+                    <View
+                      style={tailwind(
+                        "flex flex-row justify-between items-center py-3 px-4"
+                      )}
+                    >
+                      <Text style={tailwind("text-black font-bold text-2xl")}>
+                        Notifications
+                      </Text>
+                      <TouchableOpacity onPress={() => setPopupState(0)}>
+                        <FontAwesomeIcon icon={faClose} size={25} />
+                      </TouchableOpacity>
+                    </View>
+                    <View style={tailwind("bg-green-100")}>
+                      {notifications.map((notification, index) => (
+                        <View
+                          key={index}
+                          style={tailwind(
+                            "border-b py-2 mt-1 px-4 flex flex-row justify-between"
+                          )}
+                        >
+                          <View>
+                            <Text style={tailwind("text-lg")}>
+                              {notification.title}
+                            </Text>
+                            <View
+                              style={tailwind(
+                                "flex flex-row items-center pl-2"
+                              )}
+                            >
+                              <FontAwesomeIcon
+                                icon={faClock}
+                                size={15}
+                                color="green"
+                              />
+                              <Text
+                                style={tailwind("text-xs text-zinc-400 pl-1")}
+                              >
+                                {notification.time} hours ago
+                              </Text>
+                            </View>
+                          </View>
+                          <View>
                             <FontAwesomeIcon
-                              icon={faClock}
-                              size={15}
+                              icon={faCircleInfo}
+                              size={30}
                               color="green"
                             />
-                            <Text
-                              style={tailwind("text-xs text-zinc-400 pl-1")}
-                            >
-                              {notification.time} hours ago
-                            </Text>
                           </View>
                         </View>
-                        <View>
-                          <FontAwesomeIcon
-                            icon={faCircleInfo}
-                            size={30}
-                            color="green"
-                          />
-                        </View>
-                      </View>
-                    ))}
+                      ))}
+                    </View>
                   </View>
                 </View>
               </View>
