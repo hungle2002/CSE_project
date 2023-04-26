@@ -7,10 +7,25 @@ import {
   faBuildingShield
 } from "@fortawesome/free-solid-svg-icons"
 import DetectionBox from "../component/DetectionBox";
+import { create } from "../apiServices/searchService";
+
+
 function SercurityScreen() {
   const tailwind=useTailwind()
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const toggleSwitch = async () =>{
+    try {
+      setIsEnabled(previousState => !previousState);
+      console.log('log Message', !isEnabled);
+      const update_value = !isEnabled;
+      await create({
+        path: `device/cs-ce-dadn.coolingmotor/state`,
+        data: { value: update_value },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <View style={tailwind('p-4')}>
       <View style={tailwind('flex flex-row items-center')}>
@@ -28,7 +43,7 @@ function SercurityScreen() {
         />
         <Text style={tailwind('text-lg pl-4 text-slate-500 w-[70px]')}>{isEnabled ? 'ON' : 'OFF'}</Text>
       </View>
-      <DetectionBox/>
+      {/* <DetectionBox/> */}
       
     </View>
   );
