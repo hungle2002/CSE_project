@@ -1,5 +1,5 @@
 // time for temperature, light, soil moisture : 10s
-export const conditionReset = 3000;
+export const conditionReset = 10000;
 
 // time for checking condition : 1s
 export const autoIrCircle = 3000;

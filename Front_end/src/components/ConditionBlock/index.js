@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
 import classNames from "classnames/bind";
-import { useContext, useEffect, useState } from "react";
 import styles from "./ConditionBlock.module.scss";
 import IconAndNum from "../IconAndNum";
 import config from "../../config";
-import { SocketContext } from "../../context/socket";
 
 const cx = classNames.bind(styles);
 
@@ -37,7 +35,7 @@ function ConditionBlock({ item }) {
   return (
     <div
       className={cx("wrapper")}
-      style={{ backgroundColor: modeSetting.color }}
+      style={{ backgroundColor:item.condition.color }}
     >
       <div className={cx("left-content")}>
         <IconAndNum

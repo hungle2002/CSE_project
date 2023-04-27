@@ -19,5 +19,11 @@ class SettingsController {
         Socket_1.default.update_settings(type);
         res.status(http_status_1.default.OK).json(newSettingsInfo);
     }
+    static async updateAllSettingsInfo(req, res) {
+        const newSettingsInfo = req.body;
+        SettingsRepository_1.default.updateAllSettingsInfo(newSettingsInfo);
+        Socket_1.default.update_all_settings(newSettingsInfo);
+        res.status(http_status_1.default.OK).json(newSettingsInfo);
+    }
 }
 exports.default = SettingsController;

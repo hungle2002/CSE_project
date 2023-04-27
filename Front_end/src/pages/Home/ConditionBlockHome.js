@@ -36,15 +36,7 @@ function ConditionBlockHome({ className }) {
 
   socket.on("update_all_settings", (value) => {
     console.log("This is all settings for update!");
-    // console.log(conditionResult);
     setConditionResult([value[0], value[1], value[2]]);
-    // const tmp =type === "temperature" ? value[0] : (
-    //   type === "lighting" ? value[1] : value[2]
-    // ) ;
-    // // save previous status of condition values
-    //   tmp["status"] = currentSettings["status"]
-    // setCurrentSettings(tmp)
-    // setNewSettings(tmp)
   });
 
   const conditionItem = [

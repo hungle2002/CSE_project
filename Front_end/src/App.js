@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { puplicRoutes } from "./routes";
 import DefaultLayout from "./Layouts";
 import { socket, SocketContext } from "./context/socket";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import pushNotify from "./utils/notify";
 
 function App() {
