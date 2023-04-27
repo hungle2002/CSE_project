@@ -56,6 +56,6 @@ export const DefaultModeSetting = [
 ];
 
 export const ModeChoices = ["Automatic", "Scheduled", "Manual"];
-export const SafeModeChoices = ["Take action", "Alert", "Ignore"];
+export const SafeModeChoices = ["Ignore", "Alert", "Take action"];
 
 export default modes;

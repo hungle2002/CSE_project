@@ -1,11 +1,11 @@
 // axios using
 import axios from 'axios';
-import {DrawFeedValue, FeedUpdateValue} from '../interfaces/ada';
+import { DrawFeedValue, FeedUpdateValue } from '../interfaces/ada';
 
 const request = axios.create({
   baseURL: 'https://io.adafruit.com/api/v2/heriota/',
   headers: {
-    'X-AIO-KEY': 'aio_cHNq97kjb0gf8QBATKvQZHwzIqP5',
+    'X-AIO-KEY': 'aio_XpWA36aqknAiXCJ8k8LI1dY4F1xA',
   },
 });
 
@@ -33,4 +33,4 @@ async function patch(path: string, data: undefined | Object, options: undefined 
   return response.data;
 }
 
-export {getFeed, getAllFeed, post, patch};
+export { getFeed, getAllFeed, post, patch };
