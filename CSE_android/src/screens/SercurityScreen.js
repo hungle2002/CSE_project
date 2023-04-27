@@ -1,31 +1,73 @@
-import { Text, View, Switch } from "react-native";
+import { Text, View, Switch,TouchableOpacity } from "react-native";
 import React ,{useState} from "react"; 
-
 import { useTailwind } from "tailwind-rn";
+import Voice from '@react-native-voice/voice';
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faBuildingShield
 } from "@fortawesome/free-solid-svg-icons"
 import DetectionBox from "../component/DetectionBox";
 import { create } from "../apiServices/searchService";
-
-
 function SercurityScreen() {
+  //////////////////////////////////////////////////////////////////////////
+  const [result, setResult] =React.useState('aaaa')
+  const [isRecord, setRec]=React.useState(false)
+  Voice.onSpeechStart = () => setRec(true)
+  Voice.onSpeechEnd = () => setRec(false)
+  Voice.onSpeechResults = result => setResult(result.value[0]) 
+  //////////
+  const startRec = async () => {
+    if(Voice){
+      try {
+        console.log('start')
+        await Voice.start('en-US')
+        console.log('olalala')
+      }
+      catch(error) {
+        console.log(error);
+      }
+    }
+  }
+  const stopRec = async () => {
+    try {
+      console.log('end')
+      await Voice.stop()
+    }
+    catch(error) {
+      console.log(error);
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////
   const tailwind=useTailwind()
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = async () =>{
+  // const toggleSwitch = async () =>{
+  //   try {
+  //     setIsEnabled(previousState => !previousState);
+  //     console.log('log Message', !isEnabled);
+  //     const update_value = !isEnabled;
+  //     await create({
+  //       path: `device/cs-ce-dadn.coolingmotor/state`,
+  //       data: { value: update_value },
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  const toggleSwitch = () =>setIsEnabled(previousState => !previousState);
+  
+  const handleButton = async ()=>{
     try {
-      setIsEnabled(previousState => !previousState);
-      console.log('log Message', !isEnabled);
-      const update_value = !isEnabled;
-      await create({
-        path: `device/cs-ce-dadn.coolingmotor/state`,
-        data: { value: update_value },
-      });
+      console.log("aaaaa");
+        await create({
+          path: `device/cs-ce-dadn.coolingmotor/state`,
+          data: { value: 1 },
+        });
     } catch (error) {
       console.log(error);
     }
   }
+    
   return (
     <View style={tailwind('p-4')}>
       <View style={tailwind('flex flex-row items-center')}>
@@ -43,7 +85,12 @@ function SercurityScreen() {
         />
         <Text style={tailwind('text-lg pl-4 text-slate-500 w-[70px]')}>{isEnabled ? 'ON' : 'OFF'}</Text>
       </View>
-      {/* <DetectionBox/> */}
+      {/* <TouchableOpacity style={tailwind('w-[70px] h-[40px] bg-cyan-100 justify-center items-center rounded-full')} onPress={() => isRecord? stopRec():startRec()}>
+        <Text style={tailwind('text-teal-500 text-lg')}>Good</Text>
+      </TouchableOpacity>
+      <Text >{isRecord? 'isRecord':'Not Record'}</Text>
+      <Text >{result}</Text> */}
+      <DetectionBox/>
       
     </View>
   );
