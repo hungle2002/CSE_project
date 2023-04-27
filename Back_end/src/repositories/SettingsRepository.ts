@@ -33,22 +33,18 @@ class SettingsRepository {
   }
   public updateAllSettingsInfo(updatedData: any) {
     try {
-      fs.writeFileSync(
+      writeFileModeSetting(
         path.join(__dirname, '../../src/config/modeSetting/lighting.json'),
-        JSON.stringify(updatedData[1], undefined, 2),
-        {encoding: 'utf-8'}
+        JSON.stringify(updatedData[1], undefined, 2)
       );
-      fs.writeFileSync(
+      writeFileModeSetting(
         path.join(__dirname, '../../src/config/modeSetting/soilMoisture.json'),
-        JSON.stringify(updatedData[2], undefined, 2),
-        {encoding: 'utf-8'}
+        JSON.stringify(updatedData[2], undefined, 2)
       );
-      fs.writeFileSync(
+      writeFileModeSetting(
         path.join(__dirname, '../../src/config/modeSetting/temperature.json'),
-        JSON.stringify(updatedData[0], undefined, 2),
-        {encoding: 'utf-8'}
+        JSON.stringify(updatedData[0], undefined, 2)
       );
-
       return updatedData;
     } catch (error) {
       console.log(error);

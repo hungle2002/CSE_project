@@ -5,7 +5,7 @@ import {DrawFeedValue, FeedUpdateValue} from '../interfaces/ada';
 const request = axios.create({
   baseURL: 'https://io.adafruit.com/api/v2/heriota/',
   headers: {
-    'X-AIO-KEY': 'aio_cHNq97kjb0gf8QBATKvQZHwzIqP5',
+    'X-AIO-KEY': 'aio_hPtq21rdqJpfGWltlb5DnC4LZBch',
   },
 });
 
