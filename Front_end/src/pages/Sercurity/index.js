@@ -3,11 +3,13 @@ import styles from "./sercurity.module.scss";
 import classNames from "classnames/bind";
 import Switch from "../../components/ToggleSwitch"
 import StateLine from "../../components/StateLine"
+import Voice from'../../components/Voice';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrashCan,
   faDownload
 } from "@fortawesome/free-solid-svg-icons";
+
 const cx = classNames.bind(styles);
 
 function Security() {
@@ -81,7 +83,7 @@ function Security() {
       Message: 'haha'
     },
     {
-      Date: '17/06/2023',
+      Date: "17/06/2023",
       Message: 'huhu'
     },
     {
@@ -118,6 +120,7 @@ function Security() {
           isOn={value3}
           handleToggle={() => setValue3(!value3)}
           type={1} no={3} />
+        <Voice/>
       </div>
       <div className={cx('just-a-line')}><hr></hr></div>
       <div className={cx('right-side')}>

@@ -3,6 +3,7 @@ module.exports = {
     "./src/**.{js,jsx}",
     "./src/component/**.{js,jsx}",
     "./src/screens/**.{js,jsx}",
+    "./src/component/DeviceItem/**.{js,jsx}"
   ],
   theme: {
     extend: {},
