@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addNewActivityLog = void 0;
+/* eslint-disable prettier/prettier */
 const ActivityLogRepository_1 = __importDefault(require("../repositories/ActivityLogRepository"));
 const readFileJson_1 = require("../utils/readFileJson");
 const path_1 = __importDefault(require("path"));

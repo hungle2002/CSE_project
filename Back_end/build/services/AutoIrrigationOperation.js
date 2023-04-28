@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.autoIrrigationStart = void 0;
+/* eslint-disable prettier/prettier */
 const AdaAPI_1 = __importDefault(require("../AdaAPI"));
 const SettingsRepository_1 = __importDefault(require("../repositories/SettingsRepository"));
 const deviceKeys_1 = __importDefault(require("../config/deviceKeys"));

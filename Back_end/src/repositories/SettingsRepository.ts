@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 
 import path from 'path';
-import {readFileModeSetting, writeFileModeSetting} from '../utils/readFileJson';
+import { readFileModeSetting, writeFileModeSetting } from '../utils/readFileJson';
 
 class SettingsRepository {
   // implement singleton pattern
   private static instance: SettingsRepository;
-  private constructor() {}
+  private constructor() { }
   public static getSettingsRepository(): SettingsRepository {
     if (!SettingsRepository.instance) {
       return new SettingsRepository();
@@ -25,7 +25,7 @@ class SettingsRepository {
 
   public updateSettingsInfo(type: string, updatedData: any) {
     try {
-      updatedData= writeFileModeSetting(path.join(__dirname, `../../src/config/modeSetting/${type}.json`),updatedData)
+      updatedData = writeFileModeSetting(path.join(__dirname, `../../src/config/modeSetting/${type}.json`), JSON.stringify(updatedData, undefined, 2))
       return updatedData;
     } catch (error) {
       console.log(error);
