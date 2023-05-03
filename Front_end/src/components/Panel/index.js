@@ -101,41 +101,70 @@ const Panel = ({ type }) => {
       mode = "AUTOMATIC";
       modeText = "Keep between";
       modeRange = `${currentSettings.autoMin} - ${currentSettings.autoMax}`;
+      if (currentSettings.status >= currentSettings.autoMin && currentSettings.status <= currentSettings.autoMax) {
+        statusText = "Good";
+      }
+      else if (currentSettings.status < currentSettings.autoMin) {
+        statusText = "Low";
+      }
+      else {
+        statusText = "High";
+      }
       break;
     case 1:
       mode = "SCHEDULED";
       modeText = "On from";
       modeRange = currentSettings.schedStart + " - " + currentSettings.schedEnd;
+      if (currentSettings.status >= currentSettings.safeMin && currentSettings.status <= currentSettings.safeMax) {
+        statusText = "Good";
+      }
+      else if (currentSettings.status < currentSettings.safeMin) {
+        statusText = "Low";
+      }
+      else {
+        statusText = "High";
+      }
       break;
     case 2:
       mode = "MANUAL";
       modeText = `${
-        currentSettings.safeAction === 1
+        currentSettings.safeAction === 0
           ? "Ignore"
-          : currentSettings.safeAction === 2
+          : currentSettings.safeAction === 1
           ? "Alert"
           : "Take action"
       } when outside`;
       modeRange = `${currentSettings.manualMin} - ${currentSettings.manualMax}`;
+      if (currentSettings.status >= currentSettings.manualMin && currentSettings.status <= currentSettings.manualMax) {
+        statusText = "Good";
+      }
+      else if (currentSettings.status < currentSettings.manualMin) {
+        statusText = "Low";
+      }
+      else {
+        statusText = "High";
+      }
       break;
     default:
+      if (currentSettings.status >= currentSettings.autoMin && currentSettings.status <= currentSettings.autoMax) {
+        statusText = "Good";
+      }
+      else if (currentSettings.status < currentSettings.autoMin) {
+        statusText = "Low";
+      }
+      else {
+        statusText = "High";
+      }
       break;
   }
-  if (currentSettings.status >= currentSettings.autoMin && currentSettings.status <= currentSettings.autoMax) {
-    statusText = "Good";
-  }
-  else if (currentSettings.status < currentSettings.autoMin) {
-    statusText = "Low";
-  }
-  else {
-    statusText = "High";
-  }
+
   const displayInfo = {
     settingType, measurementUnit, icon, modeText, mode, modeRange, backgroundColor, statusText
   }
 
   const handleSave = (e) => {
     setCurrentSettings({...newSettings})
+    console.log(newSettings);
     const updateAPI = async () => {
       try {
         await update({

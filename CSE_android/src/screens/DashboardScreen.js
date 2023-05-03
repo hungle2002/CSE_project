@@ -212,7 +212,7 @@ function DashboardScreen({ navigation }) {
                     borderRadius: 20,
                     borderWidth: 1,
                     borderColor: getStatusDisplay(
-                      item.value,
+                      conditionValue[index],
                       item.min,
                       item.max
                     ).color,
@@ -225,11 +225,20 @@ function DashboardScreen({ navigation }) {
                     style={{
                       width: "100%",
                       textAlign: "center",
-                      color: getStatusDisplay(item.value, item.min, item.max)
-                        .color,
+                      color: getStatusDisplay(
+                        conditionValue[index],
+                        item.min,
+                        item.max
+                      ).color,
                     }}
                   >
-                    {getStatusDisplay(item.value, item.min, item.max).text}
+                    {
+                      getStatusDisplay(
+                        conditionValue[index],
+                        item.min,
+                        item.max
+                      ).text
+                    }
                   </Text>
                 </View>
               </View>
