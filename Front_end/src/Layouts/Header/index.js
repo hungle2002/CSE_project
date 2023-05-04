@@ -1,6 +1,7 @@
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import images from "../../assets/images";
+import Voice from'../../components/Voice';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseChimneyWindow,
@@ -19,6 +20,7 @@ function Header({ title }) {
       </div>
 
       <div className={cx("action")}>
+        <Voice/>
         <SearchButton />
         <button className={cx("alert")}>
           <FontAwesomeIcon className={cx("bell-icon")} icon={faBell} />
