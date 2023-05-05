@@ -1,9 +1,9 @@
 "use strict";
+/* eslint-disable prettier/prettier */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const readFileJson_1 = require("../utils/readFileJson");
 class SettingsRepository {
@@ -17,9 +17,6 @@ class SettingsRepository {
     getSettingsInfo(type) {
         try {
             const settingsData = (0, readFileJson_1.readFileModeSetting)(path_1.default.join(__dirname, `../../src/config/modeSetting/${type}.json`));
-            // const settingsData = JSON.parse(
-            //   fs.readFileSync(path.join(__dirname, `../json/${type}.json`), {encoding: 'utf-8'})
-            // );
             return settingsData;
         }
         catch (error) {
@@ -28,7 +25,7 @@ class SettingsRepository {
     }
     updateSettingsInfo(type, updatedData) {
         try {
-            fs_1.default.writeFileSync(path_1.default.join(__dirname, `../../src/config/modeSetting/${type}.json`), JSON.stringify(updatedData, undefined, 2), { encoding: 'utf-8' });
+            updatedData = (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, `../../src/config/modeSetting/${type}.json`), updatedData);
             return updatedData;
         }
         catch (error) {
@@ -37,9 +34,9 @@ class SettingsRepository {
     }
     updateAllSettingsInfo(updatedData) {
         try {
-            fs_1.default.writeFileSync(path_1.default.join(__dirname, '../../src/config/modeSetting/lighting.json'), JSON.stringify(updatedData[1], undefined, 2), { encoding: 'utf-8' });
-            fs_1.default.writeFileSync(path_1.default.join(__dirname, '../../src/config/modeSetting/soilMoisture.json'), JSON.stringify(updatedData[2], undefined, 2), { encoding: 'utf-8' });
-            fs_1.default.writeFileSync(path_1.default.join(__dirname, '../../src/config/modeSetting/temperature.json'), JSON.stringify(updatedData[0], undefined, 2), { encoding: 'utf-8' });
+            (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/lighting.json'), JSON.stringify(updatedData[1], undefined, 2));
+            (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/soilMoisture.json'), JSON.stringify(updatedData[2], undefined, 2));
+            (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/temperature.json'), JSON.stringify(updatedData[0], undefined, 2));
             return updatedData;
         }
         catch (error) {

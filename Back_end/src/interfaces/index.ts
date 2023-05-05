@@ -6,3 +6,4 @@ export {default as serverRecord} from './record';
 export {default as numberID} from './numberID';
 export {FeedValue, DrawFeedValue, FeedUpdateValue} from './ada';
 export {default as Error} from './error';
+export {default as UserInfo} from './user';
