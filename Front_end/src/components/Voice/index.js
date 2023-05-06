@@ -7,8 +7,9 @@ import {
   faMicrophone
 } from "@fortawesome/free-solid-svg-icons";
 import { turnOnDevice, turnOffDevice} from './command';
+import Button from '../deviceTable/Button';
 const cx = classNames.bind(styles);
-function Voice(){
+function Voice( {closeModel}){
     const commands = [
         {
             command:'turn on *',
@@ -32,17 +33,21 @@ function Voice(){
     }
     
     return (
-        <div>
-            <FontAwesomeIcon
-            className={cx("icon")}
-            icon={faMicrophone}
-            style={listening?{ color: "#4979D1" }: {color:"#000000"}}/>
-            <p>Microphone: {listening ? 'on' : 'off'}</p>
+        <div className={cx("wrapper")}>
+        <p className={cx("close-button")} onClick={() => closeModel(0)}>X</p>
+            <div className={cx("micro")}>                    
+                <FontAwesomeIcon
+                        className={cx("icon")}
+                        icon={faMicrophone}
+                        style={listening?{ color: "#4979D1"}: {color:"#000000"}}/></div>
+            <p className={cx("header")}>Microphone {listening ? 'on' : 'off'}</p>
+
+            {transcript? <p className={cx("content")}>{transcript}</p> : <p className={cx("content")}>Say something ...</p>}
+
             {listening?
-            <button onClick={SpeechRecognition.stopListening}>Stop</button>:
-            <button onClick={SpeechRecognition.startListening}>Start</button>
+                <Button title='Stop' small danger onClick={SpeechRecognition.stopListening}/>:
+            <Button title='Start' small primary onClick={SpeechRecognition.startListening}/>
             }
-            <p>{transcript}</p>
             
         </div>
     );

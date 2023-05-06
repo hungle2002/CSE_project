@@ -1,7 +1,6 @@
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import images from "../../assets/images";
-import Voice from'../../components/Voice';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseChimneyWindow,
@@ -12,6 +11,12 @@ import SearchButton from "../../components/SearchButton";
 const cx = classNames.bind(styles);
 
 function Header({ title }) {
+
+  // open new window for plant detection
+  const handlePlant = () => {
+    window.open('http://127.0.0.1:5000/webcam', '_blank');
+  };
+
   return (
     <aside className={cx("wrapper")}>
       <div className={cx("title")}>
@@ -20,7 +25,7 @@ function Header({ title }) {
       </div>
 
       <div className={cx("action")}>
-        <Voice/>
+        <img className={cx("logo")} src={images.plantDisease} alt="plant disease" onClick={handlePlant}/>
         <SearchButton />
         <button className={cx("alert")}>
           <FontAwesomeIcon className={cx("bell-icon")} icon={faBell} />

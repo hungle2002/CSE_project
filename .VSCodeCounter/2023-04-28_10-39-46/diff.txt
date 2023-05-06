@@ -1,0 +1,252 @@
+Date : 2023-04-28 10:39:46
+Directory : d:\HCMUT\HK222\CSE_project\CSE_android
+Total : 170 files,  31414 codes, -112 comments, 1223 blanks, all 32525 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |         15 |     23,714 |         15 |         -1 |     23,728 |
+| Log                |          1 |      8,125 |          0 |      1,245 |      9,370 |
+| CSS                |          2 |        393 |          0 |        120 |        513 |
+| JavaScript         |         95 |        275 |          9 |         72 |        356 |
+| XML                |          3 |         23 |          0 |          0 |         23 |
+| JSON with Comments |          2 |        -14 |        -90 |        -10 |       -114 |
+| TypeScript         |         52 |     -1,102 |        -46 |       -203 |     -1,351 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                            | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                               |        170 |     31,414 |       -112 |      1,223 |     32,525 |
+| . (Files)                                                                       |         14 |     41,781 |         27 |      1,377 |     43,185 |
+| ..                                                                              |        124 |    -11,930 |       -182 |       -278 |    -12,390 |
+| ..\Back_end                                                                     |        124 |    -11,930 |       -182 |       -278 |    -12,390 |
+| ..\Back_end (Files)                                                             |          5 |     -9,420 |        -90 |        -14 |     -9,524 |
+| ..\Back_end\build                                                               |         62 |     -1,363 |        -46 |        -61 |     -1,470 |
+| ..\Back_end\build (Files)                                                       |          1 |        -44 |         -6 |         -1 |        -51 |
+| ..\Back_end\build\AdaAPI                                                        |          1 |        -22 |         -1 |         -1 |        -24 |
+| ..\Back_end\build\config                                                        |          6 |        -65 |         -4 |         -5 |        -74 |
+| ..\Back_end\build\config (Files)                                                |          3 |        -40 |         -4 |         -3 |        -47 |
+| ..\Back_end\build\config\modeSetting                                            |          3 |        -25 |          0 |         -2 |        -27 |
+| ..\Back_end\build\controllers                                                   |          5 |       -154 |        -13 |         -5 |       -172 |
+| ..\Back_end\build\db                                                            |          1 |        -19 |          0 |         -1 |        -20 |
+| ..\Back_end\build\errors                                                        |          5 |        -64 |          0 |         -5 |        -69 |
+| ..\Back_end\build\interfaces                                                    |         11 |        -22 |          0 |        -11 |        -33 |
+| ..\Back_end\build\middlewares                                                   |          3 |        -36 |          0 |         -3 |        -39 |
+| ..\Back_end\build\models                                                        |          7 |       -198 |         -2 |         -7 |       -207 |
+| ..\Back_end\build\providers                                                     |          1 |       -105 |         -1 |         -1 |       -107 |
+| ..\Back_end\build\repositories                                                  |          7 |       -265 |         -3 |         -7 |       -275 |
+| ..\Back_end\build\routes                                                        |          6 |        -67 |         -4 |         -6 |        -77 |
+| ..\Back_end\build\services                                                      |          5 |       -218 |        -10 |         -5 |       -233 |
+| ..\Back_end\build\utils                                                         |          3 |        -84 |         -2 |         -3 |        -89 |
+| ..\Back_end\src                                                                 |         57 |     -1,147 |        -46 |       -203 |     -1,396 |
+| ..\Back_end\src (Files)                                                         |          1 |        -38 |         -6 |         -8 |        -52 |
+| ..\Back_end\src\AdaAPI                                                          |          1 |        -21 |         -1 |         -5 |        -27 |
+| ..\Back_end\src\config                                                          |          6 |        -72 |         -4 |        -10 |        -86 |
+| ..\Back_end\src\config (Files)                                                  |          3 |        -33 |         -4 |        -10 |        -47 |
+| ..\Back_end\src\config\modeSetting                                              |          3 |        -39 |          0 |          0 |        -39 |
+| ..\Back_end\src\controllers                                                     |          3 |        -86 |        -12 |        -18 |       -116 |
+| ..\Back_end\src\db                                                              |          1 |        -14 |          0 |         -3 |        -17 |
+| ..\Back_end\src\errors                                                          |          5 |        -40 |          0 |        -12 |        -52 |
+| ..\Back_end\src\interfaces                                                      |         11 |        -95 |          0 |        -24 |       -119 |
+| ..\Back_end\src\middlewares                                                     |          3 |        -23 |          0 |         -9 |        -32 |
+| ..\Back_end\src\models                                                          |          6 |       -144 |         -1 |        -22 |       -167 |
+| ..\Back_end\src\providers                                                       |          1 |        -99 |         -2 |        -11 |       -112 |
+| ..\Back_end\src\record                                                          |          2 |         -6 |          0 |          0 |         -6 |
+| ..\Back_end\src\repositories                                                    |          5 |       -169 |         -6 |        -30 |       -205 |
+| ..\Back_end\src\routes                                                          |          4 |        -27 |         -2 |        -12 |        -41 |
+| ..\Back_end\src\services                                                        |          5 |       -247 |        -10 |        -24 |       -281 |
+| ..\Back_end\src\utils                                                           |          3 |        -66 |         -2 |        -15 |        -83 |
+| .idea                                                                           |          3 |         23 |          0 |          0 |         23 |
+| assets                                                                          |          1 |         13 |          0 |          2 |         15 |
+| assets\images                                                                   |          1 |         13 |          0 |          2 |         15 |
+| src                                                                             |         28 |      1,527 |         43 |        122 |      1,692 |
+| src\apiServices                                                                 |          1 |         25 |          0 |          4 |         29 |
+| src\component                                                                   |          9 |        685 |          2 |         47 |        734 |
+| src\component (Files)                                                           |          7 |        607 |          2 |         44 |        653 |
+| src\component\DeviceItem                                                        |          2 |         78 |          0 |          3 |         81 |
+| src\config                                                                      |          6 |        106 |          0 |         13 |        119 |
+| src\context                                                                     |          2 |          9 |          2 |          6 |         17 |
+| src\hooks                                                                       |          2 |         13 |          1 |          7 |         21 |
+| src\screens                                                                     |          6 |        651 |         38 |         38 |        727 |
+| src\utils                                                                       |          2 |         38 |          0 |          7 |         45 |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                        | language           | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| d:\HCMUT\HK222\CSE_project\Back_end\.eslintrc.json                              | JSON with Comments |         -3 |          0 |         -1 |         -4 |
+| d:\HCMUT\HK222\CSE_project\Back_end\.prettierrc.js                              | JavaScript         |         -9 |          0 |         -2 |        -11 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\AdaAPI\index.js                       | JavaScript         |        -22 |         -1 |         -1 |        -24 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\config\CORS.js                        | JavaScript         |         -7 |          0 |         -1 |         -8 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\config\deviceKeys.js                  | JavaScript         |        -26 |          0 |         -1 |        -27 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\config\modeSetting\lighting.json      | JSON               |        -12 |          0 |         -1 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\config\modeSetting\soilMoisture.json  | JSON               |         -1 |          0 |          0 |         -1 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\config\modeSetting\temperature.json   | JSON               |        -12 |          0 |         -1 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\config\timeSetting.js                 | JavaScript         |         -7 |         -4 |         -1 |        -12 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\controllers\DeviceController.js       | JavaScript         |        -48 |         -7 |         -1 |        -56 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\controllers\ManualModeController.js   | JavaScript         |        -27 |         -1 |         -1 |        -29 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\controllers\SafeModeController.js     | JavaScript         |        -30 |         -1 |         -1 |        -32 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\controllers\SettingsController.js     | JavaScript         |        -29 |          0 |         -1 |        -30 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\controllers\conditionController.js    | JavaScript         |        -20 |         -4 |         -1 |        -25 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\db\connect.js                         | JavaScript         |        -19 |          0 |         -1 |        -20 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\errors\badRequest.js                  | JavaScript         |        -14 |          0 |         -1 |        -15 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\errors\customErrors.js                | JavaScript         |         -8 |          0 |         -1 |         -9 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\errors\index.js                       | JavaScript         |        -14 |          0 |         -1 |        -15 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\errors\notFound.js                    | JavaScript         |        -14 |          0 |         -1 |        -15 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\errors\unauthorizied.js               | JavaScript         |        -14 |          0 |         -1 |        -15 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\index.js                              | JavaScript         |        -44 |         -6 |         -1 |        -51 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\activitylog.js             | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\ada.js                     | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\device.js                  | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\error.js                   | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\index.js                   | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\manualModeInfo.js          | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\modeSetting.js             | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\notification.js            | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\numberID.js                | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\record.js                  | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\interfaces\safeModeInfo.js            | JavaScript         |         -2 |          0 |         -1 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\middlewares\errorHandler.js           | JavaScript         |        -14 |          0 |         -1 |        -15 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\middlewares\index.js                  | JavaScript         |        -12 |          0 |         -1 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\middlewares\notFoundHandler.js        | JavaScript         |        -10 |          0 |         -1 |        -11 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\models\activityLog.js                 | JavaScript         |        -30 |          0 |         -1 |        -31 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\models\consumption.js                 | JavaScript         |        -21 |         -1 |         -1 |        -23 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\models\device.js                      | JavaScript         |        -57 |          0 |         -1 |        -58 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\models\deviceRecord.js                | JavaScript         |        -25 |         -1 |         -1 |        -27 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\models\index.js                       | JavaScript         |        -18 |          0 |         -1 |        -19 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\models\serverRecord.js                | JavaScript         |        -29 |          0 |         -1 |        -30 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\models\user.js                        | JavaScript         |        -18 |          0 |         -1 |        -19 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\providers\Socket.js                   | JavaScript         |       -105 |         -1 |         -1 |       -107 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\repositories\ActivityLogRepository.js | JavaScript         |        -25 |          0 |         -1 |        -26 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\repositories\DeviceRepository.js      | JavaScript         |        -70 |          0 |         -1 |        -71 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\repositories\ManualModeRepository.js  | JavaScript         |        -39 |         -1 |         -1 |        -41 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\repositories\SafeModeRepository.js    | JavaScript         |        -38 |         -1 |         -1 |        -40 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\repositories\ServerRecord.js          | JavaScript         |        -28 |          0 |         -1 |        -29 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\repositories\SettingsRepository.js    | JavaScript         |        -46 |         -1 |         -1 |        -48 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\repositories\condtionRepository.js    | JavaScript         |        -19 |          0 |         -1 |        -20 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\routes\conditions.js                  | JavaScript         |        -10 |         -2 |         -1 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\routes\devices.js                     | JavaScript         |        -12 |          0 |         -1 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\routes\index.js                       | JavaScript         |        -14 |          0 |         -1 |        -15 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\routes\manualMode.js                  | JavaScript         |        -10 |         -1 |         -1 |        -12 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\routes\safeMode.js                    | JavaScript         |        -10 |         -1 |         -1 |        -12 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\routes\settings.js                    | JavaScript         |        -11 |          0 |         -1 |        -12 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\services\ActivityLoggingService.js    | JavaScript         |        -21 |         -1 |         -1 |        -23 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\services\AutoIrrigationOperation.js   | JavaScript         |        -89 |         -5 |         -1 |        -95 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\services\ConditionService.js          | JavaScript         |        -15 |          0 |         -1 |        -16 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\services\DevicesService.js            | JavaScript         |        -47 |         -3 |         -1 |        -51 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\services\ServerRecordService.js       | JavaScript         |        -46 |         -1 |         -1 |        -48 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\utils\date.js                         | JavaScript         |        -21 |          0 |         -1 |        -22 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\utils\httpRequestAda.js               | JavaScript         |        -33 |         -1 |         -1 |        -35 |
+| d:\HCMUT\HK222\CSE_project\Back_end\build\utils\readFileJson.js                 | JavaScript         |        -30 |         -1 |         -1 |        -32 |
+| d:\HCMUT\HK222\CSE_project\Back_end\package-lock.json                           | JSON               |     -9,353 |          0 |         -1 |     -9,354 |
+| d:\HCMUT\HK222\CSE_project\Back_end\package.json                                | JSON               |        -44 |          0 |         -1 |        -45 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\AdaAPI\index.ts                         | TypeScript         |        -21 |         -1 |         -5 |        -27 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\config\CORS.ts                          | TypeScript         |         -6 |          0 |         -3 |         -9 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\config\deviceKeys.ts                    | TypeScript         |        -23 |          0 |         -3 |        -26 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\config\modeSetting\lighting.json        | JSON               |        -13 |          0 |          0 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\config\modeSetting\soilMoisture.json    | JSON               |        -13 |          0 |          0 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\config\modeSetting\temperature.json     | JSON               |        -13 |          0 |          0 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\config\timeSetting.ts                   | TypeScript         |         -4 |         -4 |         -4 |        -12 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\controllers\ConditionController.ts      | TypeScript         |        -16 |         -4 |         -5 |        -25 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\controllers\DeviceController.ts         | TypeScript         |        -45 |         -8 |         -8 |        -61 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\controllers\SettingsController.ts       | TypeScript         |        -25 |          0 |         -5 |        -30 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\db\connect.ts                           | TypeScript         |        -14 |          0 |         -3 |        -17 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\errors\badRequest.ts                    | TypeScript         |        -10 |          0 |         -3 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\errors\customErrors.ts                  | TypeScript         |         -6 |          0 |         -2 |         -8 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\errors\index.ts                         | TypeScript         |         -4 |          0 |         -1 |         -5 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\errors\notFound.ts                      | TypeScript         |        -10 |          0 |         -3 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\errors\unauthorizied.ts                 | TypeScript         |        -10 |          0 |         -3 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\index.ts                                | TypeScript         |        -38 |         -6 |         -8 |        -52 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\activitylog.ts               | TypeScript         |         -7 |          0 |         -2 |         -9 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\ada.ts                       | TypeScript         |        -16 |          0 |         -4 |        -20 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\device.ts                    | TypeScript         |        -17 |          0 |         -3 |        -20 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\error.ts                     | TypeScript         |         -6 |          0 |         -2 |         -8 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\index.ts                     | TypeScript         |         -8 |          0 |         -1 |         -9 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\manualModeInfo.ts            | TypeScript         |         -5 |          0 |         -2 |         -7 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\modeSetting.ts               | TypeScript         |        -13 |          0 |         -2 |        -15 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\notification.ts              | TypeScript         |         -5 |          0 |         -2 |         -7 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\numberID.ts                  | TypeScript         |         -4 |          0 |         -2 |         -6 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\record.ts                    | TypeScript         |         -8 |          0 |         -2 |        -10 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\interfaces\safeModeInfo.ts              | TypeScript         |         -6 |          0 |         -2 |         -8 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\middlewares\errorHandler.ts             | TypeScript         |        -10 |          0 |         -3 |        -13 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\middlewares\index.ts                    | TypeScript         |         -7 |          0 |         -3 |        -10 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\middlewares\notFoundHandler.ts          | TypeScript         |         -6 |          0 |         -3 |         -9 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\models\activityLog.ts                   | TypeScript         |        -25 |          0 |         -3 |        -28 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\models\consumption.ts                   | TypeScript         |        -16 |         -1 |         -3 |        -20 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\models\device.ts                        | TypeScript         |        -53 |          0 |         -3 |        -56 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\models\index.ts                         | TypeScript         |        -13 |          0 |         -3 |        -16 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\models\serverRecord.ts                  | TypeScript         |        -24 |          0 |         -7 |        -31 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\models\user.ts                          | TypeScript         |        -13 |          0 |         -3 |        -16 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\providers\Socket.ts                     | TypeScript         |        -99 |         -2 |        -11 |       -112 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\record\activity.json                    | JSON               |         -3 |          0 |          0 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\record\serverRecord.json                | JSON               |         -3 |          0 |          0 |         -3 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\repositories\ActivityLogRepository.ts   | TypeScript         |        -21 |         -1 |         -5 |        -27 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\repositories\CondtionRepository.ts      | TypeScript         |        -15 |         -1 |         -4 |        -20 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\repositories\DeviceRepository.ts        | TypeScript         |        -61 |         -1 |        -10 |        -72 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\repositories\ServerRecord.ts            | TypeScript         |        -24 |         -1 |         -5 |        -30 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\repositories\SettingsRepository.ts      | TypeScript         |        -48 |         -2 |         -6 |        -56 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\routes\conditions.ts                    | TypeScript         |         -5 |         -2 |         -3 |        -10 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\routes\devices.ts                       | TypeScript         |         -7 |          0 |         -3 |        -10 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\routes\index.ts                         | TypeScript         |         -9 |          0 |         -3 |        -12 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\routes\settings.ts                      | TypeScript         |         -6 |          0 |         -3 |         -9 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\services\ActivityLoggingService.ts      | TypeScript         |        -16 |         -1 |         -4 |        -21 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\services\AutoIrrigationOperation.ts     | TypeScript         |       -144 |         -5 |         -8 |       -157 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\services\ConditionService.ts            | TypeScript         |         -8 |          0 |         -2 |        -10 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\services\DevicesService.ts              | TypeScript         |        -40 |         -3 |         -4 |        -47 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\services\ServerRecordService.ts         | TypeScript         |        -39 |         -1 |         -6 |        -46 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\utils\date.ts                           | TypeScript         |        -14 |          0 |         -4 |        -18 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\utils\httpRequestAda.ts                 | TypeScript         |        -29 |         -1 |         -7 |        -37 |
+| d:\HCMUT\HK222\CSE_project\Back_end\src\utils\readFileJson.ts                   | TypeScript         |        -23 |         -1 |         -4 |        -28 |
+| d:\HCMUT\HK222\CSE_project\Back_end\tsconfig.json                               | JSON with Comments |        -11 |        -90 |         -9 |       -110 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\.eslintrc.js                             | JavaScript         |         31 |          0 |          1 |         32 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\.idea\CSE_android.iml                    | XML                |          9 |          0 |          0 |          9 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\.idea\modules.xml                        | XML                |          8 |          0 |          0 |          8 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\.idea\vcs.xml                            | XML                |          6 |          0 |          0 |          6 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\App.js                                   | JavaScript         |         33 |          1 |          5 |         39 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\app.json                                 | JSON               |         14 |         15 |          0 |         29 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\assets\images\index.js                   | JavaScript         |         13 |          0 |          2 |         15 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\babel.config.js                          | JavaScript         |          6 |          0 |          1 |          7 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\eas.json                                 | JSON               |          0 |          0 |          1 |          1 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\index.js                                 | JavaScript         |          3 |          0 |          2 |          5 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\input.css                                | CSS                |          1 |          0 |          1 |          2 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\package-lock.json                        | JSON               |     32,446 |          0 |          1 |     32,447 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\package.json                             | JSON               |         63 |          0 |          1 |         64 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\postcss.config.js                        | JavaScript         |          6 |          0 |          0 |          6 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\apiServices\searchService.js         | JavaScript         |         25 |          0 |          4 |         29 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\DetectionBox.js            | JavaScript         |        119 |          0 |          5 |        124 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\DeviceItem\data.js         | JavaScript         |         13 |          0 |          1 |         14 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\DeviceItem\index.js        | JavaScript         |         65 |          0 |          2 |         67 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\Loading.js                 | JavaScript         |         16 |          0 |          4 |         20 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\RadioButtonComponent.js    | JavaScript         |         31 |          0 |          6 |         37 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\RangeButton.js             | JavaScript         |         92 |          0 |          8 |        100 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\TabNavigator.js            | JavaScript         |        184 |          2 |         10 |        196 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\TimeButton.js              | JavaScript         |         46 |          0 |          5 |         51 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\modeSettingBlock.js        | JavaScript         |        119 |          0 |          6 |        125 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\condition.js                  | JavaScript         |         18 |          0 |          2 |         20 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\device.js                     | JavaScript         |         12 |          0 |          2 |         14 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\index.js                      | JavaScript         |          9 |          0 |          2 |         11 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\ipCOnfig.js                   | JavaScript         |          1 |          0 |          1 |          2 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\mode.js                       | JavaScript         |         58 |          0 |          4 |         62 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\routes.js                     | JavaScript         |          8 |          0 |          2 |         10 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\context\modeSettingContext.js        | JavaScript         |          3 |          1 |          3 |          7 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\context\socketContext.js             | JavaScript         |          6 |          1 |          3 |         10 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\hooks\index.js                       | JavaScript         |          1 |          0 |          1 |          2 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\hooks\useDebounce.js                 | JavaScript         |         12 |          1 |          6 |         19 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\DashboardScreen.js           | JavaScript         |        288 |          9 |         12 |        309 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\DetectionScreen.js           | JavaScript         |         97 |          0 |          7 |        104 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\DeviceScreen.js              | JavaScript         |         68 |          1 |          3 |         72 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\ModeScreen.js                | JavaScript         |        118 |          9 |          9 |        136 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\SercurityScreen.js           | JavaScript         |         75 |         19 |          6 |        100 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\index.js                     | JavaScript         |          5 |          0 |          1 |          6 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\utils\dateTime.js                    | JavaScript         |         16 |          0 |          1 |         17 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\utils\http.js                        | JavaScript         |         22 |          0 |          6 |         28 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\tailwind.config.js                       | JavaScript         |          3 |         11 |          0 |         14 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\tailwind.css                             | CSS                |        392 |          0 |        119 |        511 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\tailwind.json                            | JSON               |        658 |          0 |          0 |        658 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\yarn-error.log                           | Log                |      8,125 |          0 |      1,245 |      9,370 |
+| Total                                                                           |                    |     31,414 |       -112 |      1,223 |     32,525 |
++---------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

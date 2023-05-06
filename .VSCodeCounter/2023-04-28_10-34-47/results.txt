@@ -1,0 +1,88 @@
+Date : 2023-04-28 10:34:47
+Directory : d:\HCMUT\HK222\CSE_project\CSE_android
+Total : 46 files,  43344 codes, 70 comments, 1501 blanks, all 44915 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          5 |     33,181 |         15 |          3 |     33,199 |
+| Log        |          1 |      8,125 |          0 |      1,245 |      9,370 |
+| JavaScript |         35 |      1,622 |         55 |        133 |      1,810 |
+| CSS        |          2 |        393 |          0 |        120 |        513 |
+| XML        |          3 |         23 |          0 |          0 |         23 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                         | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                            |         46 |     43,344 |         70 |      1,501 |     44,915 |
+| . (Files)                                                                    |         14 |     41,781 |         27 |      1,377 |     43,185 |
+| .idea                                                                        |          3 |         23 |          0 |          0 |         23 |
+| assets                                                                       |          1 |         13 |          0 |          2 |         15 |
+| assets\images                                                                |          1 |         13 |          0 |          2 |         15 |
+| src                                                                          |         28 |      1,527 |         43 |        122 |      1,692 |
+| src\apiServices                                                              |          1 |         25 |          0 |          4 |         29 |
+| src\component                                                                |          9 |        685 |          2 |         47 |        734 |
+| src\component (Files)                                                        |          7 |        607 |          2 |         44 |        653 |
+| src\component\DeviceItem                                                     |          2 |         78 |          0 |          3 |         81 |
+| src\config                                                                   |          6 |        106 |          0 |         13 |        119 |
+| src\context                                                                  |          2 |          9 |          2 |          6 |         17 |
+| src\hooks                                                                    |          2 |         13 |          1 |          7 |         21 |
+| src\screens                                                                  |          6 |        651 |         38 |         38 |        727 |
+| src\utils                                                                    |          2 |         38 |          0 |          7 |         45 |
++------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                     | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\HCMUT\HK222\CSE_project\CSE_android\.eslintrc.js                          | JavaScript |         31 |          0 |          1 |         32 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\.idea\CSE_android.iml                 | XML        |          9 |          0 |          0 |          9 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\.idea\modules.xml                     | XML        |          8 |          0 |          0 |          8 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\.idea\vcs.xml                         | XML        |          6 |          0 |          0 |          6 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\App.js                                | JavaScript |         33 |          1 |          5 |         39 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\app.json                              | JSON       |         14 |         15 |          0 |         29 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\assets\images\index.js                | JavaScript |         13 |          0 |          2 |         15 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\babel.config.js                       | JavaScript |          6 |          0 |          1 |          7 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\eas.json                              | JSON       |          0 |          0 |          1 |          1 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\index.js                              | JavaScript |          3 |          0 |          2 |          5 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\input.css                             | CSS        |          1 |          0 |          1 |          2 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\package-lock.json                     | JSON       |     32,446 |          0 |          1 |     32,447 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\package.json                          | JSON       |         63 |          0 |          1 |         64 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\postcss.config.js                     | JavaScript |          6 |          0 |          0 |          6 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\apiServices\searchService.js      | JavaScript |         25 |          0 |          4 |         29 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\DetectionBox.js         | JavaScript |        119 |          0 |          5 |        124 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\DeviceItem\data.js      | JavaScript |         13 |          0 |          1 |         14 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\DeviceItem\index.js     | JavaScript |         65 |          0 |          2 |         67 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\Loading.js              | JavaScript |         16 |          0 |          4 |         20 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\RadioButtonComponent.js | JavaScript |         31 |          0 |          6 |         37 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\RangeButton.js          | JavaScript |         92 |          0 |          8 |        100 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\TabNavigator.js         | JavaScript |        184 |          2 |         10 |        196 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\TimeButton.js           | JavaScript |         46 |          0 |          5 |         51 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\component\modeSettingBlock.js     | JavaScript |        119 |          0 |          6 |        125 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\condition.js               | JavaScript |         18 |          0 |          2 |         20 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\device.js                  | JavaScript |         12 |          0 |          2 |         14 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\index.js                   | JavaScript |          9 |          0 |          2 |         11 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\ipCOnfig.js                | JavaScript |          1 |          0 |          1 |          2 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\mode.js                    | JavaScript |         58 |          0 |          4 |         62 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\config\routes.js                  | JavaScript |          8 |          0 |          2 |         10 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\context\modeSettingContext.js     | JavaScript |          3 |          1 |          3 |          7 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\context\socketContext.js          | JavaScript |          6 |          1 |          3 |         10 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\hooks\index.js                    | JavaScript |          1 |          0 |          1 |          2 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\hooks\useDebounce.js              | JavaScript |         12 |          1 |          6 |         19 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\DashboardScreen.js        | JavaScript |        288 |          9 |         12 |        309 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\DetectionScreen.js        | JavaScript |         97 |          0 |          7 |        104 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\DeviceScreen.js           | JavaScript |         68 |          1 |          3 |         72 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\ModeScreen.js             | JavaScript |        118 |          9 |          9 |        136 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\SercurityScreen.js        | JavaScript |         75 |         19 |          6 |        100 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\screens\index.js                  | JavaScript |          5 |          0 |          1 |          6 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\utils\dateTime.js                 | JavaScript |         16 |          0 |          1 |         17 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\src\utils\http.js                     | JavaScript |         22 |          0 |          6 |         28 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\tailwind.config.js                    | JavaScript |          3 |         11 |          0 |         14 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\tailwind.css                          | CSS        |        392 |          0 |        119 |        511 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\tailwind.json                         | JSON       |        658 |          0 |          0 |        658 |
+| d:\HCMUT\HK222\CSE_project\CSE_android\yarn-error.log                        | Log        |      8,125 |          0 |      1,245 |      9,370 |
+| Total                                                                        |            |     43,344 |         70 |      1,501 |     44,915 |
++------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

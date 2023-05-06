@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsRotate, faMicrophone } from "@fortawesome/free-solid-svg-icons";
 import styles from "./DeviceTable.module.scss";
 import SearchButton from "../SearchButton";
 import Button from "./Button";
@@ -8,11 +8,13 @@ import TableRow from "./TableRow";
 import { useEffect, useState, useRef } from "react";
 import { search } from "../../apiServices/searchService";
 import { devicesImage } from "./data";
+import Voice from "../Voice";
 
 const cx = classNames.bind(styles);
 
 function DeviceTable() {
   const [deviceInfo, setDeviceInfo] = useState([]);
+  const [micState, setMicState] = useState(0)
   const refreshButtonRef = useRef(null);
   useEffect(() => {
     const fetchAPI = async () => {
@@ -38,9 +40,11 @@ function DeviceTable() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("header")}>
-        <div className={cx("title")}>Devices</div>
+        <div className={cx("title")}>
+        <FontAwesomeIcon icon={faMicrophone} className={cx("voice-mic")} onClick={ () => {setMicState(1)}}/>
+        Devices
+        </div>
         <div className={cx("action")}>
-          <SearchButton />
           <Button title="Add new" primary />
           <Button title="Delete" danger />
         </div>
@@ -71,6 +75,10 @@ function DeviceTable() {
           ))}
         </div>
       </div>
+{micState === 1 && <div className={cx("voice-background")}>
+          <div className={cx("voice-background-opacity")}></div>
+          <div className={cx("main-voice")}><Voice closeModel = {setMicState}/></div>
+      </div>}
     </div>
   );
 }
