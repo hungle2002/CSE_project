@@ -1,0 +1,181 @@
+.wrapper {
+  width: var(---default-layout-header-width);
+  height: 600px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 5px #888888;
+  padding: 40px 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+
+.voice-mic {
+  margin-right: 10px;
+  font-size: 2.5rem;
+}
+
+// table CSS
+.inner {
+  margin-top: 25px;
+}
+
+.table-header {
+  background-color: #f3f6f9;
+  display: flex;
+  padding-left: 20px;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #b5b5c3;
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 50px;
+  text-align: center;
+}
+
+.name-header {
+  color: #464e5f;
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: row;
+}
+
+.table-body {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  padding-left: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #b5b5c3;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.table-body-row {
+  height: 400px;
+  overflow: auto;
+}
+
+.image {
+  width: 60px;
+  height: 70px;
+  margin-right: 7px;
+}
+
+.name-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.name-header-des {
+  color: #b5b5c3;
+  text-align: center;
+}
+
+.table-col-2 {
+  flex-basis: 10%;
+}
+
+.header-day {
+  color: #464e5f;
+  text-align: center;
+}
+
+.table-col-normal {
+  flex-basis: 13%;
+}
+
+.refresh-button {
+  border: 1px solid black;
+  padding: 8px 12px;
+  font-size: 500;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: row;
+
+  &:active {
+    background-color: #464e5f;
+    color: var(--white);
+  }
+}
+.refresh-button-icon {
+  margin-right: 5px;
+}
+
+.iconLoading {
+  animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  animation: spinner 1.5s linear infinite;
+  font-size: 2.2rem;
+}
+
+.state-sensor-good {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1bc5bd;
+}
+
+.state-sensor-check {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #f64e60;
+}
+
+// voice background
+.voice-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120%;
+  z-index: 100;
+}
+.voice-background-opacity {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 30%;
+}
+.main-voice {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  background-color: #fff;
+  width: 350px;
+  height: 250px;
+  border-radius: 25px;
+  padding: 30px;
+}

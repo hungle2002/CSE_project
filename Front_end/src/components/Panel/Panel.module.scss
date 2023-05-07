@@ -1,0 +1,39 @@
+.info-panel {
+  width: 20%;
+  height: 100%;
+}
+
+.settings-panel {
+  width: 80%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 100%;
+  height: 80%;
+}
+
+.save-button {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button button {
+  width: 10%;
+  background-color: #3b3b49;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.save-button button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

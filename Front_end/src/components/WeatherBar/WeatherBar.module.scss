@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  font-family: "Mohave";
+  margin-top: -220px;
+}
+
+.today {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+  color: rgb(255, 255, 255);
+  
+}
+
+.today-sunny {
+  background-image: url('../../assets/images/today-sunny.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+}
+
+.today-cloudy {
+  background-image: url('../../assets/images/today-cloudy.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+}
+
+.today-rainy {
+  background-image: url('../../assets/images/today-rainy.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+}
+
+.today-top {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  padding: 0 5px;
+}
+
+.today-top-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.today-top-content-temp {
+  font-size: 2.5em;
+}
+
+.today-top-content-feel {
+  font-size: 0.8em;
+}
+
+.today-bottom {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  font-size: 0.6em;
+}
+
+.today-bottom-location {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.today-location {
+  font-size: 1.4em;
+}
+
+.today-bottom-info {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.today-info-weather {
+  font-size: 1.2em;
+}
+
+.today-info-date {
+  font-size: 0.8em;
+}
+
+.other-days-weather-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 75%;
+}
+
+.rightbar-text {
+  font-weight: 800;
+  font-size: 0.8em;
+  height: 10%;
+  margin-top: 10px;
+}
+
+.other-days-weather {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200%;
+  justify-content: flex-start;
+  color: rgb(49, 46, 46);
+  overflow-y: scroll;
+}
+
+.other-days-weather::-webkit-scrollbar {
+  display: none;
+}
+
+.other-day-sunny {
+  background: url('../../assets/images/sunny.png');
+}
+
+.other-day-cloudy {
+  background-image: url('../../assets/images/cloudy.png');
+}
+
+.other-day-rainy {
+  background-image: url('../../assets/images/rainy.png');
+}
+
+.other-day {
+  margin: 5px 0;
+  display: flex;
+  width: 100%;
+  height: 24%;
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.other-day-left {
+  width: 30%;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 0.7em;
+}
+
+.other-day-day {
+  font-size: 1.1em;
+}
+
+.other-day-right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.other-day-temp {
+  font-size: 2.5em;
+}

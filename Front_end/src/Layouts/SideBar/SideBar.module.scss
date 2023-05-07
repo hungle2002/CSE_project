@@ -1,10 +1,12 @@
 .wrapper {
   background-color: var(--black);
   color: white;
-  width: 108px;
+  width: var(--default-layout-side-bar-width);
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
 }
 
 .logo {
@@ -12,4 +14,22 @@
   height: 7rem;
   border-radius: 50%;
   object-fit: cover;
+}
+
+// nav bar
+.nav-bar {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--white);
+
+  &:hover {
+    color: #0a7514;
+  }
 }

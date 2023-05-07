@@ -1,0 +1,21 @@
+.search {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #efefef;
+  width: 170px;
+}
+
+.search-input {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 11px 8px;
+  width: 12rem;
+  color: #a0a0a0;
+  background-color: transparent;
+}
+.search-icon {
+  padding: 0 10px;
+  color: #a0a0a0;
+  font-size: 20px;
+}

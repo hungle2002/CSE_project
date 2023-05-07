@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// size
+.small {
+  .icon {
+    font-size: 40px;
+  }
+  .num {
+    margin-top: -5px;
+    font-size: 2.6rem;
+    font-weight: 700;
+  }
+
+  .unit {
+    position: relative;
+    bottom: -4px;
+    left:5px;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+}
+
+.big {
+  .icon {
+    font-size: 45px;
+  }
+  .num {
+    margin-top: -10px;
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+
+  .unit {
+    position: relative;
+    bottom: -4px;
+    left:3px;
+    font-size: 2.6rem;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,78 @@
+.wrapper {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: calc(
+    1440px - var(--default-layout-header-width) -
+      var(--default-layout-side-bar-width)
+  );
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+@media only screen and (max-width: 1300px) {
+  .wrapper {
+    position: absolute;
+    left: -400px;
+  }
+}
+// line content
+.border-div {
+  width: 5px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.close-button {
+  font-weight: 700;
+  background-color: white;
+  position: absolute;
+  top: 90px;
+  left: -12px;
+  border: 2px solid #d7d7d7;
+  padding: 0 8px;
+  border-radius: 9999px;
+}
+
+.row {
+  width: 2px;
+  background-color: #d7d7d7;
+  height: 100%;
+}
+
+// content of right hand
+.inner {
+  margin-top: 70px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plant-image {
+  width: 125%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.plant-condition {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 280px;
+  justify-content: space-between;
+}
+
+.plant-information {
+  margin-top: 50px;
+}
+.plant-name {
+  font-size: 3.8rem;
+  font-weight: 700;
+}
+
+.plant-description {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: 500;
+}

@@ -2,28 +2,33 @@ import Home from "../pages/Home";
 import Sercurity from "../pages/Sercurity";
 import Statistic from "../pages/Statistic";
 import Mode from "../pages/Mode";
-import routes from "../config/routes";
-
+import Setting from "../pages/Setting";
+import config from "../config";
 const puplicRoutes = [
   {
-    path: routes.home,
+    path: config.routes.home,
     component: Home,
-    title:'Farm information'
+    title: "Farm information",
   },
   {
-    path: routes.sercurity,
+    path: config.routes.sercurity,
     component: Sercurity,
-    title: 'Farm sercurity'
+    title: "Farm sercurity",
   },
   {
-    path: routes.statistic,
+    path: config.routes.statistic,
     component: Statistic,
-    title: 'Farm statistic'
+    title: "Farm statistic",
   },
   {
-    path: routes.mode,
+    path: config.routes.mode,
     component: Mode,
-    title: 'Farm mode'
+    title: "Farm mode",
+  },
+  {
+    path: config.routes.setting,
+    component: Setting,
+    title: "Farm setting",
   },
 ];
 
