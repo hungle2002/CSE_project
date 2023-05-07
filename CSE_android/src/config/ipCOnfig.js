@@ -1,1 +1,1 @@
-export const ipLAN = "192.168.31.160";
+export const ipLAN = "192.168.76.242";

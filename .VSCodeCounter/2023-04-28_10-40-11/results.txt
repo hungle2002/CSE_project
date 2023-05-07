@@ -1,0 +1,139 @@
+Date : 2023-04-28 10:40:11
+Directory : d:\HCMUT\HK222\CSE_project\Front_end
+Total : 70 files,  33599 codes, 66 comments, 441 blanks, all 34106 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          3 |     30,260 |          0 |          3 |     30,263 |
+| JavaScript |         41 |      1,980 |         18 |        191 |      2,189 |
+| SCSS       |         23 |      1,300 |         25 |        213 |      1,538 |
+| Markdown   |          1 |         38 |          0 |         33 |         71 |
+| HTML       |          1 |         20 |         23 |          1 |         44 |
+| Properties |          1 |          1 |          0 |          0 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                          | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                             |         70 |     33,599 |         66 |        441 |     34,106 |
+| . (Files)                                                                                     |          4 |     30,274 |          0 |         35 |     30,309 |
+| public                                                                                        |          2 |         45 |         23 |          2 |         70 |
+| src                                                                                           |         64 |      3,280 |         43 |        404 |      3,727 |
+| src (Files)                                                                                   |          2 |         61 |          8 |         13 |         82 |
+| src\Layouts                                                                                   |          6 |        196 |          3 |         29 |        228 |
+| src\Layouts (Files)                                                                           |          2 |         30 |          0 |          9 |         39 |
+| src\Layouts\Header                                                                            |          2 |         67 |          2 |         10 |         79 |
+| src\Layouts\SideBar                                                                           |          2 |         99 |          1 |         10 |        110 |
+| src\apiServices                                                                               |          1 |         25 |          0 |          4 |         29 |
+| src\assets                                                                                    |          1 |         22 |          0 |          2 |         24 |
+| src\assets\images                                                                             |          1 |         22 |          0 |          2 |         24 |
+| src\components                                                                                |         32 |      2,044 |         20 |        252 |      2,316 |
+| src\components\Chart                                                                          |          2 |        103 |          0 |          4 |        107 |
+| src\components\ConditionBlock                                                                 |          2 |        132 |          4 |         17 |        153 |
+| src\components\GlobalStyles                                                                   |          2 |         85 |          4 |         21 |        110 |
+| src\components\IconAndNum                                                                     |          2 |         65 |          1 |         10 |         76 |
+| src\components\InfoPanel                                                                      |          2 |        135 |          0 |         20 |        155 |
+| src\components\Panel                                                                          |          2 |        233 |          1 |         17 |        251 |
+| src\components\SearchButton                                                                   |          2 |         37 |          0 |          6 |         43 |
+| src\components\SettingsPanel                                                                  |          2 |        429 |          9 |         39 |        477 |
+| src\components\StatCard                                                                       |          2 |         97 |          0 |         12 |        109 |
+| src\components\StateLine                                                                      |          2 |         22 |          0 |          3 |         25 |
+| src\components\ToggleSwitch                                                                   |          2 |         85 |          0 |         11 |         96 |
+| src\components\Voice                                                                          |          2 |         28 |          0 |          5 |         33 |
+| src\components\WeatherBar                                                                     |          2 |        238 |          0 |         33 |        271 |
+| src\components\deviceTable                                                                    |          6 |        355 |          1 |         54 |        410 |
+| src\components\deviceTable (Files)                                                            |          4 |        294 |          1 |         40 |        335 |
+| src\components\deviceTable\Button                                                             |          2 |         61 |          0 |         14 |         75 |
+| src\config                                                                                    |          5 |         67 |          0 |         10 |         77 |
+| src\context                                                                                   |          1 |          5 |          1 |          1 |          7 |
+| src\pages                                                                                     |         12 |        782 |         11 |         79 |        872 |
+| src\pages\Home                                                                                |          5 |        245 |          3 |         29 |        277 |
+| src\pages\Home (Files)                                                                        |          3 |        106 |          1 |         15 |        122 |
+| src\pages\Home\RhandContent                                                                   |          2 |        139 |          2 |         14 |        155 |
+| src\pages\Mode                                                                                |          2 |        163 |          0 |         16 |        179 |
+| src\pages\Sercurity                                                                           |          2 |        214 |          0 |         13 |        227 |
+| src\pages\Setting                                                                             |          1 |         10 |          0 |          4 |         14 |
+| src\pages\Statistic                                                                           |          2 |        150 |          8 |         17 |        175 |
+| src\routes                                                                                    |          1 |         35 |          0 |          3 |         38 |
+| src\utils                                                                                     |          3 |         43 |          0 |         11 |         54 |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                      | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\HCMUT\HK222\CSE_project\Front_end\.env                                                     | Properties |          1 |          0 |          0 |          1 |
+| d:\HCMUT\HK222\CSE_project\Front_end\README.md                                                | Markdown   |         38 |          0 |         33 |         71 |
+| d:\HCMUT\HK222\CSE_project\Front_end\package-lock.json                                        | JSON       |     30,176 |          0 |          1 |     30,177 |
+| d:\HCMUT\HK222\CSE_project\Front_end\package.json                                             | JSON       |         59 |          0 |          1 |         60 |
+| d:\HCMUT\HK222\CSE_project\Front_end\public\index.html                                        | HTML       |         20 |         23 |          1 |         44 |
+| d:\HCMUT\HK222\CSE_project\Front_end\public\manifest.json                                     | JSON       |         25 |          0 |          1 |         26 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\App.js                                               | JavaScript |         51 |          3 |          8 |         62 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\Layouts\DefaultLayout.module.scss                    | SCSS       |         13 |          0 |          3 |         16 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\Layouts\Header\Header.module.scss                    | SCSS       |         39 |          2 |          5 |         46 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\Layouts\Header\index.js                              | JavaScript |         28 |          0 |          5 |         33 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\Layouts\SideBar\SideBar.module.scss                  | SCSS       |         30 |          1 |          5 |         36 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\Layouts\SideBar\index.js                             | JavaScript |         69 |          0 |          5 |         74 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\Layouts\index.js                                     | JavaScript |         17 |          0 |          6 |         23 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\apiServices\searchService.js                         | JavaScript |         25 |          0 |          4 |         29 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\assets\images\index.js                               | JavaScript |         22 |          0 |          2 |         24 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\Chart\Chart.module.scss                   | SCSS       |          9 |          0 |          1 |         10 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\Chart\index.js                            | JavaScript |         94 |          0 |          3 |         97 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\ConditionBlock\ConditionBlock.module.scss | SCSS       |         57 |          0 |          9 |         66 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\ConditionBlock\index.js                   | JavaScript |         75 |          4 |          8 |         87 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\GlobalStyles\GlobalStyles.scss            | SCSS       |         80 |          4 |         18 |        102 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\GlobalStyles\index.js                     | JavaScript |          5 |          0 |          3 |          8 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\IconAndNum\IconAndNum.module.scss         | SCSS       |         39 |          1 |          5 |         45 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\IconAndNum\index.js                       | JavaScript |         26 |          0 |          5 |         31 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\InfoPanel\InfoPanel.module.scss           | SCSS       |         91 |          0 |         15 |        106 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\InfoPanel\index.js                        | JavaScript |         44 |          0 |          5 |         49 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\Panel\Panel.module.scss                   | SCSS       |         34 |          0 |          5 |         39 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\Panel\index.js                            | JavaScript |        199 |          1 |         12 |        212 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\SearchButton\SearchButton.module.scss     | SCSS       |         20 |          0 |          2 |         22 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\SearchButton\index.js                     | JavaScript |         17 |          0 |          4 |         21 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\SettingsPanel\SettingsPanel.module.scss   | SCSS       |        175 |          9 |         33 |        217 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\SettingsPanel\index.js                    | JavaScript |        254 |          0 |          6 |        260 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\StatCard\StatCard.module.scss             | SCSS       |         52 |          0 |          9 |         61 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\StatCard\index.js                         | JavaScript |         45 |          0 |          3 |         48 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\StateLine\StateLine.module.scss           | SCSS       |         10 |          0 |          0 |         10 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\StateLine\index.js                        | JavaScript |         12 |          0 |          3 |         15 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\ToggleSwitch\ToggleSwitch.module.scss     | SCSS       |         57 |          0 |          8 |         65 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\ToggleSwitch\index.js                     | JavaScript |         28 |          0 |          3 |         31 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\Voice\index.js                            | JavaScript |         24 |          0 |          5 |         29 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\Voice\voice.module.scss                   | SCSS       |          4 |          0 |          0 |          4 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\WeatherBar\WeatherBar.module.scss         | SCSS       |        165 |          0 |         28 |        193 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\WeatherBar\index.js                       | JavaScript |         73 |          0 |          5 |         78 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\deviceTable\Button\Button.module.scss     | SCSS       |         39 |          0 |         10 |         49 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\deviceTable\Button\index.js               | JavaScript |         22 |          0 |          4 |         26 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\deviceTable\DeviceTable.module.scss       | SCSS       |        128 |          1 |         21 |        150 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\deviceTable\TableRow.js                   | JavaScript |         79 |          0 |         13 |         92 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\deviceTable\data.js                       | JavaScript |         13 |          0 |          1 |         14 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\components\deviceTable\index.js                      | JavaScript |         74 |          0 |          5 |         79 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\config\condition.js                                  | JavaScript |         18 |          0 |          2 |         20 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\config\device.js                                     | JavaScript |         12 |          0 |          2 |         14 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\config\index.js                                      | JavaScript |         11 |          0 |          2 |         13 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\config\mode.js                                       | JavaScript |         18 |          0 |          2 |         20 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\config\routes.js                                     | JavaScript |          8 |          0 |          2 |         10 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\context\socket.js                                    | JavaScript |          5 |          1 |          1 |          7 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\index.js                                             | JavaScript |         10 |          5 |          5 |         20 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Home\ConditionBlockHome.js                     | JavaScript |         74 |          1 |          7 |         82 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Home\Home.module.scss                          | SCSS       |         11 |          0 |          4 |         15 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Home\RhandContent\RhandContent.module.scss     | SCSS       |         69 |          2 |          8 |         79 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Home\RhandContent\index.js                     | JavaScript |         70 |          0 |          6 |         76 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Home\index.js                                  | JavaScript |         21 |          0 |          4 |         25 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Mode\Mode.module.scss                          | SCSS       |         49 |          0 |          5 |         54 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Mode\index.js                                  | JavaScript |        114 |          0 |         11 |        125 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Sercurity\index.js                             | JavaScript |        153 |          0 |          5 |        158 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Sercurity\sercurity.module.scss                | SCSS       |         61 |          0 |          8 |         69 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Setting\index.js                               | JavaScript |         10 |          0 |          4 |         14 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Statistic\index.js                             | JavaScript |         82 |          3 |          6 |         91 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\pages\Statistic\statistic.module.scss                | SCSS       |         68 |          5 |         11 |         84 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\routes\index.js                                      | JavaScript |         35 |          0 |          3 |         38 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\utils\dateTime.js                                    | JavaScript |          0 |          0 |          1 |          1 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\utils\http.js                                        | JavaScript |         21 |          0 |          7 |         28 |
+| d:\HCMUT\HK222\CSE_project\Front_end\src\utils\notify.js                                      | JavaScript |         22 |          0 |          3 |         25 |
+| Total                                                                                         |            |     33,599 |         66 |        441 |     34,106 |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

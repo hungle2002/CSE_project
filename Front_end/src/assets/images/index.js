@@ -18,6 +18,7 @@ const images = {
   todaySunnyImage: require("./today-sunny.png"),
   todayRainyImage: require("./today-rainy.png"),
   todayCloudyImage: require("./today-cloudy.png"),
+  plantDisease: require("./plant_disease.png"),
 };
 
 export default images;
