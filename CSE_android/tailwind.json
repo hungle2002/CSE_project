@@ -42,6 +42,14 @@
 			"marginLeft": 8
 		}
 	},
+	"m-auto": {
+		"style": {
+			"marginTop": "auto",
+			"marginRight": "auto",
+			"marginBottom": "auto",
+			"marginLeft": "auto"
+		}
+	},
 	"mx-2": {
 		"style": {
 			"marginLeft": 8,
@@ -123,6 +131,21 @@
 	"mt-6": {
 		"style": {
 			"marginTop": 24
+		}
+	},
+	"mr-2": {
+		"style": {
+			"marginRight": 8
+		}
+	},
+	"mr-4": {
+		"style": {
+			"marginRight": 16
+		}
+	},
+	"mr-5": {
+		"style": {
+			"marginRight": 20
 		}
 	},
 	"flex": {

@@ -30,6 +30,10 @@
   margin: 0.5rem
 }
 
+.m-auto {
+  margin: auto
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem
@@ -95,6 +99,18 @@
 
 .mt-6 {
   margin-top: 1.5rem
+}
+
+.mr-2 {
+  margin-right: 0.5rem
+}
+
+.mr-4 {
+  margin-right: 1rem
+}
+
+.mr-5 {
+  margin-right: 1.25rem
 }
 
 .flex {
