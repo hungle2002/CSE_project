@@ -1,5 +1,5 @@
 {
-  "mode": 0,
+  "mode": 2,
   "safeAction": 1,
   "schedStart": "06:00",
   "schedEnd": "06:30",
@@ -9,5 +9,5 @@
   "autoMax": 47,
   "manualMin": 31,
   "manualMax": 35,
-  "status": 48
+  "status": 29
 }

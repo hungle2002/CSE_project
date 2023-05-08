@@ -1,4 +1,4 @@
-import { UserInfo } from '../interfaces';
+import {UserInfo} from '../interfaces';
 import Model from '../models';
 class AuthRepository {
   // implement singleton pattern
@@ -14,7 +14,7 @@ class AuthRepository {
 
   public async handleRegister(data: UserInfo) {
     await Model.user.create(data);
-    return data
+    return data;
   }
 
   public async findUser(username: String): Promise<UserInfo[]> {

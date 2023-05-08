@@ -1,6 +1,6 @@
 interface UserInfo {
-  username: String,
-  password: String
+  username: String;
+  password: String;
 }
 
 export default UserInfo;

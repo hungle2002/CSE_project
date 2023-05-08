@@ -16,6 +16,11 @@ NodeJS
 MongoDB
 # Run app
 ## Web app
+First, you need to download all packages from npm
+### Download all packages
+npm run install
+### Run server
+npm run start
 ## Mobile app
 First, you need to download Expo Go app on CHPlay
 ### Download all packages
@@ -26,4 +31,10 @@ npm run dev:tailwind (for auto create tailwind css)
 npm run start (for start server)
 ### Scan QR code from terminal and start app on your phone
 ## Server
+### Download all packages
+npm run install
+### Compile typescript
+npm run compile
+### Run server
+npm run start
 
