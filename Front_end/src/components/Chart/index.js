@@ -44,7 +44,6 @@ const ChartBox = ({ title, data, opNum }) => {
         type: 'linear',
         display: true,
         min: 0,
-        max: 20000,
         grid: {
           drawOnChartArea: false, // only want the grid lines for one axis to show up
         },

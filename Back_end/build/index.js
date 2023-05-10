@@ -27,6 +27,7 @@ Socket_1.default.init(server);
 app.use('/api/v1/condition/', routes_1.default.conditionRoute);
 app.use('/api/v1/device/', routes_1.default.deviceRoute);
 app.use('/api/v1/settings/', routes_1.default.settingsRoute);
+app.use('/api/v1/statistic/', routes_1.default.statisticRoute);
 // using middlewares
 app.use(middlewares_1.default.notFoundMiddleware);
 app.use(middlewares_1.default.errorHandleMiddleware);
