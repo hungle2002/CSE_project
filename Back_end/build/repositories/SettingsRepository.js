@@ -1,5 +1,6 @@
 "use strict";
 /* eslint-disable prettier/prettier */
+/* eslint-disable prettier/prettier */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -34,6 +35,9 @@ class SettingsRepository {
     }
     updateAllSettingsInfo(updatedData) {
         try {
+            (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/lighting.json'), JSON.stringify(updatedData[1], undefined, 2));
+            (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/soilMoisture.json'), JSON.stringify(updatedData[2], undefined, 2));
+            (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/temperature.json'), JSON.stringify(updatedData[0], undefined, 2));
             (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/lighting.json'), JSON.stringify(updatedData[1], undefined, 2));
             (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/soilMoisture.json'), JSON.stringify(updatedData[2], undefined, 2));
             (0, readFileJson_1.writeFileModeSetting)(path_1.default.join(__dirname, '../../src/config/modeSetting/temperature.json'), JSON.stringify(updatedData[0], undefined, 2));
