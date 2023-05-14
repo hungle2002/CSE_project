@@ -27,6 +27,8 @@ app.use('/api/v1/condition/', route.conditionRoute);
 app.use('/api/v1/device/', route.deviceRoute);
 app.use('/api/v1/settings/', route.settingsRoute);
 app.use('/api/v1/statistic/', route.statisticRoute);
+app.use('/api/v1/auth/', route.authRoute);
+
 // using middlewares
 app.use(middlewares.notFoundMiddleware);
 app.use(middlewares.errorHandleMiddleware);

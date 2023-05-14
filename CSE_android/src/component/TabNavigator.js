@@ -9,6 +9,7 @@ import {
   DeviceScreen,
   ModeScreen,
   SercurityScreen,
+  StatisticScreen,
 } from "../screens";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -166,7 +167,9 @@ function TabNavigator() {
           } else if (route.name === "Sercurity") {
             iconName = focused ? "business-sharp" : "business-outline";
           } else if (route.name === "Devices") {
-            iconName = focused ? "ios-settings" : "ios-settings-outline";
+            iconName = focused ? "rocket" : "rocket-outline";
+          } else if (route.name === "Statistic") {
+            iconName = focused ? "analytics" : "analytics-outline";
           }
 
           // You can add more icons for other screens here
@@ -185,6 +188,7 @@ function TabNavigator() {
       {/* Add screens here */}
       <Tab.Screen name="Dashboard" component={DashboardScreen} />
       <Tab.Screen name="Devices" component={DeviceScreen} />
+      <Tab.Screen name="Statistic" component={StatisticScreen} />
       <Tab.Screen name="Mode" component={ModeScreen} />
       <Tab.Screen name="Detection" component={DetectionScreen} />
       <Tab.Screen name="Sercurity" component={SercurityScreen} />
