@@ -9,7 +9,6 @@ class StatisticController {
     const waterConsumption = await ConsumptionRepository.getConsumptionValue('cs-ce-dadn.motor')
     const tempConsumption = await ConsumptionRepository.getConsumptionValue('cs-ce-dadn.coolingmotor')
     const lightConsumption = await ConsumptionRepository.getConsumptionValue('cs-ce-dadn.light-button')
-    const data = [10000, 5000, 30000, 20000, 40200, 15959, 35507];
     res
       .status(status.OK)
       .json({soilCons: waterConsumption, tempCons: tempConsumption, lightCons: lightConsumption, value: result});
