@@ -71,7 +71,7 @@ function DetectionScreen() {
         {isCompleted == 1 && (
           <View>
             <Image
-              source={require("../../assets/leafDisease.png")}
+              source={require("../../assets/leafdisease.png")}
               style={{ width: 220, height: 180, objectFit: "contain" }}
             />
             <Text style={tailwind("text-center text-lg")}>Part B: col 8</Text>
