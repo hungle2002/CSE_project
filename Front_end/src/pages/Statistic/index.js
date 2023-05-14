@@ -35,6 +35,7 @@ function Statistic() {
   const [avgTemperature,setAvgTemperature] = useState(0);
   const [waterConsumption,setWaterCons] = useState(0);
   const [elecConsumption,setElecCons] = useState(0);
+  const [totalElecCons,setTotalElecCons] = useState([]);
   const [total,setTotal] = useState(0);
   useEffect(() => {
     const fetchAPI = async () => {
@@ -68,6 +69,9 @@ function Statistic() {
         response.lightCons.forEach((v) => {
           setLightCons(lightCons=>[...lightCons,v.amount])
           totalElec +=v.amount
+          const tempElec =totalElec
+          setTotalElecCons(totalElecCons=>[...totalElecCons,tempElec])
+          
         });
         setElecCons(totalElec)
         setTotal(Math.round((14400*0.00454609*totalWater + 3000*totalElec)/25000))
@@ -77,19 +81,7 @@ function Statistic() {
     };
     fetchAPI();
   }, []);
-  // const socket = useContext(SocketContext);
-  // socket.on("update_condition", (value) => setConditionValue(value));
-
-  // socket.on("update_all_settings", (value) => {
-  //   console.log("This is all settings for update!");
-  //   setConditionResult([value[0], value[1], value[2]]);
-  // });
-
-  // const [condition1Result, setCondition1Result] = useState([]);
-  // const handle =() =>{
-  //   console.log('success button')
-  //   setCondition1Result([0, 0, 55, 0, 0, 0, 0])
-  // }
+  
   const data = [{
     labels: last7Days,
     datasets: [
@@ -165,7 +157,7 @@ function Statistic() {
       {
         label: "Consumption",
         // yAxisID: 'consumption',
-        data: lightCons,
+        data: totalElecCons,
         fill: false,
         borderColor: 'rgba(255, 149, 0, 1)',
         tension: 0.2,
