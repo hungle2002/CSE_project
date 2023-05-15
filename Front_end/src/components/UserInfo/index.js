@@ -10,7 +10,7 @@ const UserInfo = ({user}) => {
 
   const handleLogout = async () => {
     document.cookie = "username=; Max-Age=-1;"
-    window.location.href = "/setting"
+    window.location.href = "/"
   }
 
   return (

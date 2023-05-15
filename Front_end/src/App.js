@@ -1,9 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { puplicRoutes } from "./routes";
 import DefaultLayout from "./Layouts";
 import { socket, SocketContext } from "./context/socket";
 import { useEffect } from "react";
 import pushNotify from "./utils/notify";
+import Login from "./pages/Login";
+import Error from "./pages/Error";
 
 function App() {
   // handle socket io connections
@@ -30,11 +32,24 @@ function App() {
       // socket.off("update_something", onFooEvent);
     };
   }, []);
+
+  const getUsername = () => {
+    const username = document.cookie.substring(document.cookie.indexOf("=") + 1)
+    console.log("username", username)
+    if (username.length) return username;
+    return ""
+  }
+  
+  const user = {
+    username: getUsername()
+  }
+
   return (
     <SocketContext.Provider value={socket}>
       <Router>
         <div className="App">
           <Routes>
+            <Route path="/" element={user.username.length ? <Navigate to="/home" /> : <Login />} />
             {puplicRoutes.map((route, index) => {
               const Page = route.component;
               let Layout = DefaultLayout;
@@ -44,13 +59,14 @@ function App() {
                   key={index}
                   path={route.path}
                   element={
-                    <Layout title={route.title}>
+                    user.username.length ? <Layout title={route.title}>
                       <Page />
-                    </Layout>
+                    </Layout> : <Navigate to="/" />
                   }
                 />
               );
             })}
+            <Route path="*" element={<Error />} />
           </Routes>
         </div>
       </Router>

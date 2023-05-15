@@ -5,24 +5,36 @@ import Socket from '../providers/Socket';
 
 class SettingsController {
   public static async getSettingsInfo(req: Request, res: Response) {
-    const {type} = req.params;
-    const settingsInfo = SettingsRepository.getSettingsInfo(type);
-    res.status(status.OK).json(settingsInfo);
+    try {
+      const {type} = req.params;
+      const settingsInfo = SettingsRepository.getSettingsInfo(type);
+      res.status(status.OK).json(settingsInfo);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   public static async updateSettingsInfo(req: Request, res: Response) {
-    const {type} = req.params;
-    const newSettingsInfo = req.body;
-    SettingsRepository.updateSettingsInfo(type, newSettingsInfo);
-    Socket.update_settings(type);
-    res.status(status.OK).json(newSettingsInfo);
+    try {
+      const {type} = req.params;
+      const newSettingsInfo = req.body;
+      SettingsRepository.updateSettingsInfo(type, newSettingsInfo);
+      Socket.update_settings(type);
+      res.status(status.OK).json(newSettingsInfo);
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   public static async updateAllSettingsInfo(req: Request, res: Response) {
-    const newSettingsInfo = req.body;
-    SettingsRepository.updateAllSettingsInfo(newSettingsInfo);
-    Socket.update_all_settings(newSettingsInfo);
-    res.status(status.OK).json(newSettingsInfo);
+    try {
+      const newSettingsInfo = req.body;
+      SettingsRepository.updateAllSettingsInfo(newSettingsInfo);
+      Socket.update_all_settings(newSettingsInfo);
+      res.status(status.OK).json(newSettingsInfo);
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 

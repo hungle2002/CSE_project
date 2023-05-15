@@ -3,7 +3,6 @@ import { SocketContext } from "../../context/socket";
 import classNames from "classnames/bind";
 import styles from "./Setting.module.scss"
 import UserInfo from "../../components/UserInfo";
-import Login from "../../components/Login";
 
 const cx = classNames.bind(styles)
 
@@ -27,7 +26,7 @@ function Setting() {
     <div className={cx("container")}>
       <div className={cx("inner-container")}>
         <div className={cx("content")}>
-          {user.username.length ? <UserInfo user={user} /> : <Login />}
+          <UserInfo user={user} />
         </div>
       </div>
     </div>

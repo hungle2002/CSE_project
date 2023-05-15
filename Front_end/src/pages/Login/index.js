@@ -2,13 +2,10 @@ import { useState } from "react"
 import classNames from "classnames/bind";
 import styles from "./Login.module.scss";
 import { create } from "../../apiServices/searchService";
-import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles)
 
 const Login = () => {
-
-  const navigate = useNavigate()
 
   const [errorMsg, setErrorMsg] = useState("");
   const [username, setUsername] = useState("");
@@ -26,7 +23,7 @@ const Login = () => {
         return
       }
       document.cookie = `username=${username.trim()};secure`;
-      navigate("/home")
+      window.location.href = "/home"
     } catch (error) {
       console.log(error.message)
     }
@@ -35,6 +32,7 @@ const Login = () => {
 
   return (
     <div className={cx("container")}>
+      <h1 className={cx("site-title")}>Smart Farm</h1>
       <p className={cx("form-legend")}>Login</p>
       <form onSubmit={(e) => handleSubmit(e)} className={cx("form-container")}>
         <div className={cx("form-field")}>

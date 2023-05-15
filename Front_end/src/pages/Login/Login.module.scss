@@ -1,6 +1,6 @@
 .container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -8,6 +8,12 @@
   background-color: #d3ffd2;
   align-items: center;
   padding: 30px;
+}
+
+.site-title {
+  font-size: 5rem;
+  font-weight: bold;
+  align-self: self-start;
 }
 
 .form-legend {
@@ -32,6 +38,7 @@
 
 .form-field-label {
   width: 30%;
+  font-weight: bold;
 }
 
 .form-field-input {

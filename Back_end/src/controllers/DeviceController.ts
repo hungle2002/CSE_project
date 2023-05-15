@@ -11,49 +11,73 @@ import {getNewDeviceState} from '../services/DevicesService';
 class DeviceController {
   // get all information about one device include state and other information
   public static async getOneDeviceInfo(req: Request, res: Response) {
-    const {key} = req.params;
-    const device = await deviceRepository.getOneDevice(key);
-    res.status(status.OK).json({device: device});
+    try {
+      const {key} = req.params;
+      const device = await deviceRepository.getOneDevice(key);
+      res.status(status.OK).json({device: device});
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // get all device information
   public static async getAllDeviceInfo(req: Request, res: Response) {
-    const device = await deviceRepository.getAllDevice();
-    res.status(status.OK).json({devices: device});
+    try {
+      const device = await deviceRepository.getAllDevice();
+      res.status(status.OK).json({devices: device});
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // get one device state
   public static async getOneDeviceState(req: Request, res: Response) {
-    const {key} = req.params;
-    const device = deviceRepository.getOneDeviceState(key);
-    res.status(status.OK).json({device: device});
+    try {
+      const {key} = req.params;
+      const device = deviceRepository.getOneDeviceState(key);
+      res.status(status.OK).json({device: device});
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // get all device state
   public static async getAllDeviceState(req: Request, res: Response) {
     // get current device state from repo
-    const devices = await getNewDeviceState();
-    res.status(status.OK).json({devices: devices});
+    try {
+      const devices = await getNewDeviceState();
+      res.status(status.OK).json({devices: devices});
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // create new state for device
   public static async createDeviceState(req: Request, res: Response) {
-    const {key} = req.params;
-    const data = req.body;
-    const newDeviceState = await AdaAPI.createFeedValue(key, data);
-    Socket.update_device_state(key, Number(newDeviceState.value));
-    DeviceRepository.updateDeviceState(key, Number(newDeviceState.value));
-    res.status(status.OK).json({device: newDeviceState});
+    try {
+      const {key} = req.params;
+      const data = req.body;
+      const newDeviceState = await AdaAPI.createFeedValue(key, data);
+      Socket.update_device_state(key, Number(newDeviceState.value));
+      DeviceRepository.updateDeviceState(key, Number(newDeviceState.value));
+      res.status(status.OK).json({device: newDeviceState});
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   // create new device
   public static async createDevice(req: Request, res: Response) {
-    const {data} = req.body;
-    const newDevice: DeviceInfo | undefined = await DeviceRepository.createDevice(data);
-    if (newDevice) {
-      Socket.create_device(newDevice.typ, newDevice.des);
+    try {
+      const {data} = req.body;
+      const newDevice: DeviceInfo | undefined = await DeviceRepository.createDevice(data);
+      if (newDevice) {
+        Socket.create_device(newDevice.typ, newDevice.des);
+      }
+      res.status(status.OK).json({device: newDevice});
+    } catch (error) {
+      console.log(error)
     }
-    res.status(status.OK).json({device: newDevice});
   }
 }
 

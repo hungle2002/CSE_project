@@ -8,17 +8,23 @@ const CondtionRepository_1 = __importDefault(require("../repositories/CondtionRe
 const ConditionService_1 = require("../services/ConditionService");
 class ConditionController {
     static async getAllConditionInfo(req, res) {
-        const condition = (0, ConditionService_1.getAllSetting)();
-        const value = await CondtionRepository_1.default.getAllConditionValue();
-        res.status(http_status_1.default.OK).json({ condition: condition, value: value[value.length - 1] });
+        try {
+            const condition = (0, ConditionService_1.getAllSetting)();
+            const value = await CondtionRepository_1.default.getAllConditionValue();
+            res.status(http_status_1.default.OK).json({ condition: condition, value: value[value.length - 1] });
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
-    // public static async getAllConditionValue(req: Request, res: Response) {
-    //   const condition = await CondtionRepository.getLatestConditionValue();
-    //   res.status(status.OK).json({condition: condition});
-    // }
     static async getOneConditionValue(req, res) {
-        const condition = await CondtionRepository_1.default.getAllConditionValue();
-        res.status(http_status_1.default.OK).json({ condition: condition });
+        try {
+            const condition = await CondtionRepository_1.default.getAllConditionValue();
+            res.status(http_status_1.default.OK).json({ condition: condition });
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 }
 exports.default = ConditionController;

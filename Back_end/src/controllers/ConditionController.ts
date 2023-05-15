@@ -5,19 +5,22 @@ import {getAllSetting} from '../services/ConditionService';
 
 class ConditionController {
   public static async getAllConditionInfo(req: Request, res: Response) {
-    const condition = getAllSetting();
-    const value = await CondtionRepository.getAllConditionValue();
-    res.status(status.OK).json({condition: condition, value: value[value.length - 1]});
+    try {
+      const condition = getAllSetting();
+      const value = await CondtionRepository.getAllConditionValue();
+      res.status(status.OK).json({condition: condition, value: value[value.length - 1]});
+    } catch (error) {
+      console.log(error)
+    }
   }
 
-  // public static async getAllConditionValue(req: Request, res: Response) {
-  //   const condition = await CondtionRepository.getLatestConditionValue();
-  //   res.status(status.OK).json({condition: condition});
-  // }
-
   public static async getOneConditionValue(req: Request, res: Response) {
-    const condition = await CondtionRepository.getAllConditionValue();
-    res.status(status.OK).json({condition: condition});
+    try {
+      const condition = await CondtionRepository.getAllConditionValue();
+      res.status(status.OK).json({condition: condition});
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 

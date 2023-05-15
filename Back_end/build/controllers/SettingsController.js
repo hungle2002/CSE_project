@@ -8,22 +8,37 @@ const SettingsRepository_1 = __importDefault(require("../repositories/SettingsRe
 const Socket_1 = __importDefault(require("../providers/Socket"));
 class SettingsController {
     static async getSettingsInfo(req, res) {
-        const { type } = req.params;
-        const settingsInfo = SettingsRepository_1.default.getSettingsInfo(type);
-        res.status(http_status_1.default.OK).json(settingsInfo);
+        try {
+            const { type } = req.params;
+            const settingsInfo = SettingsRepository_1.default.getSettingsInfo(type);
+            res.status(http_status_1.default.OK).json(settingsInfo);
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
     static async updateSettingsInfo(req, res) {
-        const { type } = req.params;
-        const newSettingsInfo = req.body;
-        SettingsRepository_1.default.updateSettingsInfo(type, newSettingsInfo);
-        Socket_1.default.update_settings(type);
-        res.status(http_status_1.default.OK).json(newSettingsInfo);
+        try {
+            const { type } = req.params;
+            const newSettingsInfo = req.body;
+            SettingsRepository_1.default.updateSettingsInfo(type, newSettingsInfo);
+            Socket_1.default.update_settings(type);
+            res.status(http_status_1.default.OK).json(newSettingsInfo);
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
     static async updateAllSettingsInfo(req, res) {
-        const newSettingsInfo = req.body;
-        SettingsRepository_1.default.updateAllSettingsInfo(newSettingsInfo);
-        Socket_1.default.update_all_settings(newSettingsInfo);
-        res.status(http_status_1.default.OK).json(newSettingsInfo);
+        try {
+            const newSettingsInfo = req.body;
+            SettingsRepository_1.default.updateAllSettingsInfo(newSettingsInfo);
+            Socket_1.default.update_all_settings(newSettingsInfo);
+            res.status(http_status_1.default.OK).json(newSettingsInfo);
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 }
 exports.default = SettingsController;

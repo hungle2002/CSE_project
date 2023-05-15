@@ -3,6 +3,7 @@ import Sercurity from "../pages/Sercurity";
 import Statistic from "../pages/Statistic";
 import Mode from "../pages/Mode";
 import Setting from "../pages/Setting";
+import Login from "../pages/Login";
 import config from "../config";
 const puplicRoutes = [
   {
