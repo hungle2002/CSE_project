@@ -2,7 +2,7 @@ import axios from "axios";
 import { ipLAN } from "../config/ipCOnfig";
 
 const request = axios.create({
-  baseURL: `http://${ipLAN}:3000/api/v1/`,
+  baseURL: `https://my-smart-farm-api.onrender.com/api/v1/`,
 });
 export const get = async (path, options) => {
   const response = await request.get(path, options);
